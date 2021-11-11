@@ -126,6 +126,15 @@ ggsave("fixed_sfcomparison10032021", device= "png", dpi= 300)
 # ggplot(data= pfruit, aes(x= sf2, y= sf2sf1))
 # 
 
+in_class <- rep_len(0.5, length(ar_scores$score))
+k <- sample(c(seq(from= 3.5, to = 4.5, by= 0.5)), size= length(in_class), replace = TRUE, prob = NULL)
+k[k>4]=4
+k= sort(k, decreasing= TRUE)
+inclass_EC <- sample(k)
+
+inclass_EC[1:25] <- 4
+inclass_EC[30:39]= 4
+inclass_EC[54:66]= 4
 
 
 

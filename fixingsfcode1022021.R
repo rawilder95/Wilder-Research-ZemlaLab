@@ -33,6 +33,8 @@ nsubj= unique(dat$id) #Get number of subjects in Experiment 1
 
 
 
+
+
 ############# SPOTCHECK EXAMPLE  SINGLE ITEM ################
 #  # Get counts for rp fluency trial 1
 # idl1 <- fruit[listrank== 1 & item== "kiwi"]$id
@@ -118,8 +120,8 @@ pfruit[,sf2:= sf2/length(nsubj)]
  
 
  #############################  PLOT DATA ################################  
-ggplot(data= data.frame(pfruit), aes(x= sf2, y= sf2sf1, color= "Fruits"))+ geom_count(alpha= 0.3)+ geom_abline() + labs(x= "Sum(SF2)-1/length(N Subjects)", y= "Sum(SF2 & SF1)/ Sum(SF1)", color= "Category", size= "Frequency")+ geom_count(data= data.frame(pveg), aes(x= vf2, y= vf2vf1, color= "Vegetables"), alpha= 0.3)+ geom_count(data= data.frame(panimal), aes(x= af2, y= af2af1, color= "Animals"), alpha= 0.3)
-ggsave("fixed_sfcomparison10032021", device= "png", dpi= 300)
+ggplot(data= data.frame(pfruit), aes(x= sf2, y= sf2sf1, color= "Fruits"))+ geom_count(alpha= 0.3)+ geom_abline() + labs(x= "Item Typicality", y= "p(B|A)", color= "Category", size= "Frequency")+ geom_count(data= data.frame(pveg), aes(x= vf2, y= vf2vf1, color= "Vegetables"), alpha= 0.3)+ geom_count(data= data.frame(panimal), aes(x= af2, y= af2af1, color= "Animals"), alpha= 0.3)
+ggsave("fixed_sfcomparison10212021", device= "png", dpi= 300)
 
 
 ################### Something like an SPC? ###################
@@ -211,7 +213,7 @@ for (subj in 1:length(nsubj)){
 }
 # We don't really care about the third repetition ATM so just take it out. It's getting confusing
 s1 <- s1[listrank<3,]
-########################### REPEATED TRANSITIONS NOT FINISHED ##################################
+########################### Transitions. It's a Mess.  ##################################
 # s1[id== "A101"]
 # (full_transitions= matrix(rep(NaN, 200), nrow= 20, ncol= 100))
 # 
@@ -249,3 +251,29 @@ s1 <- s1[listrank<3,]
 # ggplot()+ geom_line(aes(x= n_transitions, y= p_transitions))+ geom_point(aes(x= n_transitions, y= p_transitions))+ labs(x= "Transition", y= "p(Transition)")
   
 
+# LAG CRP Generated Plot
+
+ll= length(l1)
+library(ggplot2)
+l1 <- c(0.33, 0.335, 0.34, 0.36, 0.4, 0.49, NaN, 0.58, 0.39, 0.34, 0.33, 0.32, 0.33)
+l2 <- l1*0.87
+# ggplot()+ geom_point(aes(x= c(1:(ll/0.58), y= l1))+ geom_line(aes(x= c(1:(ll/0.58)), y= l1))+ ylim(0.3,0.8)+xlim(1, length(l1))+ scale_x_continuous(name= waiver(), breaks= (1:length(l1))))
+
+                      
+
+list1 <- data.table(l1= l1*0.5, x1= seq(round(ll/2)*-1,ll/2), h0= rep(1/ll, ll), l2= l2)
+# list1$l1 <- l1
+# list1$x1 <- seq(round(ll/2)*-1,ll/2)
+
+
+ggplot(data= list1, aes(x= x1, y= l1))+ geom_point(aes(y= l1, color= "Temporal Proximity"), color= "blue")+ geom_line(aes(y= l1))+ geom_line(aes(y= h0), color= "red", , linejoin= "bevel")+ geom_point(aes(y= h0), color= "blue")+ labs(x= "Item Lag", y= "CRP")+ ylim(0,1) 
+ggsave("sample_contiguity_SF", device= "png", dpi= 300)
+
+
+ # + scale_x_discrete(labels= c("1"= "-6", "2"= "-5", "3"= "-4", "4"= "-3", "5"= "-2", "6"= "-1", "7"="0", "8"= "1", "9"= "2", "10"= "3", "11"= "4", "12"= "5"))+ labs(y= "CRP", x= "Item Lag")))
+                         
+                         
+                         
+#                          scale_x_discrete(breaks= c("-1", "1" , floor(length(l1)/2)), labels= c(-1:floor(length(l1)/2)))
+# ))
+# 

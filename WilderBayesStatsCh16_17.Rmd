@@ -1,0 +1,35 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+
+Chapter 16
+
+Exercise 16.1
+
+```{r}
+myDataFrame = read.csv( file="ShohatOphirKAMH2012dataReduced.csv" )
+xName="Group"
+yName="PreferenceIndex"
+fileNameRoot="ShohatOphirKAMH2012data-PI-"
+RopeMuDiff=c(-0.1,0.1) ; RopeSdDiff=c(-0.1,0.1) ; RopeEff=c(-0.1,0.1)
+```
+Exercise 16.2
+
+```{r}
+
+```
+
+Exercise 16.3
+```{r}
+
+```
+
+Chapter 17
+Exercise 17.1
+```{r}
+
+```
+
+
