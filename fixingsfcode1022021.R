@@ -120,9 +120,9 @@ pfruit[,sf2:= sf2/length(nsubj)]
  
 
  #############################  PLOT DATA ################################  
-ggplot(data= data.frame(pfruit), aes(x= sf2, y= sf2sf1, color= "Fruits"))+ geom_count(alpha= 0.3)+ geom_abline() + labs(x= "Item Typicality", y= "p(B|A)", color= "Category", size= "Frequency")+ geom_count(data= data.frame(pveg), aes(x= vf2, y= vf2vf1, color= "Vegetables"), alpha= 0.3)+ geom_count(data= data.frame(panimal), aes(x= af2, y= af2af1, color= "Animals"), alpha= 0.3)
-ggsave("fixed_sfcomparison10212021", device= "png", dpi= 300)
+ggplot(data= data.frame(pfruit), aes(x= sf2, y= sf2sf1, color= "Fruits"))+ geom_count(alpha= 0.3)+ geom_abline() + labs(x= "Item Typicality", y= "p(B|A)", color= "Category", size= "Frequency")+ geom_count(data= data.frame(pveg), aes(x= vf2, y= vf2vf1, color= "Vegetables"), alpha= 0.3)+ geom_count(data= data.frame(panimal), aes(x= af2, y= af2af1, color= "Animals"), alpha= 0.3)+ xlim(0,1)+theme(text=element_text(size= 15))
 
+ggsave("repvtypicalityII.png", device= "png", dpi= 400, height= 5, width= 7)
 
 ################### Something like an SPC? ###################
 
@@ -253,21 +253,32 @@ s1 <- s1[listrank<3,]
 
 # LAG CRP Generated Plot
 
+
 ll= length(l1)
 library(ggplot2)
-l1 <- c(0.33, 0.335, 0.34, 0.36, 0.4, 0.49, NaN, 0.58, 0.39, 0.34, 0.33, 0.32, 0.33)
-l2 <- l1*0.87
-# ggplot()+ geom_point(aes(x= c(1:(ll/0.58), y= l1))+ geom_line(aes(x= c(1:(ll/0.58)), y= l1))+ ylim(0.3,0.8)+xlim(1, length(l1))+ scale_x_continuous(name= waiver(), breaks= (1:length(l1))))
+l1 <- c(0.14, 0.145, 0.125, 0.14, 0.21, 0.35, NaN, 0.42, 0.19, 0.18, 0.178, 0.17, 0.18)
 
-                      
+list1 <- data.table(l1= l1, x1= seq(round(ll/2)*-1,ll/2), h0= rep(0.1756667, ll))
+list1[l1>1]$l1 <- 1
+ggplot(data= list1, aes(x= x1, y= l1))+ geom_point(aes(y= l1, color= "CRP"), color= "blue")+ geom_line(aes(y= l1))+ geom_line(aes(y= h0), color= "red")+ labs(x= "Item Lag", y= "CRP")+ ylim(0.1,1)
+ggsave("new_contiguity_SF.png", device= "png", dpi= 300)
+# p2 <- ggplot(data= list1, aes(x= x1, y= l1))+ geom_point(aes(x= x1, l3))+ geom_line(aes(x= x1, y= l3), color= "blue")+ ylim(0,1)
+# # install.packages("cowplot")
+# cowplot::plot_grid(p1,p2)
 
-list1 <- data.table(l1= l1*0.5, x1= seq(round(ll/2)*-1,ll/2), h0= rep(1/ll, ll), l2= l2)
-# list1$l1 <- l1
-# list1$x1 <- seq(round(ll/2)*-1,ll/2)
+# ll= length(l1)
+# library(ggplot2)
+# l1 <- c(0.4, 0.46, 0.5, 0.61, 0.8, 0.95, NaN, 0.91, 0.75, 0.55, 0.43, 0.32, 0.33)
+# l1 <- l1*0.95
+# l2 <- rep(0.5, length(l1))
+# l3 <- c(0.250, 0.205, 0.220, 0.383, 0.460, 0.600,  NaN, 0.915, 0.775, 0.510, 0.465, 0.335, 0.350)
+# list1 <- data.table(l1= l1*0.8, x1= seq(round(ll/2)*-1,ll/2), h0= l2)
+# ggplot(data= list1, aes(x= x1, y= l1))+ geom_point(aes(y= l1, color= "Temporal Proximity"), color= "blue")+ geom_line(aes(y= l1, na.rm= TRUE))+ geom_line(aes(y= h0), color= "red", linejoin= "bevel")+ labs(x= "Item Lag", y= "CRP") + geom_point(aes(x= x1, l3))+ geom_line(aes(x= x1, l3), color= "blue")
 
 
-ggplot(data= list1, aes(x= x1, y= l1))+ geom_point(aes(y= l1, color= "Temporal Proximity"), color= "blue")+ geom_line(aes(y= l1))+ geom_line(aes(y= h0), color= "red", , linejoin= "bevel")+ geom_point(aes(y= h0), color= "blue")+ labs(x= "Item Lag", y= "CRP")+ ylim(0,1) 
-ggsave("sample_contiguity_SF", device= "png", dpi= 300)
+
+
+ggsave("new_contiguity_SF.png", device= "png", dpi= 300)
 
 
  # + scale_x_discrete(labels= c("1"= "-6", "2"= "-5", "3"= "-4", "4"= "-3", "5"= "-2", "6"= "-1", "7"="0", "8"= "1", "9"= "2", "10"= "3", "11"= "4", "12"= "5"))+ labs(y= "CRP", x= "Item Lag")))
@@ -276,4 +287,35 @@ ggsave("sample_contiguity_SF", device= "png", dpi= 300)
                          
 #                          scale_x_discrete(breaks= c("-1", "1" , floor(length(l1)/2)), labels= c(-1:floor(length(l1)/2)))
 # ))
-# 
+
+###### TEMPORAL CLUSTERING FACTOR #########
+k <- data.table(1:100)
+k[,tf:= sample(100)/100]
+k[,sf:= sample(100)/100]
+k[,colors:= rep(0, length(k$sf))]
+k[sf<0.5 & tf<= 0.5]$colors <- 1
+k[sf<0.5 & tf> 0.5]$colors <- 2 
+k[sf>=0.5 & tf> 0.5]$colors <- 3 
+k[sf>0.5 & tf< 0.5]$colors <- 4
+
+ggplot(data= k, aes(x= sf, y= tf))+ geom_jitter(aes(color= colors), alpha= 0.5, )+ geom_hline(yintercept = 0.5)+geom_vline(xintercept= 0.5)+ labs(y= "Temporal Distance", x= "Semantic Distance")
+
+
+ggplot()+ geom_point(aes(x= 0.22, y= 1), alpha= 0.5, size= 3)+geom_point(aes(x= 0.39, y= 4), alpha= 0.5, size= 3)+geom_point(aes(x= 0.77, y= 2), alpha= 0.5, size= 3)+ geom_point(aes(x= 0.9, y= 5), alpha= 0.5, size= 3)+ geom_hline(yintercept = 3)+geom_vline(xintercept= 0.5)+ labs(y= "Temporal Distance", x= "Semantic Distance")+ xlim(0,1)+ylim(0,6)+ geom_text(aes(x= c(0.25, 0.75, 0.25, 0.75+0.1), y= c(1, 2, 5, 5)-0.5, label= c("DOG-CAT", "FERRET-GIRAFFE", "WOLF-FOX", "TURTLE-ELEPHANT")), size= 6)+ theme(text=element_text(size= 18))
+ggsave("temp_sem1.png", device= "png", dpi= 400, width= 8, height= 6)
+
+
+
+
+
+y <- c(NaN, 0.1, 0.12, 0.1, 0.12, 0.18, 0.4, NaN, 0.7, 0.3, 0.2, 0.15, 0.13, 0.12, 0.1,0.08)
+y2 <- c(0.12, 0.1, 0.11, 0.12, 0.134, 0.19, 0.24, NaN, NaN, 0.22, 0.219, 0.23, 0.2, 0.13, 0.13, 0.1)
+ll= length(y)
+x <- seq(round(ll/2)*-1+1,round(ll/2))
+lagcrp <- data.table(x,y)
+ggplot(data= lagcrp, aes(x= x, y= y))+geom_point(shape= 1)+ geom_line()+ ylim(0,0.75)+ xlim(-6,6)+ labs(x= "Item Lag", y= "CRP")+theme(text=element_text(size= 18))
+ggsave("contiguity_both.png", dpi= 450, height= 5, width= 7)  
+
+geom_line(aes(x= x, y= y2), color= "red", size= 0.85)+geom_point(aes(x= x, y= y2, color= "SF"), color= "black", shape= 16, size= 2)+ 
+
+# + geom_line(aes(x= x, y= y2), color= "red", size= 0.85)+geom_point(aes(x= x, y= y2, color= "SF"), color= "black", shape= 16, size= 2)+ 
