@@ -56,9 +56,9 @@ $(document).ready(function() {
 
     
     var games=[];                                       // Store game results
-    var categories=["belts you can get in karate", "nickleback albums", "cat breeds", "nicholas cage films"];   // Categories to use
+    var categories=["Clothing Articles", "Cities", "Countries", "Fruits", "Animals", "Methods of Transportation", "Toys", "Sporting Games", "Kitchen Utensils", "Musical Instruments", "Camping Equipment", "Vegetables", "Furniture"];   // Categories to use
     var numx=2;                                         // How many times to do each list
-    var timeperlist=30;                                // 3 minutes per list
+    var timeperlist= 10;                                // 90 minutes per list
     var list=genList(categories,numx);                  // Generate a valid list
     var game=new gameObj();                             // Keeps track of current game
     var firstkey=1;
@@ -126,7 +126,7 @@ $(document).ready(function() {
 
         if (game.items.length <=5) {
             $("#too_few").transition({left: '0%'});
-            game.gamenum--;     // hack to replay same round, because startGame() will increment gamenum
+            game.gamenum;     // hack to replay same round, because startGame() will increment gamenum
         } else {
             if (game.gamenum < (categories.length * numx)) {
                 $("#between_categories").transition({left: '0%'});
