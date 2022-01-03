@@ -7,14 +7,14 @@ $(document).ready(function() {
     rivets.formatters.length = function(value) {
       return value.length;
     }
-
+    
     rivets.formatters.toMinutes = function(value) {
         mins = parseInt(value / 60)
         seconds = parseInt(value % 60);
         seconds = seconds < 10 ? "0" + seconds : seconds;
         return mins + ":" + seconds;
     }
-
+    var list_distractor = [];
     // variables for each game
     function gameObj() {
         this.gamenum=0;
@@ -24,7 +24,8 @@ $(document).ready(function() {
             this.firsttime=[];
             this.category="";
             this.starttime=0;
-            this.countdown=timeperlist;
+            this.countdown = timeperlist;
+            this.distractor = "";
         }
         this.init();
     }
@@ -54,13 +55,33 @@ $(document).ready(function() {
         return list;
     }        
 
-    
+    // Generate order of distractors
+    function genList_distractor(cat, numx) {
+        invalid_list_distractor = 1;
+        while (invalid_list_distractor) {
+            invalid_list = 0;
+            list_distractor = [];
+            for (i = 0; i < 3; i++) {
+                list_distractor.push(cat.slice());
+                shuffle(list_distractor[i]);
+            }
+            list_distractor = $.map(list, function (n) { return n; }); // Flatten list
+            for (i = 1; i < list_distractor.length; i++) {
+                if (list_distractor[i] == list_distractor[i - 1]) {
+                    invalid_list_distractor = 1;
+                }
+            }
+        }
+        return list_distractor;
+    }
+
     var games=[];                                       // Store game results
     var categories=["Clothing Articles", "Cities", "Countries", "Fruits", "Animals", "Methods of Transportation", "Toys", "Sporting Games", "Kitchen Utensils", "Musical Instruments", "Camping Equipment", "Vegetables", "Furniture"];   // Categories to use
     var numx=2;                                         // How many times to do each list
     var timeperlist= 10;                                // 90 minutes per list
     var list=genList(categories,numx);                  // Generate a valid list
-    var game=new gameObj();                             // Keeps track of current game
+    var distractor = ["(2 + 2) ÷ 2", "(7-1) x 2", "10 ÷ 2 - 5", "6 + 6 + 6", "5 x 5 x 5", "100 x 10 ÷ 100", "20 - 100", "2 ÷ 2 x 2", "1 + 6", "36 ÷ 6 ÷ 6", "(34 - 4) ÷ 2", "10000 ÷ 10"];
+    var game = new gameObj();                             // Keeps track of current game
     var firstkey=1;
 
     rivets.bind($('body'), { game: game });
@@ -103,7 +124,8 @@ $(document).ready(function() {
     function startGame() {
         game.gamenum++;
         game.init();
-        game.category=list[game.gamenum-1];
+        game.category = list[game.gamenum - 1];
+        game.distractor = list_distractor[game.gamenum -1]
         game.starttime = new Date().getTime();
 
         $(this).parent().transition({left: '-200%'}, function() {
@@ -113,6 +135,8 @@ $(document).ready(function() {
         $("#current").focus();
         startTimer();
     }
+
+ 
 
     function endGame() {
         firstkey=1
@@ -125,11 +149,13 @@ $(document).ready(function() {
         });
 
         if (game.items.length <=5) {
-            $("#too_few").transition({left: '0%'});
+            $("#too_few").transition({ left: '0%' });
+            $("#dist").transition({ left: '0%' });
             game.gamenum;     // hack to replay same round, because startGame() will increment gamenum
         } else {
             if (game.gamenum < (categories.length * numx)) {
-                $("#between_categories").transition({left: '0%'});
+                $("#between_categories").transition({ left: '0%' });
+                $("#dist").transition({ left: '0%' });
             } else {
                 $("#endgame").transition({left: '0%'});
                 $.post( "savedata.php", { json: JSON.stringify(games) });

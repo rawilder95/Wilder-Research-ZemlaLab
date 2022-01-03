@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Naming Task</title>
+    <script src="/Users/rebeccawilder/Desktop/Desktop - Rebecca’s MacBook Air/Research 2021-2022/GitHub/Wilder-Research-ZemlaLab/jspsych-6.1.0/jspsych.js"></script>
+    <script src="/Users/rebeccawilder/Desktop/Desktop - Rebecca’s MacBook Air/Research 2021-2022/GitHub/Wilder-Research-ZemlaLab/jspsych-6.1.0/plugins/jspsych-survey-html-form.js"></script>
+    <script src="/Users/rebeccawilder/Desktop/Desktop - Rebecca’s MacBook Air/Research 2021-2022/GitHub/Wilder-Research-ZemlaLab/jspsych-6.1.0/plugins/jspsych-html-keyboard-response.js"></script>
+    <link href="/Users/rebeccawilder/Desktop/Desktop - Rebecca’s MacBook Air/Research 2021-2022/GitHub/Wilder-Research-ZemlaLab/jspsych-6.1.0/css/jspsych.css" rel="stylesheet" type="text/css">
+    <link />
+</head>
+    <body></body>
+    <script>
+    var timeline = [];
+    var categories = ["Clothing Articles", "Cities", "Countries", "Fruits", "Animals", "Methods of Transportation", "Toys", "Sporting Games", "Kitchen Utensils", "Musical Instruments", "Camping Equipment", "Vegetables", "Furniture"];
+    var distractors = ["(2 + 2) ÷ 2", "(7-1) x 2", "10 ÷ 2 - 5", "6 + 6 + 6", "5 x 5 x 5", "100 x 10 ÷ 100", "20 - 100", "2 ÷ 2 x 2", "1 + 6", "36 ÷ 6 ÷ 6", "(34 - 4) ÷ 2", "10000 ÷ 10"];
+
+    var cat_trial =  {
+    type: 'html-keyboard-response',
+    stimulus: '<p Name words</p>',
+    choices: "ALL_KEYS",
+    prompt: "<p>which words? </p>"
+    trial_duration: 90
+};
+
+    timeline.push(cat_trial)
+
+    jsPsych.init({
+        timeline: timeline
+    });
+
+    </script>
+</html>
+
+
+
