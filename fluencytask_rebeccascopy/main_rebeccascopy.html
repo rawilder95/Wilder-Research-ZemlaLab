@@ -46,12 +46,7 @@
             </div>
             <div id="timer">{game.countdown | toMinutes}</div>
         </div>
-        <!-- <div id="items">{game.items | length} {game.category} named</div> -->
-        <!-- <div id="dist">{game.dist | length} {game.distractors} named</div> -->
-        <div id="items"></div>
-
-
-
+         <div id="items">{game.items | length} {game.category} named</div> 
     </div>
 
     <div id="between_categories">
@@ -67,8 +62,10 @@
         <a class="start" href="#">Start next round</a>
     </div>
 
-    <div id="dist">
-        Solve for the equation by typing your response into the box: {gen_distractor[0]}
+    <div id="distractor">
+        <h1>Solve the Equation</h1>
+        This Equation {distractor[game.gamenum-1]}! <br><br>
+        <a class="start" href="#">Start next round</a>
     </div>
 
     <div id="too_few">

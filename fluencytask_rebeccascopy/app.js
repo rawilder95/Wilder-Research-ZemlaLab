@@ -26,6 +26,20 @@ $(document).ready(function() {
             this.starttime=0;
             this.countdown = timeperlist;
             this.distractor = "";
+        this.init();
+    }
+
+    // variables for distractor
+    function distObj() {
+        this.distnum = 0;
+        this.init = function () {
+            this.solution = [];
+            this.times = [];
+            this.firsttime = [];
+            this.problem = "";
+            this.starttime = 0;
+            this.countdown = timeperlist;
+
         }
         this.init();
     }
@@ -78,11 +92,13 @@ $(document).ready(function() {
     var games=[];                                       // Store game results
     var categories=["Clothing Articles", "Cities", "Countries", "Fruits", "Animals", "Methods of Transportation", "Toys", "Sporting Games", "Kitchen Utensils", "Musical Instruments", "Camping Equipment", "Vegetables", "Furniture"];   // Categories to use
     var numx=2;                                         // How many times to do each list
-    var timeperlist= 10;                                // 90 minutes per list
+    var tokens = [1, 2, 3, 4, 5, 3, 2, 1, 6, 5, 4, 6, 7, 8, 9, 10, 11, 9, 8, 7, 12, 11, 10, 12];
+    var timeperlist = 10;                                // 90 minutes per list
     var list=genList(categories,numx);                  // Generate a valid list
-    var distractor = ["(2 + 2) ÷ 2", "(7-1) x 2", "10 ÷ 2 - 5", "6 + 6 + 6", "5 x 5 x 5", "100 x 10 ÷ 100", "20 - 100", "2 ÷ 2 x 2", "1 + 6", "36 ÷ 6 ÷ 6", "(34 - 4) ÷ 2", "10000 ÷ 10"];
+    var equations = ["(2 + 2) ÷ 2", "(7-1) x 2", "10 ÷ 2 - 5", "6 + 6 + 6", "5 x 5 x 5", "100 x 10 ÷ 100", "20 - 100", "2 ÷ 2 x 2", "1 + 6", "36 ÷ 6 ÷ 6", "(34 - 4) ÷ 2", "10000 ÷ 10"];
     var game = new gameObj();                             // Keeps track of current game
-    var firstkey=1;
+    var distractor = new distObj();
+    var firstkey = 1;
 
     rivets.bind($('body'), { game: game });
 
@@ -124,8 +140,7 @@ $(document).ready(function() {
     function startGame() {
         game.gamenum++;
         game.init();
-        game.category = list[game.gamenum - 1];
-        game.distractor = list_distractor[game.gamenum -1]
+        game.category = categories[tokens[game.gamenum-1] - 1];
         game.starttime = new Date().getTime();
 
         $(this).parent().transition({left: '-200%'}, function() {
@@ -150,16 +165,20 @@ $(document).ready(function() {
 
         if (game.items.length <=5) {
             $("#too_few").transition({ left: '0%' });
-            $("#dist").transition({ left: '0%' });
-            game.gamenum;     // hack to replay same round, because startGame() will increment gamenum
+            game.gamenum;   //hack to replay same round, because startGame() will increment gamenum
         } else {
             if (game.gamenum < (categories.length * numx)) {
                 $("#between_categories").transition({ left: '0%' });
-                $("#dist").transition({ left: '0%' });
             } else {
                 $("#endgame").transition({left: '0%'});
                 $.post( "savedata.php", { json: JSON.stringify(games) });
             }
         }
     }
+
+    function startDistractor() {
+        $("#between_categories").parent().transition({ left: '-200%' }, function () {
+        $("#distractor").transition({ left: '0' });    
+        }
+            $("#distractor").transition({ left: '-200' });  
 });

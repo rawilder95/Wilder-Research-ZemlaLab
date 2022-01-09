@@ -1,4 +1,4 @@
-#instructions, #between_categories, #too_few, #game, #endgame {
+#instructions, #between_categories, #too_few, #game, #endgame{
     height: 100%;
     width: 100%;
     position: fixed;
@@ -30,4 +30,3 @@
 #game_left { float: none; }
 #current { width: 500px; }
 #items { clear: both; }
-#dist {left: 100%}
