@@ -1,4 +1,5 @@
-$(document).ready(function() {
+$(document).ready(function () {
+   var subj_id = 1
     
     // jQuery transit transition speed
     $.fx.speeds._default = 750;
@@ -25,7 +26,8 @@ $(document).ready(function() {
             this.category="";
             this.starttime=0;
             this.countdown = timeperlist;
-            this.distractor = "";
+            
+        }
         this.init();
     }
 
@@ -69,32 +71,13 @@ $(document).ready(function() {
         return list;
     }        
 
-    // Generate order of distractors
-    function genList_distractor(cat, numx) {
-        invalid_list_distractor = 1;
-        while (invalid_list_distractor) {
-            invalid_list = 0;
-            list_distractor = [];
-            for (i = 0; i < 3; i++) {
-                list_distractor.push(cat.slice());
-                shuffle(list_distractor[i]);
-            }
-            list_distractor = $.map(list, function (n) { return n; }); // Flatten list
-            for (i = 1; i < list_distractor.length; i++) {
-                if (list_distractor[i] == list_distractor[i - 1]) {
-                    invalid_list_distractor = 1;
-                }
-            }
-        }
-        return list_distractor;
-    }
 
     var games=[];                                       // Store game results
-    var categories=["Clothing Articles", "Cities", "Countries", "Fruits", "Animals", "Methods of Transportation", "Toys", "Sporting Games", "Kitchen Utensils", "Musical Instruments", "Camping Equipment", "Vegetables", "Furniture"];   // Categories to use
+    var categories=["Clothing Articles", "Cities", "Countries", "Fruits", "Animals", "Methods of Transportation", "Toys", "Sporting Games", "Kitchen Utensils", "Musical Instruments", "Vegetables", "Furniture"];   // Categories to use
     var numx=2;                                         // How many times to do each list
     var tokens = [1, 2, 3, 4, 5, 3, 2, 1, 6, 5, 4, 6, 7, 8, 9, 10, 11, 9, 8, 7, 12, 11, 10, 12];
     var timeperlist = 10;                                // 90 minutes per list
-    var list=genList(categories,numx);                  // Generate a valid list
+    var list = genList(categories, numx);                  // Generate a valid list
     var equations = ["(2 + 2) ÷ 2", "(7-1) x 2", "10 ÷ 2 - 5", "6 + 6 + 6", "5 x 5 x 5", "100 x 10 ÷ 100", "20 - 100", "2 ÷ 2 x 2", "1 + 6", "36 ÷ 6 ÷ 6", "(34 - 4) ÷ 2", "10000 ÷ 10"];
     var game = new gameObj();                             // Keeps track of current game
     var distractor = new distObj();
@@ -104,6 +87,9 @@ $(document).ready(function() {
 
     // Press start
     $(".start").click(startGame);
+
+    // Press start
+    $(".next_dist").click(startDistractor);
 
     // Add item to list
     $("#current").keydown(function (e) {
@@ -117,7 +103,7 @@ $(document).ready(function() {
                 game.items.push($.trim(str));            // store in list
                 game.times.push((new Date).getTime());   // & store timestamp
                 $(this).val("");                         // & clear input field
-                $("#items").append("<p>" + str + " recorded</p>");
+                $("#items").append("<p>" + str + "recorded</p>");
                 $("#items p").fadeOut(800);
             }
         }
@@ -137,10 +123,12 @@ $(document).ready(function() {
         }, 1000);
     }
 
+
+
     function startGame() {
         game.gamenum++;
         game.init();
-        game.category = categories[tokens[game.gamenum-1] - 1];
+        game.category = categories[(tokens[game.gamenum - 1] - 1 + subj_id) % 12];
         game.starttime = new Date().getTime();
 
         $(this).parent().transition({left: '-200%'}, function() {
@@ -151,6 +139,17 @@ $(document).ready(function() {
         startTimer();
     }
 
+    function startDistractor() {
+        distractor.distnum++;
+        distractor.init();
+        distractor.problem = equations[distractor.distnum-1];
+        
+        $(this).parent().transition({ left: '-200%' }, function () {
+            $(this).css({ left: '100%' });
+        });
+        $("#dist_trial").transition({ left: '100%' });
+        $("#current").focus();
+    }
  
 
     function endGame() {
@@ -169,6 +168,7 @@ $(document).ready(function() {
         } else {
             if (game.gamenum < (categories.length * numx)) {
                 $("#between_categories").transition({ left: '0%' });
+                
             } else {
                 $("#endgame").transition({left: '0%'});
                 $.post( "savedata.php", { json: JSON.stringify(games) });
@@ -176,9 +176,16 @@ $(document).ready(function() {
         }
     }
 
-    function startDistractor() {
-        $("#between_categories").parent().transition({ left: '-200%' }, function () {
-        $("#distractor").transition({ left: '0' });    
-        }
-            $("#distractor").transition({ left: '-200' });  
+    //function startDistractor() {
+    //    $("#between_categories").parent().transition({ left: '-200%' }, function () {
+    //    $("#distractor").transition({ left: '0' });    
+    //    }
+    //        $("#distractor").transition({ left: '-200' });
+
+    
+
 });
+
+
+//Write to html manually enter or write to csv and read in previous subject number from csv and then ++
+//Add to limitation section that task isn't fully randomized (relative trial transitions will always be the same e.g. countries to clothing articles)
