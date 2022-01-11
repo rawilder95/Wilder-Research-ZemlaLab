@@ -78,12 +78,17 @@ $(document).ready(function () {
     var tokens = [1, 2, 3, 4, 5, 3, 2, 1, 6, 5, 4, 6, 7, 8, 9, 10, 11, 9, 8, 7, 12, 11, 10, 12];
     var timeperlist = 10;                                // 90 minutes per list
     var list = genList(categories, numx);                  // Generate a valid list
+    //play around with alternative distractor task idea
     var equations = ["(2 + 2) ÷ 2", "(7-1) x 2", "10 ÷ 2 - 5", "6 + 6 + 6", "5 x 5 x 5", "100 x 10 ÷ 100", "20 - 100", "2 ÷ 2 x 2", "1 + 6", "36 ÷ 6 ÷ 6", "(34 - 4) ÷ 2", "10000 ÷ 10"];
     var game = new gameObj();                             // Keeps track of current game
     var distractor = new distObj();
     var firstkey = 1;
 
-    rivets.bind($('body'), { game: game });
+    //introduce templates between javascript and html
+    rivets.bind($('body'), { game: game, distractor : distractor });
+    //rivets.bind($('body'), { distractor: distractor });
+
+
 
     // Press start
     $(".start").click(startGame);
@@ -147,7 +152,7 @@ $(document).ready(function () {
         $(this).parent().transition({ left: '-200%' }, function () {
             $(this).css({ left: '100%' });
         });
-        $("#dist_trial").transition({ left: '100%' });
+        $("#dist_trial").transition({ left: '0%' });
         $("#current").focus();
     }
  
@@ -189,3 +194,6 @@ $(document).ready(function () {
 
 //Write to html manually enter or write to csv and read in previous subject number from csv and then ++
 //Add to limitation section that task isn't fully randomized (relative trial transitions will always be the same e.g. countries to clothing articles)
+// Potential video instead of math distractor (everyone has the same temporal boundaries for encoded distractor~ same amount of effort)
+// Cycle through a slideshow of images and ask incidental encoding-type question 'e.g. indoors outdoors',
+//Not anything that could potentially be an answer for one of the SF trials.
