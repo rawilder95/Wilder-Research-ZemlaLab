@@ -15,8 +15,8 @@ $(document).ready(function () {
         seconds = seconds < 10 ? "0" + seconds : seconds;
         return mins + ":" + seconds;
     }
-    var list_distractor = [];
-    // variables for each game
+    //var list_distractor = [];
+    //// variables for each game
     function gameObj() {
         this.gamenum=0;
         this.init = function() {
@@ -31,14 +31,14 @@ $(document).ready(function () {
         this.init();
     }
 
-    // variables for distractor
+    // variables for distObj
     function distObj() {
         this.distnum = 0;
         this.init = function () {
-            this.solution = [];
+            this.items = [];
             this.times = [];
             this.firsttime = [];
-            this.problem = "";
+            this.category = "";
             this.starttime = 0;
             this.countdown = timeperlist;
 
@@ -76,7 +76,7 @@ $(document).ready(function () {
     var categories=["Clothing Articles", "Cities", "Countries", "Fruits", "Animals", "Methods of Transportation", "Toys", "Sporting Games", "Kitchen Utensils", "Musical Instruments", "Vegetables", "Furniture"];   // Categories to use
     var numx=2;                                         // How many times to do each list
     var tokens = [1, 2, 3, 4, 5, 3, 2, 1, 6, 5, 4, 6, 7, 8, 9, 10, 11, 9, 8, 7, 12, 11, 10, 12];
-    var timeperlist = 10;                                // 90 minutes per list
+    var timeperlist = 5;                                // 90 seconds per list
     var list = genList(categories, numx);                  // Generate a valid list
     //play around with alternative distractor task idea
     var equations = ["(2 + 2) ÷ 2", "(7-1) x 2", "10 ÷ 2 - 5", "6 + 6 + 6", "5 x 5 x 5", "100 x 10 ÷ 100", "20 - 100", "2 ÷ 2 x 2", "1 + 6", "36 ÷ 6 ÷ 6", "(34 - 4) ÷ 2", "10000 ÷ 10"];
@@ -108,7 +108,7 @@ $(document).ready(function () {
                 game.items.push($.trim(str));            // store in list
                 game.times.push((new Date).getTime());   // & store timestamp
                 $(this).val("");                         // & clear input field
-                $("#items").append("<p>" + str + "recorded</p>");
+                $("#items").append("<p>" + str + " recorded</p>");
                 $("#items p").fadeOut(800);
             }
         }
@@ -147,13 +147,14 @@ $(document).ready(function () {
     function startDistractor() {
         distractor.distnum++;
         distractor.init();
-        distractor.problem = equations[distractor.distnum-1];
+        distractor.problem = { "count down from 0 to 100"};
         
         $(this).parent().transition({ left: '-200%' }, function () {
             $(this).css({ left: '100%' });
         });
         $("#dist_trial").transition({ left: '0%' });
         $("#current").focus();
+        startTimer();
     }
  
 
