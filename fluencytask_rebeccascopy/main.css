@@ -1,4 +1,4 @@
-#instructions, #between_categories, #too_few, #game, #endgame, #dist_trial {
+#instructions, #between_categories, #between_distractors, #too_few, #game, #endgame, #dist_trial {
     height: 100%;
     width: 100%;
     position: fixed;
@@ -10,7 +10,7 @@
     overflow-y: scroll;
 }
 
-#timer {
+#timer, #dist_timer {
     float: none;
     padding-top: 50px;
     font-size: 60pt;
@@ -25,13 +25,8 @@
     font-size: 12pt;
 }
 #instructions { left: 0%; }
-#between_categories, #too_few, #game, #endgame, #dist_trial { left: 100%; }
-#game_top { width: 750px; }
-#game_left { float: none; }
-#current { width: 500px; }
-#items { clear: both; }
-#dist_top {width: 750px;}
-
-#dist_left {float: none;}
-
-
+#between_categories, #between_distractors, #too_few, #game, #endgame, #dist_trial { left: 100%; }
+#game_top, #dist_top { width: 750px; }
+#game_left, #dist_left { float: none; }
+#current, #dist_current { width: 500px; }
+#items, #dist_items { clear: both; }

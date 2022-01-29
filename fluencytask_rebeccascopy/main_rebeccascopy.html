@@ -24,7 +24,7 @@
         items from that category as you can. For instance, if the category is
         instruments, you should list as many instruments as you can recall.
         <ul>
-            <li> You will have three minutes to list as many items from the category as possible.
+            <li> You will have three minutes to list as many items from the category as possible. 
             <li> Please rely only on memory, and do not search the Internet for answers.
             <li>
                 Do not enter the same item twice in a round, or list two items with the same suffix.<br>
@@ -62,19 +62,32 @@
         <a class="next_dist" href="#">Start Numbers Task</a>
     </div>
 
+    <div id="between_distractors">
+        <h1>Times up!</h1>
+        You named { game.items | length } {game.category}.<br><br>
+
+        You have completed { game.gamenum } of 24 rounds.<br><br>
+
+        The next round may or may not be a category you have already done.
+        If it is a category you've already done, it's OK to list items you've
+        listed before, but you may also list new items. Please try to list as
+        many items as possible, but only list an item once per round.<br><br>
+        <a class="start" href="#">Start Fluency Task</a>
+    </div>
+    
     <div id="dist_trial">
         
-            <div id="game_top">
-                <div id="game_left">
-                    <h2>Name {game.category}</h2>
-                    <input id="current" type="text"
-                           rv-enabled="game.countdown">
+            <div id="dist_top">
+                <div id="dist_left">
+                    <h2>Name {distractor.problem}</h2>
+                    <input id="dist_current" type="text"
+                           rv-enabled="distractor.countdown">
                     <br>
                     <span class="subtext">Press enter to submit after each item</span>
                 </div>
-                <div id="timer">{distractor.countdown | toMinutes}</div>
+                <div id="dist_timer">{distractor.countdown | toMinutes}</div>
             </div>
-            <div id="items">{distractor.items | length} {distractor.solutions} named</div>
+            <div id="dist_items">{distractor.items | length} {distractor.solutions} named</div>
         </div>
     </div>
 
@@ -94,7 +107,7 @@
             The next round may or may not be a category you have already done.
             If it is a category you've already done, it's OK to list items you've
             listed before, but you may also list new items. <br><br>
-            <a class="start" href="#">Start next round</a>
+            <a class="next_dist" href="#">Start next round</a>
         </div>
 
         <div id="endgame">
