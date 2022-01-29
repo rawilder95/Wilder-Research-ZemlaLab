@@ -40,7 +40,7 @@ $(document).ready(function () {
             this.firsttime = [];
             this.category = "";
             this.starttime = 0;
-            this.countdown = timeperlist;
+            this.countdown = disttime;
 
         }
         this.init();
@@ -78,6 +78,7 @@ $(document).ready(function () {
     var tokens = [1, 2, 3, 4, 5, 3, 2, 1, 6, 5, 4, 6, 7, 8, 9, 10, 11, 9, 8, 7, 12, 11, 10, 12];
     var timeperlist = 5;                                // 90 seconds per list
     var list = genList(categories, numx);                  // Generate a valid list
+    var disttime = 5;
     //play around with alternative distractor task idea
     var equations = ["(2 + 2) ÷ 2", "(7-1) x 2", "10 ÷ 2 - 5", "6 + 6 + 6", "5 x 5 x 5", "100 x 10 ÷ 100", "20 - 100", "2 ÷ 2 x 2", "1 + 6", "36 ÷ 6 ÷ 6", "(34 - 4) ÷ 2", "10000 ÷ 10"];
     var game = new gameObj();                             // Keeps track of current game
@@ -147,7 +148,7 @@ $(document).ready(function () {
     function startDistractor() {
         distractor.distnum++;
         distractor.init();
-        distractor.problem = { "count down from 0 to 100"};
+        
         
         $(this).parent().transition({ left: '-200%' }, function () {
             $(this).css({ left: '100%' });
