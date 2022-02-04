@@ -88,6 +88,10 @@
     rivets.bind($('body'), { game: game, distractor : distractor });
     //rivets.bind($('body'), { distractor: distractor });
 
+    // Press Next
+
+$(".instructions").click(startInstructions)
+
 
 
     // Press start

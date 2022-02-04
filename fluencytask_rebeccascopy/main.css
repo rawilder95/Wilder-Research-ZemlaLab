@@ -1,4 +1,4 @@
-#instructions, #between_categories, #between_distractors, #too_few, #game, #endgame, #dist_trial {
+#consent, #instructions, #between_categories, #between_distractors, #too_few, #game, #endgame, #dist_trial {
     height: 100%;
     width: 100%;
     position: fixed;
@@ -24,6 +24,7 @@
 #postExptSurvey {
     font-size: 12pt;
 }
+#consent {left: 0%}
 #instructions { left: 0%; }
 #between_categories, #between_distractors, #too_few, #game, #endgame, #dist_trial { left: 100%; }
 #game_top, #dist_top { width: 750px; }

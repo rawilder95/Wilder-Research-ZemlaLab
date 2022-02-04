@@ -18,19 +18,28 @@
                              Please upgrade your browser before continuing.</p>
     <![endif]-->
 
-    <div id="instructions">
+    <div id="consent"
+         <h1> Consent Form </h1>
+    <b>Study Title:</b> Evaluating Episodic Reliance During Semantic Retrieval
+    <b>Principal Investigator:</b> Jeffrey Zemla, Assistant Professor
+    <b>Department and Institution:</b> Psychology, Syracuse University
+    <b>Compensation:</b> For your participation you will receive 0.5 SONA course credits for a 30 minute study or 1 course credit for a 60 minute study.
+    <a class=" instructions" href="#"> Next </a>
+    </div>
+
+    <div id="Startinstructions">
         <h1>Instructions</h1>
         For each round in this task, you will be given a category and asked to list as many
         items from that category as you can. For instance, if the category is
         instruments, you should list as many instruments as you can recall.
         <ul>
-            <li> You will have three minutes to list as many items from the category as possible. 
+            <li> You will have three minutes to list as many items from the category as possible.
             <li> Please rely only on memory, and do not search the Internet for answers.
             <li>
                 Do not enter the same item twice in a round, or list two items with the same suffix.<br>
                 For example if you list "guitar", do not list "guitars" in the same round.
         </ul>
-        You will be asked to do this nine times in total.
+        You will be asked to do this 24 times in total.
         <br><br>
         <a class="start" href="#">Click here to begin</a>
     </div>
@@ -46,8 +55,10 @@
             </div>
             <div id="timer">{game.countdown | toMinutes}</div>
         </div>
-         <div id="items">{game.items | length} {game.category} named</div> 
+        <div id="items">{game.items | length} {game.category} named</div>
     </div>
+
+
 
     <div id="between_categories">
         <h1>Times up!</h1>
@@ -62,6 +73,7 @@
         <a class="next_dist" href="#">Start Numbers Task</a>
     </div>
 
+
     <div id="between_distractors">
         <h1>Times up!</h1>
 
@@ -69,87 +81,87 @@
 
         <a class="start" href="#">Start Fluency Task</a>
     </div>
-    
+
     <div id="dist_trial">
-        
-            <div id="dist_top">
-                <div id="dist_left">
-                    <h2>Name {distractor.problem}</h2>
-                    <input id="dist_current" type="text"
-                           rv-enabled="distractor.countdown">
-                    <br>
-                    <span class="subtext">Press enter to submit after each item</span>
-                </div>
-                <div id="dist_timer">{distractor.countdown | toMinutes}</div>
+
+        <div id="dist_top">
+            <div id="dist_left">
+                <h2>Name {distractor.problem}</h2>
+                <input id="dist_current" type="text"
+                       rv-enabled="distractor.countdown">
+                <br>
+                <span class="subtext">Press enter to submit after each item</span>
             </div>
-            <div id="dist_items">{distractor.items | length} {distractor.solutions} named</div>
+            <div id="dist_timer">{distractor.countdown | toMinutes}</div>
         </div>
+        <div id="dist_items">{distractor.items | length} {distractor.solutions} named</div>
+    </div>
     </div>
 
-        
-            <!--<h1>Watch the Following Video</h1>
-         For the next trial please watch and rate the video as either "positive", "neutral", or "negatitve" <br><br>
-        <a class="start" href="#">Start next round</a>-->
-        <!--</div>-->
 
-        <div id="too_few">
-            <h1>Uh-oh...</h1>
-            You only entered { game.items | length } {game.category}!<br><br>
+    <!--<h1>Watch the Following Video</h1>
+     For the next trial please watch and rate the video as either "positive", "neutral", or "negatitve" <br><br>
+    <a class="start" href="#">Start next round</a>-->
+    <!--</div>-->
 
-            Please use the entire allotted time to try
-            and generate as many items as possible, listing each item once per round.
+    <div id="too_few">
+        <h1>Uh-oh...</h1>
+        You only entered { game.items | length } {game.category}!<br><br>
 
-            The next round may or may not be a category you have already done.
-            If it is a category you've already done, it's OK to list items you've
-            listed before, but you may also list new items. <br><br>
-            <a class="next_dist" href="#">Start next round</a>
+        Please use the entire allotted time to try
+        and generate as many items as possible, listing each item once per round.
+
+        The next round may or may not be a category you have already done.
+        If it is a category you've already done, it's OK to list items you've
+        listed before, but you may also list new items. <br><br>
+        <a class="next_dist" href="#">Start next round</a>
+    </div>
+
+    <div id="endgame">
+        <h1>Times up!</h1>
+        You named { game.items | length } {game.category}.
+
+        <div id="postExptSurvey">
+            <form action="demographics.php" method="post">
+                <h3 id="surveyTitle">Post-Experiment Survey</h3>
+                <span class="subtext">Please complete this survey. NOTE: The HIT is not complete until filling out this survey.</span>
+                <ul>
+                    <li>
+                        Gender<br>
+                        <input type="radio" name="gender" value="M"> Male
+                        <input type="radio" name="gender" value="F"> Female
+                        <input type="radio" name="gender" value="O"> Other
+                        <input type="text" name="genderOther" size="15" maxlength="40" id="genderTxt">
+                    </li>
+                    <br>
+                    <li>
+                        Age
+                        <input type="text" name="age" size="3" maxlength="3" id="ageTxt" />
+                    </li>
+                    <br>
+                    For the next two questions, please be honest. You will be paid regardless of your response.
+                    <br>
+                    <br>
+                    <li>
+                        <label for="try">Did you try to do the task?</label>
+                        <input type="radio" name="try" value="Y"> Yes
+                        <input type="radio" name="try" value="N"> No
+                    </li>
+                    Do you feel like you understood the task?
+                    <input type="radio" name="understand" value="Y"> Yes
+                    <input type="radio" name="understand" value="N"> No
+                    <br>
+                    <br>
+                    <li>
+                        Comments (optional):
+                        <br />If you were confused, please tell us why you were confused here.<br />
+                        <textarea name="comments" cols="40" rows="8" wrap="hard"> </textarea>
+                    </li>
+                </ul>
+                <input type="submit" value="Submit for your Amazon Mechanical Turk code">
+            </form>
         </div>
-
-        <div id="endgame">
-            <h1>Times up!</h1>
-            You named { game.items | length } {game.category}.
-
-            <div id="postExptSurvey">
-                <form action="demographics.php" method="post">
-                    <h3 id="surveyTitle">Post-Experiment Survey</h3>
-                    <span class="subtext">Please complete this survey. NOTE: The HIT is not complete until filling out this survey.</span>
-                    <ul>
-                        <li>
-                            Gender<br>
-                            <input type="radio" name="gender" value="M"> Male
-                            <input type="radio" name="gender" value="F"> Female
-                            <input type="radio" name="gender" value="O"> Other
-                            <input type="text" name="genderOther" size="15" maxlength="40" id="genderTxt">
-                        </li>
-                        <br>
-                        <li>
-                            Age
-                            <input type="text" name="age" size="3" maxlength="3" id="ageTxt" />
-                        </li>
-                        <br>
-                        For the next two questions, please be honest. You will be paid regardless of your response.
-                        <br>
-                        <br>
-                        <li>
-                            <label for="try">Did you try to do the task?</label>
-                            <input type="radio" name="try" value="Y"> Yes
-                            <input type="radio" name="try" value="N"> No
-                        </li>
-                        Do you feel like you understood the task?
-                        <input type="radio" name="understand" value="Y"> Yes
-                        <input type="radio" name="understand" value="N"> No
-                        <br>
-                        <br>
-                        <li>
-                            Comments (optional):
-                            <br />If you were confused, please tell us why you were confused here.<br />
-                            <textarea name="comments" cols="40" rows="8" wrap="hard"> </textarea>
-                        </li>
-                    </ul>
-                    <input type="submit" value="Submit for your Amazon Mechanical Turk code">
-                </form>
-            </div>
-        </div>
+    </div>
 
 </body>
 
