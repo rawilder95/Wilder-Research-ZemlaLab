@@ -90,14 +90,14 @@
 
     // Press Next
 
-$(".instructions").click(startInstructions)
-
-
+    $(".Next").click(startInstructions)
 
     // Press start
+
     $(".start").click(startGame);
 
     // Press start
+
     $(".next_dist").click(startDistractor);
 
     // Add item to list
@@ -162,6 +162,12 @@ $(".instructions").click(startInstructions)
             }
         }, 1000); 
     }
+
+function StartInstructions()
+("#consent").transition({ left: '0%'}, function () 
+    $this.css({ left: '100%' });
+    $()
+              });
 
 
     function startGame() {
