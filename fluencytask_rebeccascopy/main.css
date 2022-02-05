@@ -1,10 +1,12 @@
-#consent, #instructions, #between_categories, #between_distractors, #too_few, #game, #endgame, #dist_trial {
+#instructions, #between_categories, #between_distractors, #too_few, #game, #endgame, #dist_trial {
     height: 100%;
     width: 100%;
     position: fixed;
     padding: 50px;
     font-size: 16pt;
 }
+
+
 
 #endgame {
     overflow-y: scroll;
