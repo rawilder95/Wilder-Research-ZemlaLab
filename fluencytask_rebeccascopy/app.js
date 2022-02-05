@@ -207,9 +207,10 @@
             $("#game").css({left: '100%'});
         });
 
-        if (game.items.length <=5) {
-            $("#too_few").transition({ left: '0%' });
-        } else {
+        //if (game.items.length <=5) {
+        //    $("#too_few").transition({ left: '0%' });
+        //} else {
+
             if (game.gamenum < (categories.length * numx)) {
                 $("#between_categories").transition({ left: '0%' });
                 
@@ -217,7 +218,8 @@
                 $("#endgame").transition({left: '0%'});
                 $.post( "savedata.php", { json: JSON.stringify(games) });
             }
-        }
+        //}
+
     }
 
     function endDistractor() {
