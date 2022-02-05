@@ -75,11 +75,12 @@
     var distractors=[];                                  
     var categories=["Clothing Articles", "Cities", "Countries", "Fruits", "Animals", "Methods of Transportation", "Toys", "Sporting Games", "Kitchen Utensils", "Musical Instruments", "Vegetables", "Furniture"];   // Categories to use
     var numx=2;                                         // How many times to do each list
-    var tokens = [1, 2, 3, 4, 5, 3, 2, 1, 6, 5, 4, 6, 7, 8, 9, 10, 11, 9, 8, 7, 12, 11, 10, 12];
+    var tokens = [0, 1, 2, 3, 4, 5, 3, 2, 1, 6, 5, 4, 6, 7, 8, 9, 10, 11, 9, 8, 7, 12, 11, 10, 11];
     var timeperlist = 5;                                // 90 seconds per list
     var list = genList(categories, numx);                  // Generate a valid list
     //play around with alternative distractor task idea
-    var equations = ["(2 + 2) ÷ 2", "(7-1) x 2", "10 ÷ 2 - 5", "6 + 6 + 6", "5 x 5 x 5", "100 x 10 ÷ 100", "20 - 100", "2 ÷ 2 x 2", "1 + 6", "36 ÷ 6 ÷ 6", "(34 - 4) ÷ 2", "10000 ÷ 10"];
+    var equations = [1000, 789, 456, 900, 872, 985, 1174, 677, 898, 989, 1200, 1112, 909, 2020, 1010, 786, 459, 2000, 833, 702, 3000, 5012, 808, 921];
+    var countby = [7, 3, 4, 9, 5, 8, 2, 3, 6, 5, 2, 7, 8, 9, 4, 6]
     var game = new gameObj();                             // Keeps track of current game
     var distractor = new distObj();
     var firstkey = 1;
@@ -88,9 +89,9 @@
     rivets.bind($('body'), { game: game, distractor : distractor });
     //rivets.bind($('body'), { distractor: distractor });
 
-    // Press Next
 
-    $(".Next").click(startInstructions)
+
+ 
 
     // Press start
 
@@ -163,17 +164,13 @@
         }, 1000); 
     }
 
-function StartInstructions()
-("#consent").transition({ left: '0%'}, function () 
-    $this.css({ left: '100%' });
-    $()
-              });
+
 
 
     function startGame() {
         game.gamenum++;
         game.init();
-        game.category = categories[(tokens[game.gamenum - 1] - 1 + subj_id) % 12];
+        game.category = categories[(tokens[game.gamenum-1 ] + subj_id) % 12];
         game.starttime = new Date().getTime();
 
         $(this).parent().transition({left: '-200%'}, function() {
@@ -187,7 +184,7 @@ function StartInstructions()
     function startDistractor() {
         distractor.distnum++;
         distractor.init();
-        distractor.problem = [ "count down from 0 to 100"];
+        distractor.problem = ["Count backwards by ", countby[distractor.distnum % 12], ", starting at ", equations[distractor.distnum]];
         distractor.starttime = new Date().getTime();
         
         $(this).parent().transition({ left: '-200%' }, function () {
