@@ -1,6 +1,7 @@
 ﻿<?php
     session_start();
     $_SESSION['userid'] = $_POST['userid'];
+    echo $_SESSION['userid'];
 ?>
 
 
@@ -50,7 +51,7 @@
         </p>
 
 
-        <a class="consent" href="main.html"> CONSENT</a>
+        <a class="consent" href="main.php">CONSENT</a>
 
 
 </body>

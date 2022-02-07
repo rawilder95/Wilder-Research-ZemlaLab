@@ -1,5 +1,3 @@
-   var subj_id = 1
-    
     // jQuery transit transition speed
     $.fx.speeds._default = 750;
 

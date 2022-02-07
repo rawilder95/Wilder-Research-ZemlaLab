@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    echo $_SESSION['userid'];
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +12,9 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js" defer></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/rivets/0.8.0/rivets.bundled.min.js" defer></script>
     <script type="text/javascript" src="jquery.transit.min.js" defer></script>
+    <script type="text/javascript" defer>
+       var subj_id = <?php echo $_SESSION['userid']; ?>;
+    </script>
     <script type="text/javascript" src="app.js" defer></script>
   
 </head>
