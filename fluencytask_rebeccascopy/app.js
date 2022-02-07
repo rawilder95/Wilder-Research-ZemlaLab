@@ -80,8 +80,8 @@
     var timeperlist = 4;                                // 90 seconds per list
     var list = genList(categories, numx);                  // Generate a valid list
     //play around with alternative distractor task idea
-    var equations = [1000, 789, 456, 900, 872, 985, 1174, 677, 898, 989, 1200, 1112, 909, 2020, 1010, 786, 459, 2000, 833, 702, 3000, 5012, 808, 921];
-    var countby = [7, 3, 4, 9, 5, 8, 2, 3, 6, 5, 2, 7, 8, 9, 4, 6]
+    var equations = [1000, 700, 5006, 900, 872, 985, 1174, 677, 898, 989, 1200, 1112, 909, 2020, 1010, 786, 459, 2000, 833, 702, 3000, 5012, 808, 921];
+    var countby = [7, 3, 4, 9, 7, 8, 11, 3, 6, 8, 3, 7, 8, 9, 4, 6]
     var game = new gameObj();                             // Keeps track of current game
     var distractor = new distObj();
     var firstkey = 1;
