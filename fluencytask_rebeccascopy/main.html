@@ -68,8 +68,8 @@
     <div id="between_distractors">
         <h1>Time's up!</h1>
 
-        You completed {distractor.items | length} math problems. <br><br>
-        The next round may or may not be a category you have already done.
+        You counted {distractor.items | length} numbers. <br><br>
+        The next round is going to involve listing listing items again for a category.  This may or may not be a category you have already done.
         If it is a category you've already done, it's OK to list items you've
         listed before, but you may also list new items. Please try to list as
         many items as possible, but only list an item once per round.<br><br>
@@ -81,7 +81,7 @@
 
         <div id="dist_top">
             <div id="dist_left">
-                <h2>Count backwards from {distractor.counter} by {distractor.problem} </h2>
+                <h2>Count backwards from {distractor.counter} by {distractor.problem}'s </h2>
                 <input id="dist_current" type="text"
                        rv-enabled="distractor.countdown">
                 <br>
