@@ -69,7 +69,7 @@
         <h1>Time's up!</h1>
 
         You counted {distractor.items | length} numbers. <br><br>
-        The next round is going to involve listing listing items again for a category.  This may or may not be a category you have already done.
+        The next round is going to involve listing items again for a category.  This may or may not be a category you have already done.
         If it is a category you've already done, it's OK to list items you've
         listed before, but you may also list new items. Please try to list as
         many items as possible, but only list an item once per round.<br><br>
@@ -103,9 +103,7 @@
         Please use the entire allotted time to try
         and generate as many items as possible, listing each item once per round.
 
-        The next round may or may not be a category you have already done.
-        If it is a category you've already done, it's OK to list items you've
-        listed before, but you may also list new items. <br><br>
+     
         <a class="next_dist" href="#">Start next round</a>
     </div>
 
@@ -116,7 +114,7 @@
         <div id="postExptSurvey">
             <form action="demographics.php" method="post">
                 <h3 id="surveyTitle">Post-Experiment Survey</h3>
-                <span class="subtext">Please complete this survey. NOTE: The HIT is not complete until filling out this survey.</span>
+                <span class="subtext">Please complete this survey. NOTE: This study is not complete until filling out this survey.</span>
                 <ul>
                     <li>
                         Gender<br>
@@ -139,7 +137,8 @@
                         <input type="radio" name="try" value="Y"> Yes
                         <input type="radio" name="try" value="N"> No
                     </li>
-                    Do you feel like you understood the task?
+                    At any point did you cheat in the task? <br><br>
+                    For example, looking up answers on the internet counts as cheating as it does not rely on memory alone
                     <input type="radio" name="understand" value="Y"> Yes
                     <input type="radio" name="understand" value="N"> No
                     <br>
@@ -150,7 +149,7 @@
                         <textarea name="comments" cols="40" rows="8" wrap="hard"> </textarea>
                     </li>
                 </ul>
-                <input type="submit" value="Submit for your Amazon Mechanical Turk code">
+                <input type="submit" value="Submit to complete the experiment">
             </form>
         </div>
     </div>

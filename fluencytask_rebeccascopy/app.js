@@ -73,7 +73,7 @@
 
     var games=[];                                       // Store game results
     var distractors=[];                                  
-    var categories=["Clothing Articles", "Cities", "Countries", "Fruits", "Animals", "Methods of Transportation", "Toys", "Sporting Games", "Kitchen Utensils", "Musical Instruments", "Vegetables", "Furniture"];   // Categories to use
+    var categories=["Clothing Articles", "Cities", "Countries", "Fruits", "Animals", "Methods of Transportation", "Toys", "Sporting Games", "Kitchen Utensils", "Musical Instruments", "Vegetables", "Pieces of Furniture"];   // Categories to use
 
     var numx = 2;                                         // How many times to do each list
     var tokens = [1, 2, 3, 4, 5, 3, 2, 1, 6, 5, 4, 6, 7, 8, 9, 10, 11, 9, 8, 7, 12, 11, 10, 11];
