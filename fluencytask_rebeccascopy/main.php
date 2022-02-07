@@ -15,7 +15,6 @@
        var subj_id = <?php echo $_SESSION['userid']; ?>;
     </script>
     <script type="text/javascript" src="app.js" defer></script>
-  
 </head>
 
 <body>
