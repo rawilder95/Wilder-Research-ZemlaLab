@@ -211,9 +211,9 @@ function startDistractorTimer() {
             $("#game").css({left: '100%'});
         });
 
-        //if (game.items.length <=5) & (game.gamenum < (categories.length*numx)) {
-        //    $("#too_few").transition({ left: '0%' });
-        //} else {
+        if ((game.items.length <=5) & (game.gamenum < (categories.length*numx))) {
+            $("#too_few").transition({ left: '0%' });
+        } else {
 
             if (game.gamenum < (categories.length * numx)) {
                 $("#between_categories").transition({ left: '0%' });
@@ -224,7 +224,7 @@ function startDistractorTimer() {
 
                
             }
-        //}
+        }
     }
 
     function endDistractor() {
