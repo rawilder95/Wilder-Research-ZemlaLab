@@ -212,7 +212,7 @@ function startDistractorTimer() {
         });
 
         if ((game.items.length <=5) & (game.gamenum < (categories.length*numx))) {
-            $("#too_few").transition({ left: '0%' });
+           $("#too_few").transition({ left: '0%' });
         } else {
 
             if (game.gamenum < (categories.length * numx)) {
