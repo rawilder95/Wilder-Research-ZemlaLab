@@ -155,15 +155,17 @@
         }, 1000); 
     }
 
-    function startDistractorTimer() {
-        var timer = setInterval(function() {
-            distractor.countdown--;
-            if (distractor.countdown == 0) {
-                clearInterval(timer);
-                endDistractor();
-            }
-        }, 1000); 
-    }
+function startDistractorTimer() {
+    var timer = setInterval(function () {
+        distractor.countdown--;
+        if (distractor.countdown == 0) {
+            clearInterval(timer);
+            endDistractor();
+        }
+    }, 1000);
+
+};
+    
 
 
 
@@ -185,8 +187,10 @@
     function startDistractor() {
         distractor.distnum++;
         distractor.init();
-        distractor.problem = [ "<p> Count backwards by </p>", countby[distractor.distnum % 12], " starting at ", equations[distractor.distnum]];
+        distractor.problem = countby[distractor.distnum % 12];
+        distractor.counter = equations[distractor.distnum]
         distractor.starttime = new Date().getTime();
+
         
         $(this).parent().transition({ left: '-200%' }, function () {
             $(this).css({ left: '100%' });
@@ -207,9 +211,9 @@
             $("#game").css({left: '100%'});
         });
 
-        //if (game.items.length <=5) {
-        //    $("#too_few").transition({ left: '0%' });
-        //} else {
+        if (game.items.length <=5) & (game.gamenum < (categories.length*numx)) {
+            $("#too_few").transition({ left: '0%' });
+        } else {
 
             if (game.gamenum < (categories.length * numx)) {
                 $("#between_categories").transition({ left: '0%' });
@@ -236,13 +240,7 @@
         $("#between_distractors").transition({ left: '0%' });
     }
 
-    //function startDistractor() {
-    //    $("#between_categories").parent().transition({ left: '-200%' }, function () {
-    //    $("#distractor").transition({ left: '0' });    
-    //    }
-    //        $("#distractor").transition({ left: '-200' });
 
-    
 
 
 
