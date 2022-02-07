@@ -19,7 +19,7 @@
         unset($process);
     }
 
-    $file = "S".$_SESSION['userid'].$_SESSION['segment']."_data.txt";
+    $file = "S".$_SESSION['userid'].$_SESSION."_data.txt";
     $file = fopen('./logs/'.$file, 'w');
     fwrite($file, $_POST['json']);
     fclose($file);    

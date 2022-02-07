@@ -216,10 +216,9 @@
                 
             } else {
                 $("#endgame").transition({left: '0%'});
-                //$.post("savedata.php", { json: JSON.stringify(games) });
+                $.post("savedata.php", { json: JSON.stringify(games) });
 
-                save_data_csv("/Users/rebeccawilder / Desktop / Desktop - Rebecca’s MacBook Air / Research 2021 - 2022 / GitHub / Wilder - Research - ZemlaLab");
-
+               
             }
         //}
     }
