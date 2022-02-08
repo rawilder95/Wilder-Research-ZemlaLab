@@ -218,7 +218,7 @@ function startDistractorTimer() {
                 
             } else {
                 $("#endgame").transition({left: '0%'});
-                $.post("savedata.php", { json: JSON.stringify(games) });
+                $.post("savedata.php", { games_json: JSON.stringify(games), distractor_json: JSON.stringify(distractors) });
 
                
             }

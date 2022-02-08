@@ -21,6 +21,12 @@
 
     $file = "S".$_SESSION['userid'].$_SESSION."_data.txt";
     $file = fopen('./logs/'.$file, 'w');
-    fwrite($file, $_POST['json']);
+    fwrite($file, $_POST['games_json']);
     fclose($file);    
+
+    $file = "S".$_SESSION['userid'].$_SESSION."_distractor.txt";
+    $file = fopen('./logs/'.$file, 'w');
+    fwrite($file, $_POST['distractor_json']);
+    fclose($file);    
+    
 ?>
