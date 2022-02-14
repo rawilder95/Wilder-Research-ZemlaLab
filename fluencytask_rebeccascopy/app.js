@@ -71,16 +71,16 @@
 
     var games=[];                                       // Store game results
     var distractors=[];                                  
-    var categories=["Clothing Articles", "Cities", "Countries", "Fruits", "Animals", "Methods of Transportation", "Toys", "Sporting Games", "Kitchen Utensils", "Musical Instruments", "Vegetables", "Pieces of Furniture"];   // Categories to use
+    var categories=["Clothing Articles", "Cities", "Countries", "Fruits", "Animals", "Methods of Transportation", "Units of measurement", "Sporting Games", "Kitchen Utensils", "Musical Instruments", "Vegetables", "Pieces of Furniture"];   // Categories to use
 
     var numx = 2;                                         // How many times to do each list
     var tokens = [1, 2, 3, 4, 5, 3, 2, 1, 6, 5, 4, 6, 7, 8, 9, 10, 11, 9, 8, 7, 12, 11, 10, 11];
     var timeperlist = 90;                                // 90 seconds per list
-    var timeperdistractor = 30;
+    var timeperdistractor = 20;
     var list = genList(categories, numx);                  // Generate a valid list
     //play around with alternative distractor task idea
     var equations = [1000, 700, 5006, 900, 872, 985, 1174, 677, 898, 989, 1200, 1112, 909, 2020, 1010, 786, 459, 2000, 833, 702, 3000, 5012, 808, 921];
-    var countby = [7, 3, 4, 9, 7, 8, 11, 3, 6, 8, 3, 7, 8, 9, 4, 6]
+    var countby = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
     var game = new gameObj();                             // Keeps track of current game
     var distractor = new distObj();
     var firstkey = 1;

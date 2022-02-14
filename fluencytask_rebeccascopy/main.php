@@ -31,7 +31,9 @@
         For each round in this task, you will be given a category and asked to list as many
         items from that category as you can. For instance, if the category is
         instruments, you should list as many instruments as you can recall.
-        <ul>
+        <p>
+        Don't overthink it - there is no penalty for wrong answers.
+        <ul> 
             <li> You will have 90 seconds to list as many items from the category as possible.
             <li> Please rely only on memory alone.
             <li>
