@@ -9,6 +9,6 @@ fputcsv($file, $postwrite );
 fclose($file);
 
 // re-direct to completion code
-header('Location: http://www.google.com'); 
+header('Location: end.html'); 
 
 ?>
