@@ -155,10 +155,11 @@
                         <input type="radio" name="try" value="N"> No
                     </li>
                     <br><br>
-                    At any point did you cheat in the task? <br>
+                    <li> At any point did you cheat in the task? <br>
                     For example, looking up answers on the internet counts as cheating as it does not rely on memory alone
-                    <input type="radio" name="understand" value="Y"> Yes
-                    <input type="radio" name="understand" value="N"> No
+                    <input type="radio" name="cheating" value="Y"> Yes
+                    <input type="radio" name="cheating" value="N"> No
+                    </li>
                     <br>
                     <br>
                     <li>
