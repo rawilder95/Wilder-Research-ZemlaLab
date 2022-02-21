@@ -1,0 +1,501 @@
+id,game,category,itemnum,item,RT,RTstart
+SArray,1,Cities,1,asd,1574,1574
+SArray,1,Cities,2,asd,255,1829
+SArray,1,Cities,3,asd,249,2078
+SArray,1,Cities,4,asd,234,2312
+SArray,1,Cities,5,asd,238,2550
+SArray,1,Cities,6,asd,248,2798
+SArray,1,Cities,7,asd,216,3014
+SArray,1,Cities,8,asd,256,3270
+SArray,1,Cities,9,asd,258,3528
+SArray,1,Cities,10,asd,294,3822
+SArray,2,Countries,1,asd,2138,2138
+SArray,2,Countries,2,ed,544,2682
+SArray,2,Countries,3,asd,656,3338
+SArray,2,Countries,4,asd,269,3607
+SArray,2,Countries,5,asd,259,3866
+SArray,3,Fruits,1,asd,1306,1306
+SArray,3,Fruits,2,asd,344,1650
+SArray,3,Fruits,3,asd,290,1940
+SArray,3,Fruits,4,asd,255,2195
+SArray,3,Fruits,5,asd,249,2444
+SArray,3,Fruits,6,asd,254,2698
+SArray,3,Fruits,7,asd,249,2947
+SArray,3,Fruits,8,asd,232,3179
+SArray,3,Fruits,9,asd,271,3450
+SArray,3,Fruits,10,asd,264,3714
+SArray,3,Fruits,11,asd,242,3956
+SArray,4,Animals,1,asd,931,931
+SArray,4,Animals,2,asd,291,1222
+SArray,4,Animals,3,asd,292,1514
+SArray,4,Animals,4,asd,280,1794
+SArray,4,Animals,5,asd,304,2098
+SArray,4,Animals,6,asd,274,2372
+SArray,4,Animals,7,asd,254,2626
+SArray,4,Animals,8,asd,249,2875
+SArray,5,Methods of Transportation,1,asd,831,831
+SArray,5,Methods of Transportation,2,asd,328,1159
+SArray,5,Methods of Transportation,3,asd,264,1423
+SArray,5,Methods of Transportation,4,asd,256,1679
+SArray,5,Methods of Transportation,5,asd,323,2002
+SArray,5,Methods of Transportation,6,asd,301,2303
+SArray,5,Methods of Transportation,7,asd,330,2633
+SArray,5,Methods of Transportation,8,asd,343,2976
+SArray,5,Methods of Transportation,9,asd,295,3271
+SArray,5,Methods of Transportation,10,asd,355,3626
+SArray,5,Methods of Transportation,11,asd,301,3927
+SArray,6,Fruits,1,asd,864,864
+SArray,6,Fruits,2,asd,2274,3138
+SArray,6,Fruits,3,asd,472,3610
+SArray,6,Fruits,4,asd,326,3936
+SArray,7,Countries,1,edsad,1323,1323
+SArray,7,Countries,2,edx,399,1722
+SArray,7,Countries,3,asd,281,2003
+SArray,7,Countries,4,asd,255,2258
+SArray,7,Countries,5,asd,243,2501
+SArray,7,Countries,6,asd,237,2738
+SArray,7,Countries,7,asd,281,3019
+SArray,7,Countries,8,asd,271,3290
+SArray,7,Countries,9,asd,296,3586
+SArray,7,Countries,10,asd,264,3850
+SArray,8,Cities,1,asdas,1074,1074
+SArray,8,Cities,2,asd,392,1466
+SArray,8,Cities,3,asd,249,1715
+SArray,8,Cities,4,asd,232,1947
+SArray,8,Cities,5,asd,248,2195
+SArray,8,Cities,6,asd,272,2467
+SArray,8,Cities,7,asd,249,2716
+SArray,8,Cities,8,asd,245,2961
+SArray,8,Cities,9,asd,313,3274
+SArray,8,Cities,10,asd,290,3564
+SArray,8,Cities,11,asd,265,3829
+SArray,9,Toys,1,asd,3846,3846
+SArray,10,Methods of Transportation,1,asd,1311,1311
+SArray,10,Methods of Transportation,2,asd,296,1607
+SArray,10,Methods of Transportation,3,asd,328,1935
+SArray,10,Methods of Transportation,4,asd,339,2274
+SArray,10,Methods of Transportation,5,asd,351,2625
+SArray,10,Methods of Transportation,6,asd,278,2903
+SArray,10,Methods of Transportation,7,asd,272,3175
+SArray,10,Methods of Transportation,8,asd,298,3473
+SArray,10,Methods of Transportation,9,asd,287,3760
+SArray,11,Animals,1,asd,730,730
+SArray,11,Animals,2,asd,277,1007
+SArray,11,Animals,3,awd,766,1773
+SArray,12,Toys,1,asd,1203,1203
+SArray,12,Toys,2,asd,274,1477
+SArray,12,Toys,3,asd,269,1746
+SArray,12,Toys,4,asd,242,1988
+SArray,12,Toys,5,asd,237,2225
+SArray,12,Toys,6,asd,251,2476
+SArray,12,Toys,7,asd,262,2738
+SArray,12,Toys,8,asd,240,2978
+SArray,12,Toys,9,asd,261,3239
+SArray,12,Toys,10,asd,251,3490
+SArray,12,Toys,11,asd,271,3761
+SArray,13,Sporting Games,1,asd,1228,1228
+SArray,13,Sporting Games,2,asd,483,1711
+SArray,15,Musical Instruments,1,asd,862,862
+SArray,15,Musical Instruments,2,asd,295,1157
+SArray,15,Musical Instruments,3,asd,1375,2532
+SArray,15,Musical Instruments,4,asd,272,2804
+SArray,15,Musical Instruments,5,asd,259,3063
+SArray,15,Musical Instruments,6,asd,245,3308
+SArray,15,Musical Instruments,7,asd,264,3572
+SArray,16,Vegetables,1,asd,1008,1008
+SArray,16,Vegetables,2,asd,749,1757
+SArray,16,Vegetables,3,asd,320,2077
+SArray,16,Vegetables,4,asd,329,2406
+SArray,16,Vegetables,5,asd,351,2757
+SArray,16,Vegetables,6,asd,361,3118
+SArray,16,Vegetables,7,asd,367,3485
+SArray,17,Furniture,1,asd,1314,1314
+SArray,17,Furniture,2,asd,272,1586
+SArray,17,Furniture,3,asd,266,1852
+SArray,17,Furniture,4,asd,230,2082
+SArray,17,Furniture,5,as,204,2286
+SArray,17,Furniture,6,ed,429,2715
+SArray,17,Furniture,7,asd,295,3010
+SArray,17,Furniture,8,asd,241,3251
+SArray,17,Furniture,9,asd,239,3490
+SArray,17,Furniture,10,asd,321,3811
+SArray,18,Musical Instruments,1,asd,739,739
+SArray,18,Musical Instruments,2,asd,330,1069
+SArray,18,Musical Instruments,3,sa,1526,2595
+SArray,18,Musical Instruments,4,asd,392,2987
+SArray,18,Musical Instruments,5,asd,288,3275
+SArray,18,Musical Instruments,6,asd,305,3580
+SArray,18,Musical Instruments,7,asd,271,3851
+SArray,19,Kitchen Utensils,1,asd,663,663
+SArray,19,Kitchen Utensils,2,asd,302,965
+SArray,19,Kitchen Utensils,3,asd,267,1232
+SArray,19,Kitchen Utensils,4,asd,231,1463
+SArray,19,Kitchen Utensils,5,asd,272,1735
+SArray,19,Kitchen Utensils,6,asd,256,1991
+SArray,19,Kitchen Utensils,7,asd,240,2231
+SArray,19,Kitchen Utensils,8,asd,256,2487
+SArray,19,Kitchen Utensils,9,asd,261,2748
+SArray,19,Kitchen Utensils,10,asd,236,2984
+SArray,19,Kitchen Utensils,11,asd,247,3231
+SArray,19,Kitchen Utensils,12,asd,272,3503
+SArray,19,Kitchen Utensils,13,asd,243,3746
+SArray,19,Kitchen Utensils,14,asd,229,3975
+SArray,20,Sporting Games,1,asd,643,643
+SArray,20,Sporting Games,2,asd,272,915
+SArray,20,Sporting Games,3,asd,193,1108
+SArray,20,Sporting Games,4,asd,651,1759
+SArray,20,Sporting Games,5,asd,236,1995
+SArray,20,Sporting Games,6,asd,235,2230
+SArray,20,Sporting Games,7,asd,245,2475
+SArray,20,Sporting Games,8,asd,233,2708
+SArray,20,Sporting Games,9,asd,236,2944
+SArray,20,Sporting Games,10,asd,216,3160
+SArray,20,Sporting Games,11,asd,259,3419
+SArray,20,Sporting Games,12,asd,241,3660
+SArray,20,Sporting Games,13,asd,251,3911
+SArray,21,Clothing Articles,1,asd,1418,1418
+SArray,21,Clothing Articles,2,sd,904,2322
+SArray,21,Clothing Articles,3,asd,248,2570
+SArray,21,Clothing Articles,4,asd,267,2837
+SArray,21,Clothing Articles,5,asd,245,3082
+SArray,21,Clothing Articles,6,asd,232,3314
+SArray,21,Clothing Articles,7,asd,265,3579
+SArray,21,Clothing Articles,8,asd,279,3858
+SArray,22,Furniture,1,asdsa,878,878
+SArray,22,Furniture,2,rfc,2073,2951
+SArray,22,Furniture,3,asd,383,3334
+SArray,22,Furniture,4,asd,249,3583
+SArray,22,Furniture,5,asd,256,3839
+SArray,23,Vegetables,1,asd,754,754
+SArray,23,Vegetables,2,asd,270,1024
+SArray,23,Vegetables,3,asd,241,1265
+SArray,23,Vegetables,4,asd,255,1520
+SArray,23,Vegetables,5,asd,289,1809
+SArray,23,Vegetables,6,asd,295,2104
+SArray,23,Vegetables,7,asd,344,2448
+SArray,23,Vegetables,8,asd,264,2712
+SArray,23,Vegetables,9,asd,232,2944
+SArray,23,Vegetables,10,asd,336,3280
+SArray,23,Vegetables,11,asd,264,3544
+SArray,23,Vegetables,12,asd,312,3856
+SArray,24,Furniture,1,asd,1503,1503
+SArray,24,Furniture,2,asd,417,1920
+SArray,24,Furniture,3,asd,335,2255
+SArray,24,Furniture,4,asd,474,2729
+SArray,24,Furniture,5,asd,358,3087
+SArray,24,Furniture,6,asd,296,3383
+SArray,24,Furniture,7,asd,299,3682
+SArray,24,Furniture,8,asd,286,3968
+S,1,Musical Instruments,1,violin,6164,6164
+S,1,Musical Instruments,2,ukelele,4344,10508
+S,1,Musical Instruments,3,drums,2355,12863
+S,1,Musical Instruments,4,guitar,3470,16333
+S,1,Musical Instruments,5,maraccas,8819,25152
+S,1,Musical Instruments,6,triangle,10207,35359
+S,1,Musical Instruments,7,flute,3459,38818
+S,1,Musical Instruments,8,viola,2098,40916
+S,1,Musical Instruments,9,clarinet,6473,47389
+S,1,Musical Instruments,10,xylophone,19712,67101
+S,1,Musical Instruments,11,recorder,8866,75967
+S,1,Musical Instruments,12,bass,11421,87388
+S,2,Vegetables,1,poblano,9508,9508
+S,2,Vegetables,2,tomato,3127,12635
+S,2,Vegetables,3,butternutsquash,9899,22534
+S,2,Vegetables,4,bellpepper,2643,25177
+S,2,Vegetables,5,jalapeno,3406,28583
+S,2,Vegetables,6,potato???????????????,8920,37503
+S,2,Vegetables,7,cucumber,13503,51006
+S,2,Vegetables,8,carrot,4350,55356
+S,2,Vegetables,9,onion,9073,64429
+S,2,Vegetables,10,zucchini,7802,72231
+S,2,Vegetables,11,parsnip,10715,82946
+S,2,Vegetables,12,beet,1775,84721
+S,3,Pieces of Furniture,1,dresser,8663,8663
+S,3,Pieces of Furniture,2,table,2170,10833
+S,3,Pieces of Furniture,3,bed,6082,16915
+S,3,Pieces of Furniture,4,chair,1958,18873
+S,3,Pieces of Furniture,5,door,5045,23918
+S,3,Pieces of Furniture,6,ottoman,5245,29163
+S,3,Pieces of Furniture,7,barstool,7567,36730
+S,3,Pieces of Furniture,8,lamp,6435,43165
+S,3,Pieces of Furniture,9,armour,21744,64909
+S,3,Pieces of Furniture,10,desl,5220,70129
+S,3,Pieces of Furniture,11,chalkboard,15806,85935
+S,4,Clothing Articles,1,cardigan,13190,13190
+S,4,Clothing Articles,2,skirt,3969,17159
+S,4,Clothing Articles,3,hat,3038,20197
+S,4,Clothing Articles,4,sweater,2636,22833
+S,4,Clothing Articles,5,pants,1737,24570
+S,4,Clothing Articles,6,gloves,3377,27947
+S,4,Clothing Articles,7,blazer,5738,33685
+S,4,Clothing Articles,8,leggings,5188,38873
+S,4,Clothing Articles,9,scarf,4185,43058
+S,4,Clothing Articles,10,shawl,5094,48152
+S,4,Clothing Articles,11,sock,1679,49831
+S,4,Clothing Articles,12,jeans,6829,56660
+S,4,Clothing Articles,13,tshirt,4757,61417
+S,4,Clothing Articles,14,jacket,9314,70731
+S,4,Clothing Articles,15,sweats,18482,89213
+S,5,Cities,1,boston,4703,4703
+S,5,Cities,2,syracuse,2182,6885
+S,5,Cities,3,losangeles,2960,9845
+S,5,Cities,4,sanjuan,3544,13389
+S,5,Cities,5,carolina,4313,17702
+S,5,Cities,6,barcelona,3079,20781
+S,5,Cities,7,viejosanjuan,8355,29136
+S,5,Cities,8,vieques,10120,39256
+S,5,Cities,9,tenerife,2785,42041
+S,5,Cities,10,madrid,1486,43527
+S,5,Cities,11,segovia,4161,47688
+S,5,Cities,12,salamonca,5105,52793
+S,5,Cities,13,palma,31799,84592
+S,6,Pieces of Furniture,1,lamp,5393,5393
+S,6,Pieces of Furniture,2,desk,2826,8219
+S,6,Pieces of Furniture,3,barstool,3786,12005
+S,6,Pieces of Furniture,4,dresser,3944,15949
+S,6,Pieces of Furniture,5,armour,6387,22336
+S,6,Pieces of Furniture,6,sidetable,7159,29495
+S,6,Pieces of Furniture,7,sofa,5297,34792
+S,6,Pieces of Furniture,8,lamp,11120,45912
+S,6,Pieces of Furniture,9,bed,5010,50922
+S,6,Pieces of Furniture,10,door,4234,55156
+S,6,Pieces of Furniture,11,whiteboard,9445,64601
+S,6,Pieces of Furniture,12,armchair,8046,72647
+S,7,Vegetables,1,poblano,8582,8582
+S,7,Vegetables,2,tomato,2366,10948
+S,7,Vegetables,3,cucumber,4696,15644
+S,7,Vegetables,4,potato,2194,17838
+S,7,Vegetables,5,beet,1501,19339
+S,7,Vegetables,6,parsnip,4790,24129
+S,7,Vegetables,7,jalapeno,3102,27231
+S,7,Vegetables,8,carrot,4124,31355
+S,7,Vegetables,9,onion,8141,39496
+S,7,Vegetables,10,brocolli,14915,54411
+S,7,Vegetables,11,brusselsprouts,7155,61566
+S,7,Vegetables,12,sweetpotato,5277,66843
+S,7,Vegetables,13,bellpepper,2807,69650
+S,8,Musical Instruments,1,52,1421,1421
+S,8,Musical Instruments,2,65,126,1547
+S,8,Musical Instruments,3,+2589,285,1832
+S,8,Musical Instruments,4,5984,534,2366
+S,8,Musical Instruments,5,95,389,2755
+S,8,Musical Instruments,6,59,345,3100
+S,8,Musical Instruments,7,59,307,3407
+S,8,Musical Instruments,8,59+362,361,3768
+S,8,Musical Instruments,9,violin,13515,17283
+S,8,Musical Instruments,10,moraccos,6043,23326
+S,8,Musical Instruments,11,xylophone,7230,30556
+S,8,Musical Instruments,12,triangle,3097,33653
+S,8,Musical Instruments,13,viola,2743,36396
+S,8,Musical Instruments,14,base,1814,38210
+S,8,Musical Instruments,15,flute,1849,40059
+S,8,Musical Instruments,16,drums,3241,43300
+S,8,Musical Instruments,17,triangle,4820,48120
+S,8,Musical Instruments,18,recorder,9469,57589
+S,8,Musical Instruments,19,viper,31525,89114
+S,9,Countries,1,unitesstates,7664,7664
+S,9,Countries,2,mexico,3759,11423
+S,9,Countries,3,spain,1617,13040
+S,9,Countries,4,chile,3184,16224
+S,9,Countries,5,france,3549,19773
+S,9,Countries,6,brazil,5793,25566
+S,9,Countries,7,eqypt,3692,29258
+S,9,Countries,8,paraguay,3973,33231
+S,9,Countries,9,germany,4065,37296
+S,9,Countries,10,southafrica,4217,41513
+S,9,Countries,11,uraguay,4075,45588
+S,9,Countries,12,turkey,5895,51483
+S,9,Countries,13,italy,6088,57571
+S,9,Countries,14,russia,1570,59141
+S,9,Countries,15,honduras,5526,64667
+S,9,Countries,16,canada,2574,67241
+S,9,Countries,17,persia,4601,71842
+S,9,Countries,18,serbia,3667,75509
+S,9,Countries,19,colombia,6875,82384
+S,10,Cities,1,boston,8410,8410
+S,10,Cities,2,madrid,2074,10484
+S,10,Cities,3,berlin,2317,12801
+S,10,Cities,4,barcelona,2699,15500
+S,10,Cities,5,hamberg,2075,17575
+S,10,Cities,6,segovia,7484,25059
+S,10,Cities,7,palma,3630,28689
+S,10,Cities,8,sanjuan,6595,35284
+S,10,Cities,9,barcelonita,7278,42562
+S,10,Cities,10,carolina,6726,49288
+S,10,Cities,11,syracuse,2463,51751
+S,10,Cities,12,saratoga,7624,59375
+S,10,Cities,13,charolette,2945,62320
+S,10,Cities,14,westpalmbeach,3967,66287
+S,10,Cities,15,logangeles,2448,68735
+S,10,Cities,16,salamonca,6493,75228
+S,10,Cities,17,valladolid,3845,79073
+S,10,Cities,18,rome,3302,82375
+S,10,Cities,19,utica,5478,87853
+S,11,Clothing Articles,1,cardigan,6359,6359
+S,11,Clothing Articles,2,scarf,1978,8337
+S,11,Clothing Articles,3,sweater,3435,11772
+S,11,Clothing Articles,4,sweatshirt,3313,15085
+S,11,Clothing Articles,5,skirt,5489,20574
+S,11,Clothing Articles,6,suit,5203,25777
+S,11,Clothing Articles,7,gloves,4638,30415
+S,11,Clothing Articles,8,pants,2907,33322
+S,11,Clothing Articles,9,sweatpants,4606,37928
+S,11,Clothing Articles,10,socks,2088,40016
+S,11,Clothing Articles,11,belt,7014,47030
+S,11,Clothing Articles,12,blazer,11492,58522
+S,12,Countries,1,spain,6740,6740
+S,12,Countries,2,unitedstates,3405,10145
+S,12,Countries,3,germany,5207,15352
+S,12,Countries,4,russia,2339,17691
+S,12,Countries,5,elsalvador,12044,29735
+S,12,Countries,6,france,7490,37225
+S,12,Countries,7,ireland,2513,39738
+S,12,Countries,8,georgia,4162,43900
+S,12,Countries,9,eqypt,3443,47343
+S,12,Countries,10,england,14666,62009
+S,12,Countries,11,northkorea,4931,66940
+S,12,Countries,12,vietnam,6938,73878
+S,12,Countries,13,iraq,3331,77209
+S,12,Countries,14,southkorea,3275,80484
+S,12,Countries,15,iran,3067,83551
+S,13,Fruits,1,tomato,5944,5944
+S,13,Fruits,2,peach,1482,7426
+S,13,Fruits,3,plum,1689,9115
+S,13,Fruits,4,pear,1721,10836
+S,13,Fruits,5,guava,4207,15043
+S,13,Fruits,6,starfruit,4521,19564
+S,13,Fruits,7,mango,1757,21321
+S,13,Fruits,8,mandarin,4128,25449
+S,13,Fruits,9,quenepas,28942,54391
+S,13,Fruits,10,kumquat,6102,60493
+S,13,Fruits,11,grapes,4975,65468
+S,13,Fruits,12,watermelon,6209,71677
+S,13,Fruits,13,strawberry,2554,74231
+S,13,Fruits,14,banana,1388,75619
+S,13,Fruits,15,kiwi,1333,76952
+S,13,Fruits,16,orange,10574,87526
+S,14,Animals,1,anteater,7782,7782
+S,14,Animals,2,velociraptor,18284,26066
+S,14,Animals,3,chicken,3330,29396
+S,14,Animals,4,giraffe,2950,32346
+S,14,Animals,5,parrot,6534,38880
+S,14,Animals,6,wombat,14144,53024
+S,14,Animals,7,kookaburra,18600,71624
+S,14,Animals,8,prayingmantis,5110,76734
+S,14,Animals,9,bunny,2628,79362
+S,15,Methods of Transportation,1,plane,4772,4772
+S,15,Methods of Transportation,2,bus,1232,6004
+S,15,Methods of Transportation,3,walking,1901,7905
+S,15,Methods of Transportation,4,metro,1915,9820
+S,15,Methods of Transportation,5,jogging,3209,13029
+S,15,Methods of Transportation,6,rollerskating,11955,24984
+S,15,Methods of Transportation,7,segway,4505,29489
+S,15,Methods of Transportation,8,rollinglikearollypolly,11584,41073
+S,15,Methods of Transportation,9,car,12439,53512
+S,15,Methods of Transportation,10,scooter,6987,60499
+S,15,Methods of Transportation,11,hoverboarding,15349,75848
+S,15,Methods of Transportation,12,boat,10569,86417
+S,15,Methods of Transportation,13,ferry,2475,88892
+S,16,Toys,1,hotwheels,5698,5698
+S,16,Toys,2,bratzdolls,9609,15307
+S,16,Toys,3,orbeez,32032,47339
+S,16,Toys,4,bricks,9830,57169
+S,16,Toys,5,barbie,2485,59654
+S,16,Toys,6,buzzlightyear,24242,83896
+S,17,Sporting Games,1,archery,10758,10758
+S,17,Sporting Games,2,curling,3750,14508
+S,17,Sporting Games,3,figureskating,5891,20399
+S,17,Sporting Games,4,polevaulting,14400,34799
+S,17,Sporting Games,5,softball,13749,48548
+S,17,Sporting Games,6,volleyball,4385,52933
+S,17,Sporting Games,7,basketball,13951,66884
+S,17,Sporting Games,8,cricket,10021,76905
+S,17,Sporting Games,9,waterpolo,7346,84251
+S,18,Methods of Transportation,1,plane,5661,5661
+S,18,Methods of Transportation,2,boat,1969,7630
+S,18,Methods of Transportation,3,watertaxi,3968,11598
+S,18,Methods of Transportation,4,running,9322,20920
+S,18,Methods of Transportation,5,car,2314,23234
+S,18,Methods of Transportation,6,bus,1464,24698
+S,18,Methods of Transportation,7,bike,9535,34233
+S,18,Methods of Transportation,8,segway,4273,38506
+S,18,Methods of Transportation,9,speedwalking,9914,48420
+S,18,Methods of Transportation,10,helicopter,13297,61717
+S,19,Animals,1,tasmaniandevil,6279,6279
+S,19,Animals,2,quokka,4808,11087
+S,19,Animals,3,antelope,6327,17414
+S,19,Animals,4,parrot,4749,22163
+S,19,Animals,5,beardeddragon,5665,27828
+S,19,Animals,6,hummingbird,5825,33653
+S,19,Animals,7,leopard,2730,36383
+S,19,Animals,8,mink,3190,39573
+S,19,Animals,9,zebra,2575,42148
+S,19,Animals,10,dolphin,6059,48207
+S,19,Animals,11,penguin,1983,50190
+S,19,Animals,12,tiger,2073,52263
+S,19,Animals,13,prayingmantis,9689,61952
+S,19,Animals,14,dragonfly,3799,65751
+S,19,Animals,15,wombat,4346,70097
+S,19,Animals,16,bat,8073,78170
+S,20,Fruits,1,tomato,3386,3386
+S,20,Fruits,2,peach,1753,5139
+S,20,Fruits,3,plum,1670,6809
+S,20,Fruits,4,pear,1682,8491
+S,20,Fruits,5,starfruit,2932,11423
+S,20,Fruits,6,keylime,4411,15834
+S,20,Fruits,7,dragonfruit,4829,20663
+S,20,Fruits,8,guava,3265,23928
+S,20,Fruits,9,mango,1511,25439
+S,20,Fruits,10,grape,2234,27673
+S,20,Fruits,11,strawberry,3123,30796
+S,20,Fruits,12,banana,5427,36223
+S,20,Fruits,13,watermelon,4104,40327
+S,20,Fruits,14,blackberry,3566,43893
+S,20,Fruits,15,pineapple,12054,55947
+S,20,Fruits,16,blackcurrant,16983,72930
+S,21,Kitchen Utensils,1,slottedspoon,10546,10546
+S,21,Kitchen Utensils,2,potatoricer,7539,18085
+S,21,Kitchen Utensils,3,whisk,4522,22607
+S,21,Kitchen Utensils,4,knife,2347,24954
+S,21,Kitchen Utensils,5,spatula,4452,29406
+S,21,Kitchen Utensils,6,spoon,1862,31268
+S,21,Kitchen Utensils,7,fork,3141,34409
+S,21,Kitchen Utensils,8,garlicpeeler,3572,37981
+S,21,Kitchen Utensils,9,sifter,6539,44520
+S,21,Kitchen Utensils,10,tongs,4078,48598
+S,21,Kitchen Utensils,11,ladel,36475,85073
+S,22,Sporting Games,1,archery,4309,4309
+S,22,Sporting Games,2,waterpolo,5399,9708
+S,22,Sporting Games,3,bobsledding,5556,15264
+S,22,Sporting Games,4,basketball,7054,22318
+S,22,Sporting Games,5,volleyball,4453,26771
+S,22,Sporting Games,6,softball,1972,28743
+S,22,Sporting Games,7,curling,6595,35338
+S,22,Sporting Games,8,skiing,4836,40174
+S,22,Sporting Games,9,croquet,32313,72487
+S,22,Sporting Games,10,badmitton,9732,82219
+S,23,Toys,1,hotwheels,4445,4445
+S,23,Toys,2,barbie,1525,5970
+S,23,Toys,3,legos,1226,7196
+S,23,Toys,4,bratz,1778,8974
+S,23,Toys,5,pollypocket,8327,17301
+S,23,Toys,6,slime,4046,21347
+S,23,Toys,7,americangirldoll,8268,29615
+S,23,Toys,8,elmo,7702,37317
+S,23,Toys,9,nerfgun,11894,49211
+S,23,Toys,10,play-doh,13911,63122
+S,24,Sporting Games,1,croquet,6122,6122
+S,24,Sporting Games,2,badminton,4906,11028
+S,24,Sporting Games,3,archery,3248,14276
+S,24,Sporting Games,4,waterpolo,7116,21392
+S,24,Sporting Games,5,bobsledding,3778,25170
+S,24,Sporting Games,6,polevaulting,6205,31375
+S,24,Sporting Games,7,skiing,2621,33996
+S,24,Sporting Games,8,curling,3349,37345
+S,24,Sporting Games,9,tennis,3922,41267
+S,24,Sporting Games,10,softball,10050,51317
+S,24,Sporting Games,11,volleyball,5483,56800
+S,24,Sporting Games,12,football,7749,64549
+S,24,Sporting Games,13,lacrosse,3219,67768
+S,24,Sporting Games,14,baseball,8503,76271
+S,24,Sporting Games,15,figureskating,11757,88028
