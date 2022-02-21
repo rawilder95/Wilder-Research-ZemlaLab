@@ -133,10 +133,19 @@
                     </li>
                     <br>
                     <li>
+                    
                         Age
                         <input type="text" name="age" size="3" maxlength="3" id="ageTxt" />
                     </li>
                     <br>
+                    
+                    <li>
+                        Are you experiencing medical condition that could have impacted your memory, such as a recent concussion?<br>
+                        <input type="radio" name="MedicalCondition" value="N"> No
+                        <input type="radio" name="MedicalCondition" value="Y"> Yes (Please Specify)
+                        
+                        <input type="text" name="MedicalOther" size="15" maxlength="40" id="MedicalTxt">
+                    </li>
                     <!--For the next two questions, please be honest. You will be paid regardless of your response.-->
                     <br>
                     <br>
