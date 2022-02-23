@@ -71,7 +71,7 @@
 
     var games=[];                                       // Store game results
     var distractors=[];                                  
-    var categories=["Clothing Articles", "Cities", "Countries", "Fruits", "Animals", "Methods of Transportation", "Units of measurement", "Sporting Games", "Kitchen Utensils", "Musical Instruments", "Vegetables", "Pieces of Furniture"];   // Categories to use
+    var categories=["Clothing Articles", "Cities", "Countries", "Fruits", "Animals", "Methods of Transportation", "Units of measurement", "Sporting Games", "Objects You Would Find in The Kitchen", "Musical Instruments", "Vegetables", "Pieces of Furniture"];   // Categories to use
 
     var numx = 2;                                         // How many times to do each list
 
