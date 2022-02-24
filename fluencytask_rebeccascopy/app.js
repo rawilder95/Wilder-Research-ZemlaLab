@@ -17,6 +17,7 @@
     function gameObj() {
         this.gamenum=0;
         this.init = function() {
+            this.subj_id = subj_id;
             this.items=[];
             this.times=[];
             this.firsttime=[];

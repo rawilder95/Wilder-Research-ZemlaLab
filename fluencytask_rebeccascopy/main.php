@@ -12,7 +12,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/rivets/0.8.0/rivets.bundled.min.js" defer></script>
     <script type="text/javascript" src="jquery.transit.min.js" defer></script>
     <script type="text/javascript" defer>
-       var subj_id = <?php echo $_['userid']; ?>;
+       var subj_id = <?php echo $_SESSION['userid']; ?>;
     </script>
     <script type="text/javascript" src="app.js" defer></script>
 </head>
