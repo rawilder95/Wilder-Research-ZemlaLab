@@ -19,12 +19,12 @@
     //    unset($process);
     //}
 
-    $file = "S".$_SESSION['userid']."_data.txt";
+    $file = "S".$_['userid']."_data.txt";
     $file = fopen('./logs/'.$file, 'w');
     fwrite($file, $_POST['games_json']);
     fclose($file);    
 
-    $file = "S".$_SESSION['userid']."_distractor.txt";
+    $file = "S".$_['userid']."_distractor.txt";
     $file = fopen('./logs/'.$file, 'w');
     fwrite($file, $_POST['distractor_json']);
     fclose($file);    
