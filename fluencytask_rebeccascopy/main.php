@@ -77,7 +77,7 @@
         <h1>Time's up!</h1>
 
         You counted {distractor.items | length} numbers. <br><br>
-        The next round is going to involve listing items again for a category.  This may or may not be a category you have already done.
+        The next round will involve listing items again for a category.  This may or may not be a category you have already done.
         If it is a category you've already done, it's OK to list items you've
         listed before, but you may also list new items. Please try to list as
         many items as possible, but only list an item once per round.<br><br>
