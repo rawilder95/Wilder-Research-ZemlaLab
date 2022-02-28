@@ -1,5 +1,5 @@
-if (getwd()!= "/Users/rebeccawilder/Documents/GitHub/Wilder-Research-ZemlaLab"){
-  setwd("~/Documents/GitHub/Wilder-Research-ZemlaLab")
+if (getwd()!= "~/Desktop/Desktop - Rebecca’s MacBook Air/Research 2021-2022/GitHub/Wilder-Research-ZemlaLab/Proposal Analyses"){
+  setwd("~/Desktop/Desktop - Rebecca’s MacBook Air/Research 2021-2022/GitHub/Wilder-Research-ZemlaLab/Proposal Analyses")
 }
 # Install packages and libraries
 # install.packages("data.table")
@@ -7,10 +7,11 @@ if (getwd()!= "/Users/rebeccawilder/Documents/GitHub/Wilder-Research-ZemlaLab"){
 # install.packages("cowplot")
 # library("cowplot")
 
+# library("data.table")
+# library("ggplot2")
 
 
-library(data.table)
-library(ggplot2)
+
 # Load Data
 dat <- data.table(read.csv("snafu_sample.csv"))
 
