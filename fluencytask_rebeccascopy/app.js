@@ -93,6 +93,8 @@
     var distractor = new distObj();
     var firstkey = 1;
 
+    document.getElementById("subj_id").value = subj_id; // set subj id in HTML form
+
     //introduce templates between javascript and html
     rivets.bind($('body'), { game: game, distractor : distractor });
     //rivets.bind($('body'), { distractor: distractor });

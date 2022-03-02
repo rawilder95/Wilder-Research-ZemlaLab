@@ -162,6 +162,14 @@
                     </li>
                     <br>
                     <br>
+
+                    <li> Do you consider English to be your native language? <br>
+                    <input type="radio" name="native" value="Y"> Yes
+                    <input type="radio" name="native" value="N"> No
+                    </li>
+                    <br><br>
+                    <input type="hidden" name="subj_id" id="subj_id" value="">
+
                     <li>
                         Comments (optional):
                         <br />If you were confused, please tell us why you were confused here.<br />
