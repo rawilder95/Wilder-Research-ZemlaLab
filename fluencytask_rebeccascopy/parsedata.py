@@ -36,3 +36,4 @@ with open('results_cleaned.csv','w') as csvfile:
     for i in fulldata:
         w.writerow(i)
 
+
