@@ -34,5 +34,9 @@ sports <- sort(unique(dat[category== cat_names[11],item]))
 
 kitchen <- sort(unique(dat[category== cat_names[12],item]))
 
+spellcheck <- c(instruments_clean, vegetables, furniture, clothing, cities, countries, fruits, animals, transportation, measurements, sports, kitchen)
+
+write.csv(spellcheck, "spellcheckdata.csv")
+
 
 
