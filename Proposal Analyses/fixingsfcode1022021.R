@@ -320,3 +320,7 @@ ggsave("contiguity_both.png", dpi= 450, height= 5, width= 7)
 geom_line(aes(x= x, y= y2), color= "red", size= 0.85)+geom_point(aes(x= x, y= y2, color= "SF"), color= "black", shape= 16, size= 2)+ 
 
 # + geom_line(aes(x= x, y= y2), color= "red", size= 0.85)+geom_point(aes(x= x, y= y2, color= "SF"), color= "black", shape= 16, size= 2)+ 
+  
+  
+write.csv(sort(unique(animal_items)), "animal_data1.csv")
+
