@@ -54,7 +54,7 @@ access_sheets<- data.table(read_sheet('https://docs.google.com/spreadsheets/d/1A
 
 
 
-ra_sheet<- data.table(read_sheet('https://docs.google.com/spreadsheets/d/14YJ7IpvEyFVRSqr3zo3SAqgyR6g0QYAbI5xzxh3rl_A/edit?usp=sharing'))
+ra_sheet<- data.table(read_sheet('https://docs.google.com/spreadsheets/d/1AAPf2miO7cbkWZROg7BS8gpE-nXgK7xexbjLMkJ4mv0/edit?usp=sharing'))
 
 ra_sheet <- ra_sheet[order(-rank(Unchecked), Category)]
 
@@ -87,4 +87,12 @@ import_fr <- my_sheet[order(-rank(item)%in%to_import,category)]
 
 
 sheet_append(ss= 'https://docs.google.com/spreadsheets/d/1AAPf2miO7cbkWZROg7BS8gpE-nXgK7xexbjLMkJ4mv0/edit?usp=sharing', data.frame(to_import)
+
+
+             
+             
+ra_sheet[ra_sheet== "NONSENSE"] <- print(paste("SENSE"))    
+
+sheet_append(ss= "https://docs.google.com/spreadsheets/d/1AAPf2miO7cbkWZROg7BS8gpE-nXgK7xexbjLMkJ4mv0/edit?usp=sharing", data.frame(ra_sheet), 1)
+
 
