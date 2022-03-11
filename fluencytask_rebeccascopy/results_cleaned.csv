@@ -746,6 +746,446 @@ S1e4whspHBB,24,Cities,25,copenhagen,4368,74765
 S1e4whspHBB,24,Cities,26,barcelona,4720,79485
 S1e4whspHBB,24,Cities,27,santiago,2664,82149
 S1e4whspHBB,24,Cities,28,porto,6383,88532
+SPVB0T96HlU,1,Cities,1,sandiego,12183,12183
+SPVB0T96HlU,1,Cities,2,losangeles,7040,19223
+SPVB0T96HlU,1,Cities,3,lasvegas,4376,23599
+SPVB0T96HlU,1,Cities,4,cedarrapids,7335,30934
+SPVB0T96HlU,1,Cities,5,sanfrancisco,11704,42638
+SPVB0T96HlU,1,Cities,6,sacramento,3768,46406
+SPVB0T96HlU,1,Cities,7,corona,2375,48781
+SPVB0T96HlU,1,Cities,8,newyorkcity,7048,55829
+SPVB0T96HlU,1,Cities,9,boston,3224,59053
+SPVB0T96HlU,1,Cities,10,miami,2624,61677
+SPVB0T96HlU,1,Cities,11,saltlakecity,4848,66525
+SPVB0T96HlU,1,Cities,12,ftlauderdale,6367,72892
+SPVB0T96HlU,1,Cities,13,syracuse,3016,75908
+SPVB0T96HlU,1,Cities,14,irvine,5559,81467
+SPVB0T96HlU,1,Cities,15,tuscon,4744,86211
+SPVB0T96HlU,1,Cities,16,provost,2456,88667
+SPVB0T96HlU,2,Countries,1,unitedstates,9088,9088
+SPVB0T96HlU,2,Countries,2,mexico,3535,12623
+SPVB0T96HlU,2,Countries,3,canada,4623,17246
+SPVB0T96HlU,2,Countries,4,montreal,3977,21223
+SPVB0T96HlU,2,Countries,5,carribean,5023,26246
+SPVB0T96HlU,2,Countries,6,hawaii,5431,31677
+SPVB0T96HlU,2,Countries,7,barcelona,11601,43278
+SPVB0T96HlU,2,Countries,8,spain,3672,46950
+SPVB0T96HlU,2,Countries,9,switzerland,5615,52565
+SPVB0T96HlU,2,Countries,10,madrid,6496,59061
+SPVB0T96HlU,2,Countries,11,italy,2760,61821
+SPVB0T96HlU,2,Countries,12,greece,3600,65421
+SPVB0T96HlU,2,Countries,13,bahamas,5351,70772
+SPVB0T96HlU,2,Countries,14,iceland,7328,78100
+SPVB0T96HlU,2,Countries,15,ireland,3272,81372
+SPVB0T96HlU,2,Countries,16,ukraine,5912,87284
+SPVB0T96HlU,3,Fruits,1,kiwi,3663,3663
+SPVB0T96HlU,3,Fruits,2,guava,3128,6791
+SPVB0T96HlU,3,Fruits,3,strawberry,5632,12423
+SPVB0T96HlU,3,Fruits,4,banana,2231,14654
+SPVB0T96HlU,3,Fruits,5,mango,2841,17495
+SPVB0T96HlU,3,Fruits,6,starfruit,4641,22136
+SPVB0T96HlU,3,Fruits,7,huckleberry,3542,25678
+SPVB0T96HlU,3,Fruits,8,blackberry,3936,29614
+SPVB0T96HlU,3,Fruits,9,blueberry,3952,33566
+SPVB0T96HlU,3,Fruits,10,rasberry,3352,36918
+SPVB0T96HlU,3,Fruits,11,orange,2624,39542
+SPVB0T96HlU,3,Fruits,12,lime,12735,52277
+SPVB0T96HlU,3,Fruits,13,lemon,2648,54925
+SPVB0T96HlU,3,Fruits,14,melon,2312,57237
+SPVB0T96HlU,3,Fruits,15,tomato,3399,60636
+SPVB0T96HlU,3,Fruits,16,pear,2432,63068
+SPVB0T96HlU,3,Fruits,17,prune,5176,68244
+SPVB0T96HlU,4,Animals,1,bear,4367,4367
+SPVB0T96HlU,4,Animals,2,lion,3264,7631
+SPVB0T96HlU,4,Animals,3,mountainlion,7168,14799
+SPVB0T96HlU,4,Animals,4,mountaingoat,4888,19687
+SPVB0T96HlU,4,Animals,5,bighornedsheep,7855,27542
+SPVB0T96HlU,4,Animals,6,elk,1536,29078
+SPVB0T96HlU,4,Animals,7,fox,1288,30366
+SPVB0T96HlU,4,Animals,8,wolf,1568,31934
+SPVB0T96HlU,4,Animals,9,coyote,2840,34774
+SPVB0T96HlU,4,Animals,10,groundhog,10199,44973
+SPVB0T96HlU,4,Animals,11,dog,1304,46277
+SPVB0T96HlU,4,Animals,12,cat,1880,48157
+SPVB0T96HlU,4,Animals,13,fish,1680,49837
+SPVB0T96HlU,4,Animals,14,salmon,2568,52405
+SPVB0T96HlU,4,Animals,15,trout,1704,54109
+SPVB0T96HlU,4,Animals,16,giraffe,14231,68340
+SPVB0T96HlU,4,Animals,17,horse,2888,71228
+SPVB0T96HlU,4,Animals,18,zebra,3472,74700
+SPVB0T96HlU,4,Animals,19,bison,5887,80587
+SPVB0T96HlU,5,Methods of Transportation,1,car,5727,5727
+SPVB0T96HlU,5,Methods of Transportation,2,bike,2120,7847
+SPVB0T96HlU,5,Methods of Transportation,3,uber,2169,10016
+SPVB0T96HlU,5,Methods of Transportation,4,train,2063,12079
+SPVB0T96HlU,5,Methods of Transportation,5,taxi,3648,15727
+SPVB0T96HlU,5,Methods of Transportation,6,scooter,3744,19471
+SPVB0T96HlU,5,Methods of Transportation,7,plane,4151,23622
+SPVB0T96HlU,5,Methods of Transportation,8,tricycle,5304,28926
+SPVB0T96HlU,5,Methods of Transportation,9,motorcycle,5000,33926
+SPVB0T96HlU,5,Methods of Transportation,10,bus,2928,36854
+SPVB0T96HlU,5,Methods of Transportation,11,troly,1792,38646
+SPVB0T96HlU,5,Methods of Transportation,12,privatejet,4711,43357
+SPVB0T96HlU,5,Methods of Transportation,13,helicopter,8680,52037
+SPVB0T96HlU,5,Methods of Transportation,14,boat,3783,55820
+SPVB0T96HlU,5,Methods of Transportation,15,yacht,2777,58597
+SPVB0T96HlU,5,Methods of Transportation,16,cruise,2992,61589
+SPVB0T96HlU,5,Methods of Transportation,17,walking,3191,64780
+SPVB0T96HlU,5,Methods of Transportation,18,running,2472,67252
+SPVB0T96HlU,5,Methods of Transportation,19,skipping,3664,70916
+SPVB0T96HlU,5,Methods of Transportation,20,lyft,5288,76204
+SPVB0T96HlU,5,Methods of Transportation,21,skating,9879,86083
+SPVB0T96HlU,6,Fruits,1,kiwi,4032,4032
+SPVB0T96HlU,6,Fruits,2,guava,3368,7400
+SPVB0T96HlU,6,Fruits,3,berry,2199,9599
+SPVB0T96HlU,6,Fruits,4,strawberry,4560,14159
+SPVB0T96HlU,6,Fruits,5,banana,3624,17783
+SPVB0T96HlU,6,Fruits,6,blackberry,4904,22687
+SPVB0T96HlU,6,Fruits,7,huckleberry,4455,27142
+SPVB0T96HlU,6,Fruits,8,cranberry,4296,31438
+SPVB0T96HlU,6,Fruits,9,blueberry,4728,36166
+SPVB0T96HlU,6,Fruits,10,rasberry,3185,39351
+SPVB0T96HlU,6,Fruits,11,grapefruit,5439,44790
+SPVB0T96HlU,6,Fruits,12,orange,3032,47822
+SPVB0T96HlU,6,Fruits,13,lime,3880,51702
+SPVB0T96HlU,6,Fruits,14,lemon,3808,55510
+SPVB0T96HlU,6,Fruits,15,starfruit,3783,59293
+SPVB0T96HlU,6,Fruits,16,grape,4496,63789
+SPVB0T96HlU,6,Fruits,17,melon,3071,66860
+SPVB0T96HlU,6,Fruits,18,tomato,3161,70021
+SPVB0T96HlU,6,Fruits,19,tangerine,10391,80412
+SPVB0T96HlU,7,Countries,1,ukraine,8943,8943
+SPVB0T96HlU,7,Countries,2,unitedstates,7480,16423
+SPVB0T96HlU,7,Countries,3,mexico,2976,19399
+SPVB0T96HlU,7,Countries,4,canada,5760,25159
+SPVB0T96HlU,7,Countries,5,italy,6319,31478
+SPVB0T96HlU,7,Countries,6,barcelona,4368,35846
+SPVB0T96HlU,7,Countries,7,spain,2792,38638
+SPVB0T96HlU,7,Countries,8,madrid,2944,41582
+SPVB0T96HlU,7,Countries,9,london,2729,44311
+SPVB0T96HlU,7,Countries,10,england,2350,46661
+SPVB0T96HlU,7,Countries,11,greece,2360,49021
+SPVB0T96HlU,7,Countries,12,carribean,6592,55613
+SPVB0T96HlU,7,Countries,13,hawaii,3584,59197
+SPVB0T96HlU,7,Countries,14,alaska,5416,64613
+SPVB0T96HlU,7,Countries,15,cuba,4911,69524
+SPVB0T96HlU,7,Countries,16,thailand,12384,81908
+SPVB0T96HlU,7,Countries,17,taiwon,4223,86131
+SPVB0T96HlU,7,Countries,18,jordan,3696,89827
+SPVB0T96HlU,8,Cities,1,sandiego,7152,7152
+SPVB0T96HlU,8,Cities,2,sanfrancisco,6183,13335
+SPVB0T96HlU,8,Cities,3,saltlakecity,4680,18015
+SPVB0T96HlU,8,Cities,4,provoste,3424,21439
+SPVB0T96HlU,8,Cities,5,sacramento,2984,24423
+SPVB0T96HlU,8,Cities,6,irvine,4383,28806
+SPVB0T96HlU,8,Cities,7,anaheim,3904,32710
+SPVB0T96HlU,8,Cities,8,poway,3592,36302
+SPVB0T96HlU,8,Cities,9,syracuse,7336,43638
+SPVB0T96HlU,8,Cities,10,boston,3319,46957
+SPVB0T96HlU,8,Cities,11,newyorkcity,4216,51173
+SPVB0T96HlU,8,Cities,12,miami,4304,55477
+SPVB0T96HlU,8,Cities,13,jackson,3273,58750
+SPVB0T96HlU,8,Cities,14,tuscon,4343,63093
+SPVB0T96HlU,8,Cities,15,seattle,7615,70708
+SPVB0T96HlU,8,Cities,16,cedarcity,8168,78876
+SPVB0T96HlU,8,Cities,17,ftlauderdale,7983,86859
+SPVB0T96HlU,9,Units of measurement,1,inches,4328,4328
+SPVB0T96HlU,9,Units of measurement,2,feet,1528,5856
+SPVB0T96HlU,9,Units of measurement,3,meters,3503,9359
+SPVB0T96HlU,9,Units of measurement,4,kilometers,3960,13319
+SPVB0T96HlU,9,Units of measurement,5,pounds,3752,17071
+SPVB0T96HlU,9,Units of measurement,6,miles,4704,21775
+SPVB0T96HlU,9,Units of measurement,7,centimeters,6791,28566
+SPVB0T96HlU,9,Units of measurement,8,milimeters,6720,35286
+SPVB0T96HlU,9,Units of measurement,9,hours,6535,41821
+SPVB0T96HlU,9,Units of measurement,10,minutes,3889,45710
+SPVB0T96HlU,9,Units of measurement,11,seconds,2855,48565
+SPVB0T96HlU,9,Units of measurement,12,days,3192,51757
+SPVB0T96HlU,9,Units of measurement,13,ounces,2880,54637
+SPVB0T96HlU,9,Units of measurement,14,yards,4736,59373
+SPVB0T96HlU,9,Units of measurement,15,fortnight,23615,82988
+SPVB0T96HlU,10,Methods of Transportation,1,car,3456,3456
+SPVB0T96HlU,10,Methods of Transportation,2,uber,1648,5104
+SPVB0T96HlU,10,Methods of Transportation,3,bus,1592,6696
+SPVB0T96HlU,10,Methods of Transportation,4,train,3184,9880
+SPVB0T96HlU,10,Methods of Transportation,5,lyft,2767,12647
+SPVB0T96HlU,10,Methods of Transportation,6,trolley,3584,16231
+SPVB0T96HlU,10,Methods of Transportation,7,taxi,2536,18767
+SPVB0T96HlU,10,Methods of Transportation,8,metro,2656,21423
+SPVB0T96HlU,10,Methods of Transportation,9,yacht,2528,23951
+SPVB0T96HlU,10,Methods of Transportation,10,boat,2408,26359
+SPVB0T96HlU,10,Methods of Transportation,11,skilift,5888,32247
+SPVB0T96HlU,10,Methods of Transportation,12,motorcycle,6631,38878
+SPVB0T96HlU,10,Methods of Transportation,13,privatejet,6872,45750
+SPVB0T96HlU,10,Methods of Transportation,14,helicopter,6167,51917
+SPVB0T96HlU,10,Methods of Transportation,15,scooter,2400,54317
+SPVB0T96HlU,10,Methods of Transportation,16,tricycle,5184,59501
+SPVB0T96HlU,10,Methods of Transportation,17,walking,3936,63437
+SPVB0T96HlU,10,Methods of Transportation,18,running,2800,66237
+SPVB0T96HlU,10,Methods of Transportation,19,skipping,3488,69725
+SPVB0T96HlU,10,Methods of Transportation,20,hopping,3303,73028
+SPVB0T96HlU,10,Methods of Transportation,21,hotairballoon,6216,79244
+SPVB0T96HlU,10,Methods of Transportation,22,skiing,5272,84516
+SPVB0T96HlU,10,Methods of Transportation,23,snowboarding,3935,88451
+SPVB0T96HlU,11,Animals,1,bear,2920,2920
+SPVB0T96HlU,11,Animals,2,lion,2336,5256
+SPVB0T96HlU,11,Animals,3,deer,1304,6560
+SPVB0T96HlU,11,Animals,4,monkey,3208,9768
+SPVB0T96HlU,11,Animals,5,fish,2904,12672
+SPVB0T96HlU,11,Animals,6,salmon,2824,15496
+SPVB0T96HlU,11,Animals,7,dog,1487,16983
+SPVB0T96HlU,11,Animals,8,cat,1840,18823
+SPVB0T96HlU,11,Animals,9,bison,2608,21431
+SPVB0T96HlU,11,Animals,10,meercat,4120,25551
+SPVB0T96HlU,11,Animals,11,sloth,2151,27702
+SPVB0T96HlU,11,Animals,12,zebr,2978,30680
+SPVB0T96HlU,11,Animals,13,mountainlion,8534,39214
+SPVB0T96HlU,11,Animals,14,ox,1464,40678
+SPVB0T96HlU,11,Animals,15,horse,3176,43854
+SPVB0T96HlU,11,Animals,16,goat,2032,45886
+SPVB0T96HlU,11,Animals,17,bighornedsheep,5871,51757
+SPVB0T96HlU,11,Animals,18,fox,1440,53197
+SPVB0T96HlU,11,Animals,19,wolf,1504,54701
+SPVB0T96HlU,11,Animals,20,coyote,3296,57997
+SPVB0T96HlU,11,Animals,21,trout,3560,61557
+SPVB0T96HlU,11,Animals,22,owl,2208,63765
+SPVB0T96HlU,11,Animals,23,osprey,2864,66629
+SPVB0T96HlU,11,Animals,24,giraffe,7680,74309
+SPVB0T96HlU,11,Animals,25,eek,15607,89916
+SPVB0T96HlU,12,Units of measurement,1,inches,5654,5654
+SPVB0T96HlU,12,Units of measurement,2,feet,2080,7734
+SPVB0T96HlU,12,Units of measurement,3,meters,4184,11918
+SPVB0T96HlU,12,Units of measurement,4,yards,3200,15118
+SPVB0T96HlU,12,Units of measurement,5,centimeter,4871,19989
+SPVB0T96HlU,12,Units of measurement,6,milimeter,4080,24069
+SPVB0T96HlU,12,Units of measurement,7,miles,4584,28653
+SPVB0T96HlU,12,Units of measurement,8,kilometers,4648,33301
+SPVB0T96HlU,12,Units of measurement,9,ounces,2775,36076
+SPVB0T96HlU,12,Units of measurement,10,pounds,4120,40196
+SPVB0T96HlU,12,Units of measurement,11,seconds,4120,44316
+SPVB0T96HlU,12,Units of measurement,12,minutes,2928,47244
+SPVB0T96HlU,12,Units of measurement,13,hours,2672,49916
+SPVB0T96HlU,12,Units of measurement,14,days,2552,52468
+SPVB0T96HlU,12,Units of measurement,15,fortnight,4551,57019
+SPVB0T96HlU,12,Units of measurement,16,months,5040,62059
+SPVB0T96HlU,12,Units of measurement,17,years,2905,64964
+SPVB0T96HlU,12,Units of measurement,18,lightyears,9543,74507
+SPVB0T96HlU,13,Sporting Games,1,tennis,6168,6168
+SPVB0T96HlU,13,Sporting Games,2,hockey,2568,8736
+SPVB0T96HlU,13,Sporting Games,3,iceskating,8559,17295
+SPVB0T96HlU,13,Sporting Games,4,football,4328,21623
+SPVB0T96HlU,13,Sporting Games,5,soccer,2768,24391
+SPVB0T96HlU,13,Sporting Games,6,basketball,5527,29918
+SPVB0T96HlU,13,Sporting Games,7,volleyball,4784,34702
+SPVB0T96HlU,13,Sporting Games,8,rowing,2864,37566
+SPVB0T96HlU,13,Sporting Games,9,badminton,3744,41310
+SPVB0T96HlU,13,Sporting Games,10,sailing,3512,44822
+SPVB0T96HlU,13,Sporting Games,11,gymnastics,4041,48863
+SPVB0T96HlU,13,Sporting Games,12,dance,2558,51421
+SPVB0T96HlU,13,Sporting Games,13,cheer,3344,54765
+SPVB0T96HlU,13,Sporting Games,14,lacrosse,3320,58085
+SPVB0T96HlU,13,Sporting Games,15,fieldhockey,4607,62692
+SPVB0T96HlU,13,Sporting Games,16,surfing,2257,64949
+SPVB0T96HlU,13,Sporting Games,17,equestrian,6591,71540
+SPVB0T96HlU,13,Sporting Games,18,pickleball,7152,78692
+SPVB0T96HlU,14,Objects You Would Find in The Kitchen,1,knife,5176,5176
+SPVB0T96HlU,14,Objects You Would Find in The Kitchen,2,spoon,2736,7912
+SPVB0T96HlU,14,Objects You Would Find in The Kitchen,3,bowl,2464,10376
+SPVB0T96HlU,14,Objects You Would Find in The Kitchen,4,fork,2599,12975
+SPVB0T96HlU,14,Objects You Would Find in The Kitchen,5,microwave,3968,16943
+SPVB0T96HlU,14,Objects You Would Find in The Kitchen,6,mugs,3080,20023
+SPVB0T96HlU,14,Objects You Would Find in The Kitchen,7,dishes,5200,25223
+SPVB0T96HlU,14,Objects You Would Find in The Kitchen,8,napkin,5855,31078
+SPVB0T96HlU,14,Objects You Would Find in The Kitchen,9,toaster,2808,33886
+SPVB0T96HlU,14,Objects You Would Find in The Kitchen,10,food,1240,35126
+SPVB0T96HlU,14,Objects You Would Find in The Kitchen,11,ice,1448,36574
+SPVB0T96HlU,14,Objects You Would Find in The Kitchen,12,water,4728,41302
+SPVB0T96HlU,14,Objects You Would Find in The Kitchen,13,appliances,5680,46982
+SPVB0T96HlU,14,Objects You Would Find in The Kitchen,14,dishwasher,4846,51828
+SPVB0T96HlU,14,Objects You Would Find in The Kitchen,15,sink,2361,54189
+SPVB0T96HlU,14,Objects You Would Find in The Kitchen,16,towel,2034,56223
+SPVB0T96HlU,14,Objects You Would Find in The Kitchen,17,coffeemaker,6262,62485
+SPVB0T96HlU,14,Objects You Would Find in The Kitchen,18,bottleopener,3864,66349
+SPVB0T96HlU,14,Objects You Would Find in The Kitchen,19,mitts,3343,69692
+SPVB0T96HlU,14,Objects You Would Find in The Kitchen,20,spatula,5016,74708
+SPVB0T96HlU,14,Objects You Would Find in The Kitchen,21,seasoning,5712,80420
+SPVB0T96HlU,14,Objects You Would Find in The Kitchen,22,salt,1367,81787
+SPVB0T96HlU,14,Objects You Would Find in The Kitchen,23,pepper,3257,85044
+SPVB0T96HlU,14,Objects You Would Find in The Kitchen,24,grater,3111,88155
+SPVB0T96HlU,15,Musical Instruments,1,cello,4647,4647
+SPVB0T96HlU,15,Musical Instruments,2,piano,2921,7568
+SPVB0T96HlU,15,Musical Instruments,3,trombone,3863,11431
+SPVB0T96HlU,15,Musical Instruments,4,violin,3064,14495
+SPVB0T96HlU,15,Musical Instruments,5,voice,4448,18943
+SPVB0T96HlU,15,Musical Instruments,6,trumpet,8152,27095
+SPVB0T96HlU,15,Musical Instruments,7,harp,2567,29662
+SPVB0T96HlU,15,Musical Instruments,8,drum,3152,32814
+SPVB0T96HlU,15,Musical Instruments,9,viola,6680,39494
+SPVB0T96HlU,15,Musical Instruments,10,chimes,11591,51085
+SPVB0T96HlU,15,Musical Instruments,11,recorder,4432,55517
+SPVB0T96HlU,15,Musical Instruments,12,flute,2320,57837
+SPVB0T96HlU,15,Musical Instruments,13,frenchhorn,13807,71644
+SPVB0T96HlU,15,Musical Instruments,14,horn,1920,73564
+SPVB0T96HlU,15,Musical Instruments,15,saxophone,5432,78996
+SPVB0T96HlU,16,Vegetables,1,squash,8600,8600
+SPVB0T96HlU,16,Vegetables,2,broccoli,3544,12144
+SPVB0T96HlU,16,Vegetables,3,asparagas,3959,16103
+SPVB0T96HlU,16,Vegetables,4,avocado,4736,20839
+SPVB0T96HlU,16,Vegetables,5,peppers,2064,22903
+SPVB0T96HlU,16,Vegetables,6,bellpeppers,5424,28327
+SPVB0T96HlU,16,Vegetables,7,radish,1960,30287
+SPVB0T96HlU,16,Vegetables,8,greenpepper,6895,37182
+SPVB0T96HlU,16,Vegetables,9,redpepper,3383,40565
+SPVB0T96HlU,16,Vegetables,10,jalepeno,4457,45022
+SPVB0T96HlU,16,Vegetables,11,cucumber,3624,48646
+SPVB0T96HlU,16,Vegetables,12,onion,3207,51853
+SPVB0T96HlU,16,Vegetables,13,greenonions,6032,57885
+SPVB0T96HlU,16,Vegetables,14,lettuce,6720,64605
+SPVB0T96HlU,16,Vegetables,15,pickle,3280,67885
+SPVB0T96HlU,16,Vegetables,16,kale,2815,70700
+SPVB0T96HlU,16,Vegetables,17,spinach,4320,75020
+SPVB0T96HlU,16,Vegetables,18,cauliflower,5424,80444
+SPVB0T96HlU,16,Vegetables,19,horseradish,8687,89131
+SPVB0T96HlU,17,Pieces of Furniture,1,chair,3240,3240
+SPVB0T96HlU,17,Pieces of Furniture,2,desk,1407,4647
+SPVB0T96HlU,17,Pieces of Furniture,3,table,2177,6824
+SPVB0T96HlU,17,Pieces of Furniture,4,bed,1232,8056
+SPVB0T96HlU,17,Pieces of Furniture,5,couch,2000,10056
+SPVB0T96HlU,17,Pieces of Furniture,6,lamp,11639,21695
+SPVB0T96HlU,17,Pieces of Furniture,7,beanbag,10799,32494
+SPVB0T96HlU,17,Pieces of Furniture,8,bedsidetable,11039,43533
+SPVB0T96HlU,18,Musical Instruments,1,violin,5768,5768
+SPVB0T96HlU,18,Musical Instruments,2,cello,1936,7704
+SPVB0T96HlU,18,Musical Instruments,3,piano,4047,11751
+SPVB0T96HlU,18,Musical Instruments,4,viola,1992,13743
+SPVB0T96HlU,18,Musical Instruments,5,organ,2288,16031
+SPVB0T96HlU,18,Musical Instruments,6,saxophone,4552,20583
+SPVB0T96HlU,18,Musical Instruments,7,flute,1792,22375
+SPVB0T96HlU,18,Musical Instruments,8,harp,1976,24351
+SPVB0T96HlU,18,Musical Instruments,9,trumpet,2776,27127
+SPVB0T96HlU,18,Musical Instruments,10,voice,1976,29103
+SPVB0T96HlU,18,Musical Instruments,11,horn,2183,31286
+SPVB0T96HlU,18,Musical Instruments,12,frenchhorn,4359,35645
+SPVB0T96HlU,18,Musical Instruments,13,recorder,4161,39806
+SPVB0T96HlU,18,Musical Instruments,14,triangle,3136,42942
+SPVB0T96HlU,18,Musical Instruments,15,chimes,2488,45430
+SPVB0T96HlU,18,Musical Instruments,16,windpipe,8071,53501
+SPVB0T96HlU,19,Objects You Would Find in The Kitchen,1,knife,3936,3936
+SPVB0T96HlU,19,Objects You Would Find in The Kitchen,2,spoon,2568,6504
+SPVB0T96HlU,19,Objects You Would Find in The Kitchen,3,fork,1560,8064
+SPVB0T96HlU,19,Objects You Would Find in The Kitchen,4,straw,2479,10543
+SPVB0T96HlU,19,Objects You Would Find in The Kitchen,5,spatula,3712,14255
+SPVB0T96HlU,19,Objects You Would Find in The Kitchen,6,kettle,2168,16423
+SPVB0T96HlU,19,Objects You Would Find in The Kitchen,7,coffeemaker,4904,21327
+SPVB0T96HlU,19,Objects You Would Find in The Kitchen,8,plate,3303,24630
+SPVB0T96HlU,19,Objects You Would Find in The Kitchen,9,dishrag,2601,27231
+SPVB0T96HlU,19,Objects You Would Find in The Kitchen,10,bowl,3864,31095
+SPVB0T96HlU,19,Objects You Would Find in The Kitchen,11,water,2815,33910
+SPVB0T96HlU,19,Objects You Would Find in The Kitchen,12,watercups,3272,37182
+SPVB0T96HlU,19,Objects You Would Find in The Kitchen,13,muggs,2944,40126
+SPVB0T96HlU,19,Objects You Would Find in The Kitchen,14,food,7912,48038
+SPVB0T96HlU,19,Objects You Would Find in The Kitchen,15,cheesegrater,4847,52885
+SPVB0T96HlU,19,Objects You Would Find in The Kitchen,16,microwave,3672,56557
+SPVB0T96HlU,19,Objects You Would Find in The Kitchen,17,seasoning,4160,60717
+SPVB0T96HlU,19,Objects You Would Find in The Kitchen,18,pan,2376,63093
+SPVB0T96HlU,19,Objects You Would Find in The Kitchen,19,sink,3968,67061
+SPVB0T96HlU,19,Objects You Would Find in The Kitchen,20,papertowel,3344,70405
+SPVB0T96HlU,19,Objects You Would Find in The Kitchen,21,napkinholder,7807,78212
+SPVB0T96HlU,20,Sporting Games,1,tennis,4335,4335
+SPVB0T96HlU,20,Sporting Games,2,wrestling,2800,7135
+SPVB0T96HlU,20,Sporting Games,3,fieldhockey,4729,11864
+SPVB0T96HlU,20,Sporting Games,4,football,3215,15079
+SPVB0T96HlU,20,Sporting Games,5,rowing,3112,18191
+SPVB0T96HlU,20,Sporting Games,6,soccer,1824,20015
+SPVB0T96HlU,20,Sporting Games,7,pickleball,4880,24895
+SPVB0T96HlU,20,Sporting Games,8,basketball,3639,28534
+SPVB0T96HlU,20,Sporting Games,9,volleyball,5800,34334
+SPVB0T96HlU,20,Sporting Games,10,gymnastics,4608,38942
+SPVB0T96HlU,20,Sporting Games,11,skiing,2095,41037
+SPVB0T96HlU,20,Sporting Games,12,surfing,3921,44958
+SPVB0T96HlU,20,Sporting Games,13,equestrian,6208,51166
+SPVB0T96HlU,20,Sporting Games,14,rugby,3079,54245
+SPVB0T96HlU,20,Sporting Games,15,trackandfield,16648,70893
+SPVB0T96HlU,20,Sporting Games,16,swimming,3815,74708
+SPVB0T96HlU,20,Sporting Games,17,waterpolo,3536,78244
+SPVB0T96HlU,20,Sporting Games,18,dive,2200,80444
+SPVB0T96HlU,20,Sporting Games,19,figureskating,7880,88324
+SPVB0T96HlU,21,Clothing Articles,1,hoodie,4111,4111
+SPVB0T96HlU,21,Clothing Articles,2,crewneck,4648,8759
+SPVB0T96HlU,21,Clothing Articles,3,shirt,2000,10759
+SPVB0T96HlU,21,Clothing Articles,4,pants,2824,13583
+SPVB0T96HlU,21,Clothing Articles,5,shoes,2120,15703
+SPVB0T96HlU,21,Clothing Articles,6,dress,1552,17255
+SPVB0T96HlU,21,Clothing Articles,7,romper,1695,18950
+SPVB0T96HlU,21,Clothing Articles,8,leggings,3200,22150
+SPVB0T96HlU,21,Clothing Articles,9,hat,1472,23622
+SPVB0T96HlU,21,Clothing Articles,10,scarf,3024,26646
+SPVB0T96HlU,21,Clothing Articles,11,coat,1944,28590
+SPVB0T96HlU,21,Clothing Articles,12,jeans,1680,30270
+SPVB0T96HlU,21,Clothing Articles,13,leggings,2648,32918
+SPVB0T96HlU,21,Clothing Articles,14,shorts,3696,36614
+SPVB0T96HlU,21,Clothing Articles,15,croptop,3975,40589
+SPVB0T96HlU,21,Clothing Articles,16,sweater,1953,42542
+SPVB0T96HlU,21,Clothing Articles,17,bra,1663,44205
+SPVB0T96HlU,21,Clothing Articles,18,underwear,3960,48165
+SPVB0T96HlU,21,Clothing Articles,19,gloves,3352,51517
+SPVB0T96HlU,21,Clothing Articles,20,socks,1912,53429
+SPVB0T96HlU,21,Clothing Articles,21,puffer,2536,55965
+SPVB0T96HlU,21,Clothing Articles,22,zipup,2815,58780
+SPVB0T96HlU,21,Clothing Articles,23,fleece,2816,61596
+SPVB0T96HlU,21,Clothing Articles,24,boots,2288,63884
+SPVB0T96HlU,21,Clothing Articles,25,heels,2656,66540
+SPVB0T96HlU,21,Clothing Articles,26,poncho,15279,81819
+SPVB0T96HlU,21,Clothing Articles,27,flipflops,4024,85843
+SPVB0T96HlU,21,Clothing Articles,28,watershoes,3280,89123
+SPVB0T96HlU,22,Pieces of Furniture,1,chair,4311,4311
+SPVB0T96HlU,22,Pieces of Furniture,2,desk,2984,7295
+SPVB0T96HlU,22,Pieces of Furniture,3,table,4696,11991
+SPVB0T96HlU,22,Pieces of Furniture,4,bed,2816,14807
+SPVB0T96HlU,22,Pieces of Furniture,5,couch,2248,17055
+SPVB0T96HlU,22,Pieces of Furniture,6,footrest,3639,20694
+SPVB0T96HlU,22,Pieces of Furniture,7,lamp,2560,23254
+SPVB0T96HlU,22,Pieces of Furniture,8,beanbag,3528,26782
+SPVB0T96HlU,22,Pieces of Furniture,9,towelrack,4872,31654
+SPVB0T96HlU,22,Pieces of Furniture,10,clothingrack,8255,39909
+SPVB0T96HlU,22,Pieces of Furniture,11,bedsidetable,7120,47029
+SPVB0T96HlU,22,Pieces of Furniture,12,pingpongtable,8768,55797
+SPVB0T96HlU,22,Pieces of Furniture,13,shoerack,7183,62980
+SPVB0T96HlU,22,Pieces of Furniture,14,winecart,7208,70188
+SPVB0T96HlU,23,Vegetables,1,raddish,6239,6239
+SPVB0T96HlU,23,Vegetables,2,onion,2792,9031
+SPVB0T96HlU,23,Vegetables,3,jalepeno,3336,12367
+SPVB0T96HlU,23,Vegetables,4,cucumer,2960,15327
+SPVB0T96HlU,23,Vegetables,5,greenonion,5567,20894
+SPVB0T96HlU,23,Vegetables,6,lettuce,2704,23598
+SPVB0T96HlU,23,Vegetables,7,cabbage,1968,25566
+SPVB0T96HlU,23,Vegetables,8,spinach,3464,29030
+SPVB0T96HlU,23,Vegetables,9,broccoli,4768,33798
+SPVB0T96HlU,23,Vegetables,10,cauliflower,5383,39181
+SPVB0T96HlU,23,Vegetables,11,asparagus,5360,44541
+SPVB0T96HlU,23,Vegetables,12,avocado,3504,48045
+SPVB0T96HlU,23,Vegetables,13,redpepper,6768,54813
+SPVB0T96HlU,23,Vegetables,14,bananapepper,3495,58308
+SPVB0T96HlU,23,Vegetables,15,pepperoncini,5392,63700
+SPVB0T96HlU,23,Vegetables,16,mushroom,4976,68676
+SPVB0T96HlU,23,Vegetables,17,bellpepper,6344,75020
+SPVB0T96HlU,23,Vegetables,18,brusselsprouts,9463,84483
+SPVB0T96HlU,23,Vegetables,19,sprouts,3904,88387
+SPVB0T96HlU,24,Pieces of Furniture,1,desk,6072,6072
+SPVB0T96HlU,24,Pieces of Furniture,2,chair,2104,8176
+SPVB0T96HlU,24,Pieces of Furniture,3,bed,1376,9552
+SPVB0T96HlU,24,Pieces of Furniture,4,couch,1936,11488
+SPVB0T96HlU,24,Pieces of Furniture,5,table,4190,15678
+SPVB0T96HlU,24,Pieces of Furniture,6,beanbag,3441,19119
+SPVB0T96HlU,24,Pieces of Furniture,7,bedsidetable,6216,25335
+SPVB0T96HlU,24,Pieces of Furniture,8,winecart,2848,28183
+SPVB0T96HlU,24,Pieces of Furniture,9,lamp,2640,30823
+SPVB0T96HlU,24,Pieces of Furniture,10,pingpongtable,7760,38583
+SPVB0T96HlU,24,Pieces of Furniture,11,fireplace,6431,45014
+SPVB0T96HlU,24,Pieces of Furniture,12,tvtable,21735,66749
+SPVB0T96HlU,24,Pieces of Furniture,13,painting,12688,79437
+SPVB0T96HlU,24,Pieces of Furniture,14,sculpture,3071,82508
+SPVB0T96HlU,24,Pieces of Furniture,15,islandtable,5432,87940
 S8istwEIL2o,2,Cities,1,shanghai,4992,4992
 S8istwEIL2o,2,Cities,2,beijing,888,5880
 S8istwEIL2o,2,Cities,3,sichuan,1888,7768
@@ -1249,6 +1689,461 @@ Sxqd47vsHSq,24,Clothing Articles,10,sweatshirt,4384,23511
 Sxqd47vsHSq,24,Clothing Articles,11,underwear,3192,26703
 Sxqd47vsHSq,24,Clothing Articles,12,slides,48335,75038
 Sxqd47vsHSq,24,Clothing Articles,13,flipflops,3192,78230
+SZCzvIE47st,1,Units of measurement,1,centimeters,10247,10247
+SZCzvIE47st,1,Units of measurement,2,feet,2943,13190
+SZCzvIE47st,1,Units of measurement,3,yards,2384,15574
+SZCzvIE47st,1,Units of measurement,4,inches,4792,20366
+SZCzvIE47st,1,Units of measurement,5,millimeters,9752,30118
+SZCzvIE47st,1,Units of measurement,6,grams,4816,34934
+SZCzvIE47st,1,Units of measurement,7,pounds,2417,37351
+SZCzvIE47st,1,Units of measurement,8,ounces,2359,39710
+SZCzvIE47st,1,Units of measurement,9,kilograms,7799,47509
+SZCzvIE47st,1,Units of measurement,10,miles,9264,56773
+SZCzvIE47st,1,Units of measurement,11,kilometers,15576,72349
+SZCzvIE47st,1,Units of measurement,12,kilometersperhour,6520,78869
+SZCzvIE47st,1,Units of measurement,13,milesperhour,6375,85244
+SZCzvIE47st,2,Sporting Games,1,hockey,4392,4392
+SZCzvIE47st,2,Sporting Games,2,football,2583,6975
+SZCzvIE47st,2,Sporting Games,3,soccer,1792,8767
+SZCzvIE47st,2,Sporting Games,4,lacrosse,4921,13688
+SZCzvIE47st,2,Sporting Games,5,baseball,2023,15711
+SZCzvIE47st,2,Sporting Games,6,volleyball,3256,18967
+SZCzvIE47st,2,Sporting Games,7,rowing,2448,21415
+SZCzvIE47st,2,Sporting Games,8,fieldhockey,8288,29703
+SZCzvIE47st,2,Sporting Games,9,swimming,3216,32919
+SZCzvIE47st,2,Sporting Games,10,dance,2016,34935
+SZCzvIE47st,2,Sporting Games,11,horseriding,6399,41334
+SZCzvIE47st,2,Sporting Games,12,gymnastics,11432,52766
+SZCzvIE47st,2,Sporting Games,13,basketball,9056,61822
+SZCzvIE47st,2,Sporting Games,14,cricket,3288,65110
+SZCzvIE47st,2,Sporting Games,15,rugby,2544,67654
+SZCzvIE47st,2,Sporting Games,16,tabletennis,3064,70718
+SZCzvIE47st,2,Sporting Games,17,tennis,1680,72398
+SZCzvIE47st,2,Sporting Games,18,golf,1352,73750
+SZCzvIE47st,2,Sporting Games,19,diving,9280,83030
+SZCzvIE47st,2,Sporting Games,20,javelin,4319,87349
+SZCzvIE47st,3,Objects You Would Find in The Kitchen,1,spoon,4799,4799
+SZCzvIE47st,3,Objects You Would Find in The Kitchen,2,fork,1560,6359
+SZCzvIE47st,3,Objects You Would Find in The Kitchen,3,knife,2008,8367
+SZCzvIE47st,3,Objects You Would Find in The Kitchen,4,table,4160,12527
+SZCzvIE47st,3,Objects You Would Find in The Kitchen,5,counter,3648,16175
+SZCzvIE47st,3,Objects You Would Find in The Kitchen,6,oven,1488,17663
+SZCzvIE47st,3,Objects You Would Find in The Kitchen,7,cuttingboard,5760,23423
+SZCzvIE47st,3,Objects You Would Find in The Kitchen,8,towel,5864,29287
+SZCzvIE47st,3,Objects You Would Find in The Kitchen,9,shredder,4832,34119
+SZCzvIE47st,3,Objects You Would Find in The Kitchen,10,blender,2455,36574
+SZCzvIE47st,3,Objects You Would Find in The Kitchen,11,pot,1328,37902
+SZCzvIE47st,3,Objects You Would Find in The Kitchen,12,pan,1504,39406
+SZCzvIE47st,3,Objects You Would Find in The Kitchen,13,sink,10880,50286
+SZCzvIE47st,3,Objects You Would Find in The Kitchen,14,faucet,2440,52726
+SZCzvIE47st,3,Objects You Would Find in The Kitchen,15,spatula,15311,68037
+SZCzvIE47st,3,Objects You Would Find in The Kitchen,16,fridge,14176,82213
+SZCzvIE47st,3,Objects You Would Find in The Kitchen,17,grill,4112,86325
+SZCzvIE47st,3,Objects You Would Find in The Kitchen,18,stove,2192,88517
+SZCzvIE47st,4,Musical Instruments,1,trumpet,4416,4416
+SZCzvIE47st,4,Musical Instruments,2,guitar,2200,6616
+SZCzvIE47st,4,Musical Instruments,3,flute,4056,10672
+SZCzvIE47st,4,Musical Instruments,4,piano,2016,12688
+SZCzvIE47st,4,Musical Instruments,5,bass,6576,19264
+SZCzvIE47st,4,Musical Instruments,6,trombone,5800,25064
+SZCzvIE47st,4,Musical Instruments,7,drums,3008,28072
+SZCzvIE47st,4,Musical Instruments,8,tuba,4007,32079
+SZCzvIE47st,4,Musical Instruments,9,saxaphone,3992,36071
+SZCzvIE47st,4,Musical Instruments,10,violin,8352,44423
+SZCzvIE47st,4,Musical Instruments,11,chello,11784,56207
+SZCzvIE47st,4,Musical Instruments,12,synth,11408,67615
+SZCzvIE47st,4,Musical Instruments,13,recorder,19887,87502
+SZCzvIE47st,5,Vegetables,1,celery,5319,5319
+SZCzvIE47st,5,Vegetables,2,tomato,4456,9775
+SZCzvIE47st,5,Vegetables,3,lettuce,2152,11927
+SZCzvIE47st,5,Vegetables,4,spinach,10616,22543
+SZCzvIE47st,5,Vegetables,5,carrots,4384,26927
+SZCzvIE47st,5,Vegetables,6,kale,10215,37142
+SZCzvIE47st,5,Vegetables,7,asparagus,20544,57686
+SZCzvIE47st,5,Vegetables,8,cucumber,31519,89205
+SZCzvIE47st,6,Objects You Would Find in The Kitchen,1,spoon,13951,13951
+SZCzvIE47st,6,Objects You Would Find in The Kitchen,2,fork,1520,15471
+SZCzvIE47st,6,Objects You Would Find in The Kitchen,3,knife,1600,17071
+SZCzvIE47st,6,Objects You Would Find in The Kitchen,4,napkin,4192,21263
+SZCzvIE47st,6,Objects You Would Find in The Kitchen,5,towel,3560,24823
+SZCzvIE47st,6,Objects You Would Find in The Kitchen,6,blender,2896,27719
+SZCzvIE47st,6,Objects You Would Find in The Kitchen,7,pot,1200,28919
+SZCzvIE47st,6,Objects You Would Find in The Kitchen,8,pan,1536,30455
+SZCzvIE47st,6,Objects You Would Find in The Kitchen,9,spatula,5119,35574
+SZCzvIE47st,6,Objects You Would Find in The Kitchen,10,shredder,3992,39566
+SZCzvIE47st,6,Objects You Would Find in The Kitchen,11,bowl,7360,46926
+SZCzvIE47st,6,Objects You Would Find in The Kitchen,12,plate,7184,54110
+SZCzvIE47st,6,Objects You Would Find in The Kitchen,13,microwave,18752,72862
+SZCzvIE47st,6,Objects You Would Find in The Kitchen,14,toaster,2439,75301
+SZCzvIE47st,6,Objects You Would Find in The Kitchen,15,stove,2272,77573
+SZCzvIE47st,6,Objects You Would Find in The Kitchen,16,oven,1480,79053
+SZCzvIE47st,6,Objects You Would Find in The Kitchen,17,dishwasher,3648,82701
+SZCzvIE47st,7,Sporting Games,1,hockey,3927,3927
+SZCzvIE47st,7,Sporting Games,2,football,1840,5767
+SZCzvIE47st,7,Sporting Games,3,lacrosse,2032,7799
+SZCzvIE47st,7,Sporting Games,4,basketball,4824,12623
+SZCzvIE47st,7,Sporting Games,5,soccer,1576,14199
+SZCzvIE47st,7,Sporting Games,6,cricket,1527,15726
+SZCzvIE47st,7,Sporting Games,7,rugby,2193,17919
+SZCzvIE47st,7,Sporting Games,8,quitage,10024,27943
+SZCzvIE47st,7,Sporting Games,9,croquet,3455,31398
+SZCzvIE47st,7,Sporting Games,10,polo,2152,33550
+SZCzvIE47st,7,Sporting Games,11,waterpolo,3480,37030
+SZCzvIE47st,7,Sporting Games,12,swimming,2504,39534
+SZCzvIE47st,7,Sporting Games,13,diving,1560,41094
+SZCzvIE47st,7,Sporting Games,14,rowing,2192,43286
+SZCzvIE47st,7,Sporting Games,15,rockclimbing,8392,51678
+SZCzvIE47st,7,Sporting Games,16,fieldhockey,12432,64110
+SZCzvIE47st,7,Sporting Games,17,track,8095,72205
+SZCzvIE47st,7,Sporting Games,18,wrestling,4424,76629
+SZCzvIE47st,7,Sporting Games,19,competitiveweightlifting,12984,89613
+SZCzvIE47st,8,Units of measurement,1,centimeters,3552,3552
+SZCzvIE47st,8,Units of measurement,2,feet,2448,6000
+SZCzvIE47st,8,Units of measurement,3,inches,1424,7424
+SZCzvIE47st,8,Units of measurement,4,miles,2144,9568
+SZCzvIE47st,8,Units of measurement,5,kilometers,1912,11480
+SZCzvIE47st,8,Units of measurement,6,yards,3480,14960
+SZCzvIE47st,8,Units of measurement,7,milimeters,2592,17552
+SZCzvIE47st,8,Units of measurement,8,tons,4296,21848
+SZCzvIE47st,8,Units of measurement,9,pounds,8375,30223
+SZCzvIE47st,8,Units of measurement,10,ounces,1536,31759
+SZCzvIE47st,8,Units of measurement,11,grams,1656,33415
+SZCzvIE47st,8,Units of measurement,12,knots,10736,44151
+SZCzvIE47st,8,Units of measurement,13,milesperhour,9680,53831
+SZCzvIE47st,8,Units of measurement,14,kilometersperhour,9392,63223
+SZCzvIE47st,8,Units of measurement,15,nanometers,13359,76582
+SZCzvIE47st,8,Units of measurement,16,gigabytes,8408,84990
+SZCzvIE47st,9,Pieces of Furniture,1,couch,5959,5959
+SZCzvIE47st,9,Pieces of Furniture,2,chair,2208,8167
+SZCzvIE47st,9,Pieces of Furniture,3,table,3760,11927
+SZCzvIE47st,9,Pieces of Furniture,4,mantle,2576,14503
+SZCzvIE47st,9,Pieces of Furniture,5,sofa,5800,20303
+SZCzvIE47st,9,Pieces of Furniture,6,stool,3072,23375
+SZCzvIE47st,9,Pieces of Furniture,7,bench,3216,26591
+SZCzvIE47st,9,Pieces of Furniture,8,beanbagchair,15720,42311
+SZCzvIE47st,9,Pieces of Furniture,9,carpet,13255,55566
+SZCzvIE47st,9,Pieces of Furniture,10,dresser,4944,60510
+SZCzvIE47st,10,Vegetables,1,pear,6055,6055
+SZCzvIE47st,10,Vegetables,2,celery,7048,13103
+SZCzvIE47st,10,Vegetables,3,carrot,2264,15367
+SZCzvIE47st,10,Vegetables,4,cucumber,2600,17967
+SZCzvIE47st,10,Vegetables,5,tomato,4384,22351
+SZCzvIE47st,10,Vegetables,6,apsparagus,7904,30255
+SZCzvIE47st,10,Vegetables,7,arugala,2416,32671
+SZCzvIE47st,10,Vegetables,8,spinach,4311,36982
+SZCzvIE47st,10,Vegetables,9,kale,1944,38926
+SZCzvIE47st,10,Vegetables,10,lettuce,2936,41862
+SZCzvIE47st,10,Vegetables,11,peas,6464,48326
+SZCzvIE47st,11,Musical Instruments,1,trumpet,3640,3640
+SZCzvIE47st,11,Musical Instruments,2,trombone,4400,8040
+SZCzvIE47st,11,Musical Instruments,3,flute,1784,9824
+SZCzvIE47st,11,Musical Instruments,4,chello,2328,12152
+SZCzvIE47st,11,Musical Instruments,5,tuba,1616,13768
+SZCzvIE47st,11,Musical Instruments,6,recorder,5296,19064
+SZCzvIE47st,11,Musical Instruments,7,harmonica,4615,23679
+SZCzvIE47st,11,Musical Instruments,8,synth,1433,25112
+SZCzvIE47st,11,Musical Instruments,9,bass,4535,29647
+SZCzvIE47st,11,Musical Instruments,10,saxaphone,6448,36095
+SZCzvIE47st,11,Musical Instruments,11,drums,3088,39183
+SZCzvIE47st,11,Musical Instruments,12,chime,4216,43399
+SZCzvIE47st,11,Musical Instruments,13,harp,1528,44927
+SZCzvIE47st,11,Musical Instruments,14,bagpipe,10960,55887
+SZCzvIE47st,11,Musical Instruments,15,guitar,2272,58159
+SZCzvIE47st,12,Pieces of Furniture,1,sofa,3104,3104
+SZCzvIE47st,12,Pieces of Furniture,2,couch,1632,4736
+SZCzvIE47st,12,Pieces of Furniture,3,stool,1416,6152
+SZCzvIE47st,12,Pieces of Furniture,4,chair,1136,7288
+SZCzvIE47st,12,Pieces of Furniture,5,table,3680,10968
+SZCzvIE47st,12,Pieces of Furniture,6,dresser,2784,13752
+SZCzvIE47st,12,Pieces of Furniture,7,closet,3864,17616
+SZCzvIE47st,12,Pieces of Furniture,8,bench,4408,22024
+SZCzvIE47st,12,Pieces of Furniture,9,cabinet,9399,31423
+SZCzvIE47st,12,Pieces of Furniture,10,throne,30392,61815
+SZCzvIE47st,12,Pieces of Furniture,11,shelves,18807,80622
+SZCzvIE47st,13,Clothing Articles,1,t-shirt,7895,7895
+SZCzvIE47st,13,Clothing Articles,2,longsleeveashirt,3944,11839
+SZCzvIE47st,13,Clothing Articles,3,hoodie,4840,16679
+SZCzvIE47st,13,Clothing Articles,4,sweater,1664,18343
+SZCzvIE47st,13,Clothing Articles,5,sweatshirt,2792,21135
+SZCzvIE47st,13,Clothing Articles,6,jacket,1312,22447
+SZCzvIE47st,13,Clothing Articles,7,pants,2399,24846
+SZCzvIE47st,13,Clothing Articles,8,sweatpants,3488,28334
+SZCzvIE47st,13,Clothing Articles,9,jeans,1761,30095
+SZCzvIE47st,13,Clothing Articles,10,shorts,2519,32614
+SZCzvIE47st,13,Clothing Articles,11,underwear,6848,39462
+SZCzvIE47st,13,Clothing Articles,12,thong,3288,42750
+SZCzvIE47st,13,Clothing Articles,13,bra,2560,45310
+SZCzvIE47st,13,Clothing Articles,14,hat,11384,56694
+SZCzvIE47st,13,Clothing Articles,15,beanie,3320,60014
+SZCzvIE47st,13,Clothing Articles,16,tuxedo,5704,65718
+SZCzvIE47st,13,Clothing Articles,17,suit,2400,68118
+SZCzvIE47st,13,Clothing Articles,18,dresspants,3072,71190
+SZCzvIE47st,13,Clothing Articles,19,khakis,2559,73749
+SZCzvIE47st,13,Clothing Articles,20,tights,6720,80469
+SZCzvIE47st,13,Clothing Articles,21,scarf,6345,86814
+SZCzvIE47st,14,Cities,1,newyorkcity,6120,6120
+SZCzvIE47st,14,Cities,2,boston,2856,8976
+SZCzvIE47st,14,Cities,3,buffalo,2280,11256
+SZCzvIE47st,14,Cities,4,miami,2264,13520
+SZCzvIE47st,14,Cities,5,chicago,2752,16272
+SZCzvIE47st,14,Cities,6,clevland,2655,18927
+SZCzvIE47st,14,Cities,7,columbus,2976,21903
+SZCzvIE47st,14,Cities,8,saltlakecity,4168,26071
+SZCzvIE47st,14,Cities,9,losangelas,5624,31695
+SZCzvIE47st,14,Cities,10,sandiego,8912,40607
+SZCzvIE47st,14,Cities,11,sanjose,1832,42439
+SZCzvIE47st,14,Cities,12,sanfrancisco,4272,46711
+SZCzvIE47st,14,Cities,13,seattle,1672,48383
+SZCzvIE47st,14,Cities,14,portland,4040,52423
+SZCzvIE47st,14,Cities,15,oklahomacity,4152,56575
+SZCzvIE47st,14,Cities,16,houston,2079,58654
+SZCzvIE47st,14,Cities,17,dalls,1416,60070
+SZCzvIE47st,14,Cities,18,sanantonio,3288,63358
+SZCzvIE47st,14,Cities,19,neworeleans,3184,66542
+SZCzvIE47st,14,Cities,20,tampabay,3073,69615
+SZCzvIE47st,14,Cities,21,jacksonville,3023,72638
+SZCzvIE47st,14,Cities,22,charlottesville,6992,79630
+SZCzvIE47st,14,Cities,23,athens,2800,82430
+SZCzvIE47st,14,Cities,24,atlanta,3320,85750
+SZCzvIE47st,15,Countries,1,canada,4136,4136
+SZCzvIE47st,15,Countries,2,china,1793,5929
+SZCzvIE47st,15,Countries,3,finland,1767,7696
+SZCzvIE47st,15,Countries,4,sweden,1912,9608
+SZCzvIE47st,15,Countries,5,iceland,2280,11888
+SZCzvIE47st,15,Countries,6,greenland,4296,16184
+SZCzvIE47st,15,Countries,7,northkorea,3536,19720
+SZCzvIE47st,15,Countries,8,southkorea,2631,22351
+SZCzvIE47st,15,Countries,9,japan,1897,24248
+SZCzvIE47st,15,Countries,10,singapore,3895,28143
+SZCzvIE47st,15,Countries,11,taiwan,4248,32391
+SZCzvIE47st,15,Countries,12,ukraine,1816,34207
+SZCzvIE47st,15,Countries,13,russia,1448,35655
+SZCzvIE47st,15,Countries,14,france,2888,38543
+SZCzvIE47st,15,Countries,15,spain,1336,39879
+SZCzvIE47st,15,Countries,16,portugal,3328,43207
+SZCzvIE47st,15,Countries,17,southafrica,6128,49335
+SZCzvIE47st,15,Countries,18,sudan,1824,51159
+SZCzvIE47st,15,Countries,19,zimbabwae,4152,55311
+SZCzvIE47st,15,Countries,20,venuzula,4248,59559
+SZCzvIE47st,15,Countries,21,iran,2040,61599
+SZCzvIE47st,15,Countries,22,iraq,2919,64518
+SZCzvIE47st,15,Countries,23,afganistan,2257,66775
+SZCzvIE47st,15,Countries,24,kazakstan,5855,72630
+SZCzvIE47st,15,Countries,25,argentina,5056,77686
+SZCzvIE47st,15,Countries,26,norway,2880,80566
+SZCzvIE47st,15,Countries,27,denmark,2248,82814
+SZCzvIE47st,15,Countries,28,switzerland,2752,85566
+SZCzvIE47st,15,Countries,29,usa,2160,87726
+SZCzvIE47st,16,Fruits,1,aplpe,3400,3400
+SZCzvIE47st,16,Fruits,2,orange,3040,6440
+SZCzvIE47st,16,Fruits,3,bannana,6400,12840
+SZCzvIE47st,16,Fruits,4,peach,2712,15552
+SZCzvIE47st,16,Fruits,5,strawberry,7536,23088
+SZCzvIE47st,16,Fruits,6,blueberry,2968,26056
+SZCzvIE47st,16,Fruits,7,grape,3544,29600
+SZCzvIE47st,16,Fruits,8,mango,3512,33112
+SZCzvIE47st,16,Fruits,9,dragonfruit,2976,36088
+SZCzvIE47st,16,Fruits,10,passionfruit,4272,40360
+SZCzvIE47st,16,Fruits,11,pomagranide,11528,51888
+SZCzvIE47st,16,Fruits,12,kiwi,9487,61375
+SZCzvIE47st,16,Fruits,13,peach,10136,71511
+SZCzvIE47st,16,Fruits,14,mango,1456,72967
+SZCzvIE47st,16,Fruits,15,pineapple,3232,76199
+SZCzvIE47st,16,Fruits,16,cherry,6216,82415
+SZCzvIE47st,17,Animals,1,cheetah,3624,3624
+SZCzvIE47st,17,Animals,2,lion,1560,5184
+SZCzvIE47st,17,Animals,3,owl,1193,6377
+SZCzvIE47st,17,Animals,4,wolf,967,7344
+SZCzvIE47st,17,Animals,5,bear,1768,9112
+SZCzvIE47st,17,Animals,6,dog,2400,11512
+SZCzvIE47st,17,Animals,7,cat,1488,13000
+SZCzvIE47st,17,Animals,8,fish,3840,16840
+SZCzvIE47st,17,Animals,9,zebra,3224,20064
+SZCzvIE47st,17,Animals,10,snake,4711,24775
+SZCzvIE47st,17,Animals,11,ostrich,3656,28431
+SZCzvIE47st,17,Animals,12,hawk,3240,31671
+SZCzvIE47st,17,Animals,13,tiger,4656,36327
+SZCzvIE47st,17,Animals,14,squirel,7392,43719
+SZCzvIE47st,17,Animals,15,beaver,1632,45351
+SZCzvIE47st,17,Animals,16,woodchuck,2224,47575
+SZCzvIE47st,17,Animals,17,deer,936,48511
+SZCzvIE47st,17,Animals,18,bunny,2792,51303
+SZCzvIE47st,17,Animals,19,mole,1296,52599
+SZCzvIE47st,17,Animals,20,seagull,3728,56327
+SZCzvIE47st,17,Animals,21,sealion,11336,67663
+SZCzvIE47st,17,Animals,22,monkey,10303,77966
+SZCzvIE47st,17,Animals,23,gator,6480,84446
+SZCzvIE47st,18,Countries,1,zimbabwe,4752,4752
+SZCzvIE47st,18,Countries,2,southafrica,4807,9559
+SZCzvIE47st,18,Countries,3,china,1528,11087
+SZCzvIE47st,18,Countries,4,japan,1928,13015
+SZCzvIE47st,18,Countries,5,southkorea,2656,15671
+SZCzvIE47st,18,Countries,6,northkorea,2704,18375
+SZCzvIE47st,18,Countries,7,singapore,3560,21935
+SZCzvIE47st,18,Countries,8,switzerland,5376,27311
+SZCzvIE47st,18,Countries,9,sweden,3544,30855
+SZCzvIE47st,18,Countries,10,finland,2096,32951
+SZCzvIE47st,18,Countries,11,russia,1687,34638
+SZCzvIE47st,18,Countries,12,norway,1912,36550
+SZCzvIE47st,18,Countries,13,france,2408,38958
+SZCzvIE47st,18,Countries,14,spain,1920,40878
+SZCzvIE47st,18,Countries,15,denmark,2016,42894
+SZCzvIE47st,18,Countries,16,germany,3504,46398
+SZCzvIE47st,18,Countries,17,egypt,2576,48974
+SZCzvIE47st,18,Countries,18,afganistan,3368,52342
+SZCzvIE47st,18,Countries,19,iran,1528,53870
+SZCzvIE47st,18,Countries,20,iraq,1864,55734
+SZCzvIE47st,18,Countries,21,syria,1352,57086
+SZCzvIE47st,18,Countries,22,yemen,2264,59350
+SZCzvIE47st,18,Countries,23,saudiarabia,3520,62870
+SZCzvIE47st,18,Countries,24,mexico,2920,65790
+SZCzvIE47st,18,Countries,25,luxemborg,4944,70734
+SZCzvIE47st,18,Countries,26,somalia,6992,77726
+SZCzvIE47st,18,Countries,27,america,3096,80822
+SZCzvIE47st,18,Countries,28,mongolia,2871,83693
+SZCzvIE47st,18,Countries,29,taiwan,4240,87933
+SZCzvIE47st,19,Cities,1,boston,3416,3416
+SZCzvIE47st,19,Cities,2,paris,2288,5704
+SZCzvIE47st,19,Cities,3,london,1800,7504
+SZCzvIE47st,19,Cities,4,newyorkcity,6096,13600
+SZCzvIE47st,19,Cities,5,manchester,1951,15551
+SZCzvIE47st,19,Cities,6,liverpool,4576,20127
+SZCzvIE47st,19,Cities,7,tokeyo,7096,27223
+SZCzvIE47st,19,Cities,8,bejing,2656,29879
+SZCzvIE47st,19,Cities,9,buffalo,3056,32935
+SZCzvIE47st,19,Cities,10,clevland,1648,34583
+SZCzvIE47st,19,Cities,11,columbus,2264,36847
+SZCzvIE47st,19,Cities,12,chicago,1824,38671
+SZCzvIE47st,19,Cities,13,ithica,3592,42263
+SZCzvIE47st,19,Cities,14,oklahomacity,5024,47287
+SZCzvIE47st,19,Cities,15,houston,2600,49887
+SZCzvIE47st,19,Cities,16,jacksonville,2328,52215
+SZCzvIE47st,19,Cities,17,nashville,1840,54055
+SZCzvIE47st,19,Cities,18,baltimore,3223,57278
+SZCzvIE47st,19,Cities,19,pittsburg,2929,60207
+SZCzvIE47st,19,Cities,20,cincinatti,2775,62982
+SZCzvIE47st,19,Cities,21,losangelas,2265,65247
+SZCzvIE47st,19,Cities,22,oakland,1767,67014
+SZCzvIE47st,19,Cities,23,sanjose,2280,69294
+SZCzvIE47st,19,Cities,24,snfransico,7952,77246
+SZCzvIE47st,19,Cities,25,mexicocity,3840,81086
+SZCzvIE47st,19,Cities,26,sanantonio,2744,83830
+SZCzvIE47st,19,Cities,27,neworeleans,3056,86886
+SZCzvIE47st,19,Cities,28,tampabay,2152,89038
+SZCzvIE47st,20,Clothing Articles,1,t-shirt,4375,4375
+SZCzvIE47st,20,Clothing Articles,2,longsleeveshirt,4944,9319
+SZCzvIE47st,20,Clothing Articles,3,flannel,2392,11711
+SZCzvIE47st,20,Clothing Articles,4,jacket,4400,16111
+SZCzvIE47st,20,Clothing Articles,5,hat,1296,17407
+SZCzvIE47st,20,Clothing Articles,6,gloves,3656,21063
+SZCzvIE47st,20,Clothing Articles,7,shoes,1759,22822
+SZCzvIE47st,20,Clothing Articles,8,boots,1152,23974
+SZCzvIE47st,20,Clothing Articles,9,suit,2224,26198
+SZCzvIE47st,20,Clothing Articles,10,tuxedo,2288,28486
+SZCzvIE47st,20,Clothing Articles,11,dresspants,3576,32062
+SZCzvIE47st,20,Clothing Articles,12,khakis,1512,33574
+SZCzvIE47st,20,Clothing Articles,13,tights,2984,36558
+SZCzvIE47st,20,Clothing Articles,14,leggings,1744,38302
+SZCzvIE47st,20,Clothing Articles,15,thong,1656,39958
+SZCzvIE47st,20,Clothing Articles,16,bra,1040,40998
+SZCzvIE47st,20,Clothing Articles,17,underwear,4089,45087
+SZCzvIE47st,20,Clothing Articles,18,socks,2263,47350
+SZCzvIE47st,20,Clothing Articles,19,shorts,3128,50478
+SZCzvIE47st,20,Clothing Articles,20,jeans,1424,51902
+SZCzvIE47st,20,Clothing Articles,21,dressshirt,5328,57230
+SZCzvIE47st,20,Clothing Articles,22,polo,1752,58982
+SZCzvIE47st,20,Clothing Articles,23,hoodie,3992,62974
+SZCzvIE47st,20,Clothing Articles,24,sweater,1696,64670
+SZCzvIE47st,20,Clothing Articles,25,sweatshirt,3000,67670
+SZCzvIE47st,20,Clothing Articles,26,furcoat,11631,79301
+SZCzvIE47st,20,Clothing Articles,27,coat,1528,80829
+SZCzvIE47st,21,Methods of Transportation,1,car,2519,2519
+SZCzvIE47st,21,Methods of Transportation,2,bus,1664,4183
+SZCzvIE47st,21,Methods of Transportation,3,boat,1776,5959
+SZCzvIE47st,21,Methods of Transportation,4,bike,2432,8391
+SZCzvIE47st,21,Methods of Transportation,5,tricycle,5232,13623
+SZCzvIE47st,21,Methods of Transportation,6,motorcycle,4976,18599
+SZCzvIE47st,21,Methods of Transportation,7,skateboard,2464,21063
+SZCzvIE47st,21,Methods of Transportation,8,longboard,2624,23687
+SZCzvIE47st,21,Methods of Transportation,9,snowboard,2296,25983
+SZCzvIE47st,21,Methods of Transportation,10,skis,3992,29975
+SZCzvIE47st,21,Methods of Transportation,11,sled,2536,32511
+SZCzvIE47st,21,Methods of Transportation,12,rollerblades,8520,41031
+SZCzvIE47st,21,Methods of Transportation,13,monstertruck,4176,45207
+SZCzvIE47st,21,Methods of Transportation,14,pickuptruck,6552,51759
+SZCzvIE47st,21,Methods of Transportation,15,paraglider,4599,56358
+SZCzvIE47st,21,Methods of Transportation,16,windsurfing,6720,63078
+SZCzvIE47st,21,Methods of Transportation,17,ferry,8824,71902
+SZCzvIE47st,21,Methods of Transportation,18,escalator,10784,82686
+SZCzvIE47st,21,Methods of Transportation,19,walk,6983,89669
+SZCzvIE47st,22,Animals,1,snake,3759,3759
+SZCzvIE47st,22,Animals,2,rat,1632,5391
+SZCzvIE47st,22,Animals,3,mouse,1896,7287
+SZCzvIE47st,22,Animals,4,tiger,1215,8502
+SZCzvIE47st,22,Animals,5,lion,1425,9927
+SZCzvIE47st,22,Animals,6,buffalo,4431,14358
+SZCzvIE47st,22,Animals,7,eagle,4040,18398
+SZCzvIE47st,22,Animals,8,owl,7208,25606
+SZCzvIE47st,22,Animals,9,coyote,2920,28526
+SZCzvIE47st,22,Animals,10,fox,1504,30030
+SZCzvIE47st,22,Animals,11,ferrit,1408,31438
+SZCzvIE47st,22,Animals,12,mole,1328,32766
+SZCzvIE47st,22,Animals,13,beaver,1528,34294
+SZCzvIE47st,22,Animals,14,wookchuck,2056,36350
+SZCzvIE47st,22,Animals,15,squierrl,5208,41558
+SZCzvIE47st,22,Animals,16,deer,3216,44774
+SZCzvIE47st,22,Animals,17,buck,1480,46254
+SZCzvIE47st,22,Animals,18,moose,2176,48430
+SZCzvIE47st,22,Animals,19,bear,4688,53118
+SZCzvIE47st,22,Animals,20,salmon,3063,56181
+SZCzvIE47st,22,Animals,21,eagle,4824,61005
+SZCzvIE47st,22,Animals,22,dog,7336,68341
+SZCzvIE47st,22,Animals,23,cat,1232,69573
+SZCzvIE47st,22,Animals,24,hamster,5056,74629
+SZCzvIE47st,22,Animals,25,gecco,4640,79269
+SZCzvIE47st,22,Animals,26,lizard,3192,82461
+SZCzvIE47st,23,Fruits,1,apple,3311,3311
+SZCzvIE47st,23,Fruits,2,orange,1272,4583
+SZCzvIE47st,23,Fruits,3,strawberry,3176,7759
+SZCzvIE47st,23,Fruits,4,watermelon,2528,10287
+SZCzvIE47st,23,Fruits,5,pumpkin,4544,14831
+SZCzvIE47st,23,Fruits,6,dragonfruit,3128,17959
+SZCzvIE47st,23,Fruits,7,passionfruit,4504,22463
+SZCzvIE47st,23,Fruits,8,rasberry,3304,25767
+SZCzvIE47st,23,Fruits,9,strawberry,2728,28495
+SZCzvIE47st,23,Fruits,10,blueberry,2392,30887
+SZCzvIE47st,23,Fruits,11,mango,4463,35350
+SZCzvIE47st,23,Fruits,12,passionfruit,8776,44126
+SZCzvIE47st,23,Fruits,13,grape,4232,48358
+SZCzvIE47st,23,Fruits,14,cherry,7960,56318
+SZCzvIE47st,23,Fruits,15,rapeseed,5928,62246
+SZCzvIE47st,23,Fruits,16,blackberry,7136,69382
+SZCzvIE47st,23,Fruits,17,peach,11224,80606
+SZCzvIE47st,24,Animals,1,bear,3600,3600
+SZCzvIE47st,24,Animals,2,cat,1240,4840
+SZCzvIE47st,24,Animals,3,eagle,2976,7816
+SZCzvIE47st,24,Animals,4,mouse,1752,9568
+SZCzvIE47st,24,Animals,5,hawk,1368,10936
+SZCzvIE47st,24,Animals,6,rat,1728,12664
+SZCzvIE47st,24,Animals,7,snake,1871,14535
+SZCzvIE47st,24,Animals,8,dog,2152,16687
+SZCzvIE47st,24,Animals,9,beaver,1280,17967
+SZCzvIE47st,24,Animals,10,woodchuck,4128,22095
+SZCzvIE47st,24,Animals,11,squierrel,6568,28663
+SZCzvIE47st,24,Animals,12,ferrit,1808,30471
+SZCzvIE47st,24,Animals,13,mole,1304,31775
+SZCzvIE47st,24,Animals,14,moose,3608,35383
+SZCzvIE47st,24,Animals,15,rhino,4896,40279
+SZCzvIE47st,24,Animals,16,elaphant,2064,42343
+SZCzvIE47st,24,Animals,17,girrafe,2880,45223
+SZCzvIE47st,24,Animals,18,gator,5567,50790
+SZCzvIE47st,24,Animals,19,crocadile,2600,53390
+SZCzvIE47st,24,Animals,20,flamingo,4544,57934
+SZCzvIE47st,24,Animals,21,zebra,9784,67718
+SZCzvIE47st,24,Animals,22,wildabeast,2992,70710
+SZCzvIE47st,24,Animals,23,hyena,8512,79222
+SZCzvIE47st,24,Animals,24,bat,4088,83310
+SZCzvIE47st,24,Animals,25,monkey,3864,87174
 S2ATfJpFbKU,1,Animals,1,zebra,7963,7963
 S2ATfJpFbKU,1,Animals,2,lion,4047,12010
 S2ATfJpFbKU,1,Animals,3,panda,3736,15746
@@ -1956,6 +2851,305 @@ SkMEzQS0zZI,24,Units of measurement,23,ounce,1182,77276
 SkMEzQS0zZI,24,Units of measurement,24,fluidounce,2528,79804
 SkMEzQS0zZI,24,Units of measurement,25,pound,3008,82812
 SkMEzQS0zZI,24,Units of measurement,26,milliliters,5695,88507
+S6xD8UIByvQ,1,Countries,1,unitedstates,9143,9143
+S6xD8UIByvQ,1,Countries,2,unitedkingdom,10287,19430
+S6xD8UIByvQ,1,Countries,3,afghannistan,9656,29086
+S6xD8UIByvQ,1,Countries,4,germany,18800,47886
+S6xD8UIByvQ,1,Countries,5,aqustralia,3832,51718
+S6xD8UIByvQ,1,Countries,6,canada,4968,56686
+S6xD8UIByvQ,1,Countries,7,france,2632,59318
+S6xD8UIByvQ,1,Countries,8,austira,4608,63926
+S6xD8UIByvQ,1,Countries,9,"belgiu,m",4023,67949
+S6xD8UIByvQ,1,Countries,10,brazil,3552,71501
+S6xD8UIByvQ,1,Countries,11,russia,2872,74373
+S6xD8UIByvQ,1,Countries,12,china,2737,77110
+S6xD8UIByvQ,1,Countries,13,colombia,3447,80557
+S6xD8UIByvQ,1,Countries,14,japan,3160,83717
+S6xD8UIByvQ,1,Countries,15,italy,3344,87061
+S6xD8UIByvQ,2,Fruits,1,aqpple,3864,3864
+S6xD8UIByvQ,2,Fruits,2,orange,3448,7312
+S6xD8UIByvQ,2,Fruits,3,watermelon,4152,11464
+S6xD8UIByvQ,2,Fruits,4,grape,3000,14464
+S6xD8UIByvQ,2,Fruits,5,tomato,5176,19640
+S6xD8UIByvQ,2,Fruits,6,mango,2135,21775
+S6xD8UIByvQ,2,Fruits,7,honeydew,3120,24895
+S6xD8UIByvQ,2,Fruits,8,canataloupe,3768,28663
+S6xD8UIByvQ,2,Fruits,9,jackfruit,3616,32279
+S6xD8UIByvQ,2,Fruits,10,pomegranate,5416,37695
+S6xD8UIByvQ,2,Fruits,11,papaya,7136,44831
+S6xD8UIByvQ,2,Fruits,12,grappefruit,8872,53703
+S6xD8UIByvQ,2,Fruits,13,pineapple,32215,85918
+S6xD8UIByvQ,3,Animals,1,kagaroo,4407,4407
+S6xD8UIByvQ,3,Animals,2,dog,1656,6063
+S6xD8UIByvQ,3,Animals,3,cat,1625,7688
+S6xD8UIByvQ,3,Animals,4,coyote,1583,9271
+S6xD8UIByvQ,3,Animals,5,rabbit,3296,12567
+S6xD8UIByvQ,3,Animals,6,squid,3600,16167
+S6xD8UIByvQ,3,Animals,7,shark,3176,19343
+S6xD8UIByvQ,3,Animals,8,camewllion,3472,22815
+S6xD8UIByvQ,3,Animals,9,fish,3472,26287
+S6xD8UIByvQ,3,Animals,10,horse,1968,28255
+S6xD8UIByvQ,3,Animals,11,pig,1536,29791
+S6xD8UIByvQ,3,Animals,12,hamster,6816,36607
+S6xD8UIByvQ,3,Animals,13,rat,1272,37879
+S6xD8UIByvQ,3,Animals,14,chincilla,9768,47647
+S6xD8UIByvQ,3,Animals,15,zebra,8879,56526
+S6xD8UIByvQ,3,Animals,16,monkey,1672,58198
+S6xD8UIByvQ,3,Animals,17,lion,1776,59974
+S6xD8UIByvQ,3,Animals,18,mountainlion,7664,67638
+S6xD8UIByvQ,3,Animals,19,jaguar,2416,70054
+S6xD8UIByvQ,3,Animals,20,cheetah,2864,72918
+S6xD8UIByvQ,3,Animals,21,gorilla,2288,75206
+S6xD8UIByvQ,3,Animals,22,hippopotamus,13376,88582
+S6xD8UIByvQ,4,Methods of Transportation,1,bus,3848,3848
+S6xD8UIByvQ,4,Methods of Transportation,2,car,1496,5344
+S6xD8UIByvQ,4,Methods of Transportation,3,train,1688,7032
+S6xD8UIByvQ,4,Methods of Transportation,4,trolley,2752,9784
+S6xD8UIByvQ,4,Methods of Transportation,5,subway,4136,13920
+S6xD8UIByvQ,4,Methods of Transportation,6,uber,1815,15735
+S6xD8UIByvQ,4,Methods of Transportation,7,bike,2856,18591
+S6xD8UIByvQ,4,Methods of Transportation,8,motorcycle,5000,23591
+S6xD8UIByvQ,4,Methods of Transportation,9,walking,2512,26103
+S6xD8UIByvQ,4,Methods of Transportation,10,running,3496,29599
+S6xD8UIByvQ,4,Methods of Transportation,11,skateboarding,4200,33799
+S6xD8UIByvQ,4,Methods of Transportation,12,rollerskating,7440,41239
+S6xD8UIByvQ,5,Units of measurement,1,foot,10583,10583
+S6xD8UIByvQ,5,Units of measurement,2,centimrter,5952,16535
+S6xD8UIByvQ,5,Units of measurement,3,meter,1576,18111
+S6xD8UIByvQ,5,Units of measurement,4,mile,4032,22143
+S6xD8UIByvQ,5,Units of measurement,5,tens,19919,42062
+S6xD8UIByvQ,5,Units of measurement,6,hundreds,3584,45646
+S6xD8UIByvQ,5,Units of measurement,7,kilometer,9064,54710
+S6xD8UIByvQ,5,Units of measurement,8,micrometer,9608,64318
+S6xD8UIByvQ,5,Units of measurement,9,ounces,5960,70278
+S6xD8UIByvQ,5,Units of measurement,10,cups,2528,72806
+S6xD8UIByvQ,6,Animals,1,dog,3255,3255
+S6xD8UIByvQ,6,Animals,2,cat,2008,5263
+S6xD8UIByvQ,6,Animals,3,hore,1808,7071
+S6xD8UIByvQ,6,Animals,4,zebra,2512,9583
+S6xD8UIByvQ,6,Animals,5,lion,2784,12367
+S6xD8UIByvQ,6,Animals,6,bobcat,2528,14895
+S6xD8UIByvQ,6,Animals,7,fish,1736,16631
+S6xD8UIByvQ,6,Animals,8,pig,1608,18239
+S6xD8UIByvQ,6,Animals,9,bunny,2952,21191
+S6xD8UIByvQ,6,Animals,10,hamster,3584,24775
+S6xD8UIByvQ,6,Animals,11,guineapig,4176,28951
+S6xD8UIByvQ,6,Animals,12,ape,9719,38670
+S6xD8UIByvQ,6,Animals,13,gorilla,2032,40702
+S6xD8UIByvQ,6,Animals,14,kangaroo,3336,44038
+S6xD8UIByvQ,6,Animals,15,mounainlion,9768,53806
+S6xD8UIByvQ,6,Animals,16,ferret,17359,71165
+S6xD8UIByvQ,6,Animals,17,snake,2488,73653
+S6xD8UIByvQ,6,Animals,18,eel,1017,74670
+S6xD8UIByvQ,6,Animals,19,worm,3151,77821
+S6xD8UIByvQ,6,Animals,20,lizard,2640,80461
+S6xD8UIByvQ,6,Animals,21,beardeddragon,5816,86277
+S6xD8UIByvQ,7,Fruits,1,apple,4847,4847
+S6xD8UIByvQ,7,Fruits,2,orange,1912,6759
+S6xD8UIByvQ,7,Fruits,3,pomegranate,3136,9895
+S6xD8UIByvQ,7,Fruits,4,honydew,2776,12671
+S6xD8UIByvQ,7,Fruits,5,melon,3312,15983
+S6xD8UIByvQ,7,Fruits,6,watermelon,5416,21399
+S6xD8UIByvQ,7,Fruits,7,strawberry,4735,26134
+S6xD8UIByvQ,7,Fruits,8,blueberry,3073,29207
+S6xD8UIByvQ,7,Fruits,9,blackberry,7711,36918
+S6xD8UIByvQ,7,Fruits,10,blueberry,4680,41598
+S6xD8UIByvQ,7,Fruits,11,boysenberry,10176,51774
+S6xD8UIByvQ,7,Fruits,12,kiwi,12760,64534
+S6xD8UIByvQ,7,Fruits,13,pineapple,5655,70189
+S6xD8UIByvQ,7,Fruits,14,lemon,6288,76477
+S6xD8UIByvQ,7,Fruits,15,lime,3152,79629
+S6xD8UIByvQ,7,Fruits,16,banana,2856,82485
+S6xD8UIByvQ,7,Fruits,17,potaya,5736,88221
+S6xD8UIByvQ,8,Countries,1,ukraine,4200,4200
+S6xD8UIByvQ,8,Countries,2,russia,2520,6720
+S6xD8UIByvQ,8,Countries,3,cvechrepublic,5304,12024
+S6xD8UIByvQ,8,Countries,4,china,1768,13792
+S6xD8UIByvQ,8,Countries,5,unitedstates,12031,25823
+S6xD8UIByvQ,8,Countries,6,australia,2816,28639
+S6xD8UIByvQ,9,Sporting Games,1,softball,5960,5960
+S6xD8UIByvQ,9,Sporting Games,2,volleyball,4096,10056
+S6xD8UIByvQ,9,Sporting Games,3,racketball,4280,14336
+S6xD8UIByvQ,9,Sporting Games,4,tennis,5151,19487
+S6xD8UIByvQ,9,Sporting Games,5,basketball,2832,22319
+S6xD8UIByvQ,9,Sporting Games,6,football,2192,24511
+S6xD8UIByvQ,9,Sporting Games,7,track,5144,29655
+S6xD8UIByvQ,9,Sporting Games,8,volleyball,10384,40039
+S6xD8UIByvQ,10,Units of measurement,1,pounds,4495,4495
+S6xD8UIByvQ,10,Units of measurement,2,kilometers,2736,7231
+S6xD8UIByvQ,10,Units of measurement,3,meters,1904,9135
+S6xD8UIByvQ,10,Units of measurement,4,ounces,1840,10975
+S6xD8UIByvQ,10,Units of measurement,5,ceentimeters,5488,16463
+S6xD8UIByvQ,10,Units of measurement,6,cups,6264,22727
+S6xD8UIByvQ,11,Methods of Transportation,1,bus,3128,3128
+S6xD8UIByvQ,11,Methods of Transportation,2,train,1688,4816
+S6xD8UIByvQ,11,Methods of Transportation,3,car,1224,6040
+S6xD8UIByvQ,11,Methods of Transportation,4,walking,1775,7815
+S6xD8UIByvQ,11,Methods of Transportation,5,rollersskitng,2888,10703
+S6xD8UIByvQ,11,Methods of Transportation,6,skating,1824,12527
+S6xD8UIByvQ,11,Methods of Transportation,7,skateboarding,4160,16687
+S6xD8UIByvQ,11,Methods of Transportation,8,hoverboard,3096,19783
+S6xD8UIByvQ,11,Methods of Transportation,9,uber,1400,21183
+S6xD8UIByvQ,11,Methods of Transportation,10,lyft,1544,22727
+S6xD8UIByvQ,11,Methods of Transportation,11,subway,1632,24359
+S6xD8UIByvQ,11,Methods of Transportation,12,trolley,2008,26367
+S6xD8UIByvQ,12,Sporting Games,1,tennis,4640,4640
+S6xD8UIByvQ,12,Sporting Games,2,baseball,1976,6616
+S6xD8UIByvQ,12,Sporting Games,3,basketball,2296,8912
+S6xD8UIByvQ,12,Sporting Games,4,volleyball,2824,11736
+S6xD8UIByvQ,12,Sporting Games,5,rowing,1679,13415
+S6xD8UIByvQ,12,Sporting Games,6,hockey,5264,18679
+S6xD8UIByvQ,12,Sporting Games,7,track,1841,20520
+S6xD8UIByvQ,12,Sporting Games,8,football,6903,27423
+S6xD8UIByvQ,12,Sporting Games,9,basketall,2760,30183
+S6xD8UIByvQ,13,Objects You Would Find in The Kitchen,1,knife,3880,3880
+S6xD8UIByvQ,13,Objects You Would Find in The Kitchen,2,fork,1472,5352
+S6xD8UIByvQ,13,Objects You Would Find in The Kitchen,3,spoon,1904,7256
+S6xD8UIByvQ,13,Objects You Would Find in The Kitchen,4,plate,2672,9928
+S6xD8UIByvQ,13,Objects You Would Find in The Kitchen,5,spatula,3736,13664
+S6xD8UIByvQ,13,Objects You Would Find in The Kitchen,6,salt,2064,15728
+S6xD8UIByvQ,13,Objects You Would Find in The Kitchen,7,pepper,1488,17216
+S6xD8UIByvQ,13,Objects You Would Find in The Kitchen,8,papertowels,2992,20208
+S6xD8UIByvQ,13,Objects You Would Find in The Kitchen,9,napkins,2880,23088
+S6xD8UIByvQ,13,Objects You Would Find in The Kitchen,10,food,1272,24360
+S6xD8UIByvQ,13,Objects You Would Find in The Kitchen,11,spices,1552,25912
+S6xD8UIByvQ,13,Objects You Would Find in The Kitchen,12,micrave,1791,27703
+S6xD8UIByvQ,13,Objects You Would Find in The Kitchen,13,fridge,1553,29256
+S6xD8UIByvQ,13,Objects You Would Find in The Kitchen,14,dishwasher,2591,31847
+S6xD8UIByvQ,13,Objects You Would Find in The Kitchen,15,sink,1409,33256
+S6xD8UIByvQ,13,Objects You Would Find in The Kitchen,16,winefridge,4799,38055
+S6xD8UIByvQ,13,Objects You Would Find in The Kitchen,17,garbagecan,6112,44167
+S6xD8UIByvQ,13,Objects You Would Find in The Kitchen,18,cups,1824,45991
+S6xD8UIByvQ,13,Objects You Would Find in The Kitchen,19,bows,1440,47431
+S6xD8UIByvQ,13,Objects You Would Find in The Kitchen,20,plates,2656,50087
+S6xD8UIByvQ,13,Objects You Would Find in The Kitchen,21,cookiecutters,8304,58391
+S6xD8UIByvQ,13,Objects You Would Find in The Kitchen,22,sugar,1487,59878
+S6xD8UIByvQ,13,Objects You Would Find in The Kitchen,23,maplesyrup,3897,63775
+S6xD8UIByvQ,13,Objects You Would Find in The Kitchen,24,oregano,5111,68886
+S6xD8UIByvQ,13,Objects You Would Find in The Kitchen,25,mint,1480,70366
+S6xD8UIByvQ,13,Objects You Would Find in The Kitchen,26,soap,2712,73078
+S6xD8UIByvQ,13,Objects You Would Find in The Kitchen,27,cleaningsupplis,3008,76086
+S6xD8UIByvQ,13,Objects You Would Find in The Kitchen,28,mop,5697,81783
+S6xD8UIByvQ,13,Objects You Would Find in The Kitchen,29,broom,1479,83262
+S6xD8UIByvQ,13,Objects You Would Find in The Kitchen,30,vaccuumm,3049,86311
+S6xD8UIByvQ,13,Objects You Would Find in The Kitchen,31,pantry,3039,89350
+S6xD8UIByvQ,14,Musical Instruments,1,trombone,4895,4895
+S6xD8UIByvQ,14,Musical Instruments,2,flut,1648,6543
+S6xD8UIByvQ,14,Musical Instruments,3,gitar,4048,10591
+S6xD8UIByvQ,14,Musical Instruments,4,piano,2336,12927
+S6xD8UIByvQ,14,Musical Instruments,5,triangle,2288,15215
+S6xD8UIByvQ,14,Musical Instruments,6,flute,1536,16751
+S6xD8UIByvQ,14,Musical Instruments,7,harmony,5567,22318
+S6xD8UIByvQ,14,Musical Instruments,8,saxophone,2800,25118
+S6xD8UIByvQ,15,Vegetables,1,brocolli,4392,4392
+S6xD8UIByvQ,15,Vegetables,2,zucchini,45231,49623
+S6xD8UIByvQ,16,Pieces of Furniture,1,cou7ch,4384,4384
+S6xD8UIByvQ,16,Pieces of Furniture,2,chair,3256,7640
+S6xD8UIByvQ,16,Pieces of Furniture,3,otooman,2983,10623
+S6xD8UIByvQ,16,Pieces of Furniture,4,coffeetable,4072,14695
+S6xD8UIByvQ,16,Pieces of Furniture,5,barstool,3992,18687
+S6xD8UIByvQ,16,Pieces of Furniture,6,recliner,5248,23935
+S6xD8UIByvQ,16,Pieces of Furniture,7,bed,1320,25255
+S6xD8UIByvQ,16,Pieces of Furniture,8,dresser,1984,27239
+S6xD8UIByvQ,16,Pieces of Furniture,9,closet,2952,30191
+S6xD8UIByvQ,16,Pieces of Furniture,10,bedsidetable,12112,42303
+S6xD8UIByvQ,16,Pieces of Furniture,11,vanity,1872,44175
+S6xD8UIByvQ,16,Pieces of Furniture,12,desk,1352,45527
+S6xD8UIByvQ,16,Pieces of Furniture,13,organizer,3248,48775
+S6xD8UIByvQ,16,Pieces of Furniture,14,tvstand,12311,61086
+S6xD8UIByvQ,17,Clothing Articles,1,skirt,3879,3879
+S6xD8UIByvQ,17,Clothing Articles,2,blouse,1648,5527
+S6xD8UIByvQ,17,Clothing Articles,3,jacket,1936,7463
+S6xD8UIByvQ,17,Clothing Articles,4,hoodie,2488,9951
+S6xD8UIByvQ,17,Clothing Articles,5,pants,1840,11791
+S6xD8UIByvQ,17,Clothing Articles,6,skirt,1472,13263
+S6xD8UIByvQ,17,Clothing Articles,7,lrgggings,3848,17111
+S6xD8UIByvQ,17,Clothing Articles,8,hat,1352,18463
+S6xD8UIByvQ,17,Clothing Articles,9,shaw,1144,19607
+S6xD8UIByvQ,17,Clothing Articles,10,cardiagn,1976,21583
+S6xD8UIByvQ,17,Clothing Articles,11,coat,1192,22775
+S6xD8UIByvQ,17,Clothing Articles,12,pufferjacket,3472,26247
+S6xD8UIByvQ,17,Clothing Articles,13,gloves,1784,28031
+S6xD8UIByvQ,17,Clothing Articles,14,beanie,1855,29886
+S6xD8UIByvQ,17,Clothing Articles,15,tophat,2168,32054
+S6xD8UIByvQ,17,Clothing Articles,16,scarf,3976,36030
+S6xD8UIByvQ,17,Clothing Articles,17,dress,2704,38734
+S6xD8UIByvQ,18,Vegetables,1,brocolli,5632,5632
+S6xD8UIByvQ,18,Vegetables,2,carrot,2088,7720
+S6xD8UIByvQ,18,Vegetables,3,peppert,1511,9231
+S6xD8UIByvQ,18,Vegetables,4,pepperhini,3360,12591
+S6xD8UIByvQ,18,Vegetables,5,jaepeno,2688,15279
+S6xD8UIByvQ,18,Vegetables,6,bananapepper,10984,26263
+S6xD8UIByvQ,18,Vegetables,7,ghostpepper,55103,81366
+S6xD8UIByvQ,19,Musical Instruments,1,flute,38535,38535
+S6xD8UIByvQ,19,Musical Instruments,2,trumphet,2800,41335
+S6xD8UIByvQ,19,Musical Instruments,3,trombone,4224,45559
+S6xD8UIByvQ,20,Objects You Would Find in The Kitchen,1,fridgee,6128,6128
+S6xD8UIByvQ,20,Objects You Would Find in The Kitchen,2,dishwasher,3743,9871
+S6xD8UIByvQ,20,Objects You Would Find in The Kitchen,3,counter,9280,19151
+S6xD8UIByvQ,20,Objects You Would Find in The Kitchen,4,spices,1312,20463
+S6xD8UIByvQ,20,Objects You Would Find in The Kitchen,5,trashcan,2280,22743
+S6xD8UIByvQ,20,Objects You Would Find in The Kitchen,6,cups,1464,24207
+S6xD8UIByvQ,20,Objects You Would Find in The Kitchen,7,plates,1600,25807
+S6xD8UIByvQ,20,Objects You Would Find in The Kitchen,8,bowls,2120,27927
+S6xD8UIByvQ,20,Objects You Would Find in The Kitchen,9,sink,6616,34543
+S6xD8UIByvQ,20,Objects You Would Find in The Kitchen,10,mop,55238,89781
+S6xD8UIByvQ,21,Cities,1,sandiego,4647,4647
+S6xD8UIByvQ,21,Cities,2,losangeles,4496,9143
+S6xD8UIByvQ,21,Cities,3,bakersfield,3080,12223
+S6xD8UIByvQ,21,Cities,4,sanluisonispo,5336,17559
+S6xD8UIByvQ,21,Cities,5,sanfransico,2608,20167
+S6xD8UIByvQ,21,Cities,6,newyorkcity,3008,23175
+S6xD8UIByvQ,21,Cities,7,syracuse,1800,24975
+S6xD8UIByvQ,21,Cities,8,baltimore,2344,27319
+S6xD8UIByvQ,21,Cities,9,settle,1976,29295
+S6xD8UIByvQ,21,Cities,10,glendle,11423,40718
+S6xD8UIByvQ,21,Cities,11,scottsdale,3896,44614
+S6xD8UIByvQ,21,Cities,12,austin,5696,50310
+S6xD8UIByvQ,21,Cities,13,orangecounty,14272,64582
+S6xD8UIByvQ,22,Clothing Articles,1,skirt,3792,3792
+S6xD8UIByvQ,22,Clothing Articles,2,tanktop,2016,5808
+S6xD8UIByvQ,22,Clothing Articles,3,longsleeve,3728,9536
+S6xD8UIByvQ,22,Clothing Articles,4,shortsleee,2744,12280
+S6xD8UIByvQ,22,Clothing Articles,5,croptop,4863,17143
+S6xD8UIByvQ,22,Clothing Articles,6,pnts,1736,18879
+S6xD8UIByvQ,22,Clothing Articles,7,leggings,2176,21055
+S6xD8UIByvQ,22,Clothing Articles,8,jeans,1680,22735
+S6xD8UIByvQ,22,Clothing Articles,9,trousers,6584,29319
+S6xD8UIByvQ,22,Clothing Articles,10,skirt,2168,31487
+S6xD8UIByvQ,22,Clothing Articles,11,shorts,1905,33392
+S6xD8UIByvQ,22,Clothing Articles,12,dress,4519,37911
+S6xD8UIByvQ,22,Clothing Articles,13,scarf,2807,40718
+S6xD8UIByvQ,22,Clothing Articles,14,mittes,2032,42750
+S6xD8UIByvQ,22,Clothing Articles,15,beanie,3416,46166
+S6xD8UIByvQ,22,Clothing Articles,16,baseballcap,4344,50510
+S6xD8UIByvQ,22,Clothing Articles,17,fedora,3736,54246
+S6xD8UIByvQ,22,Clothing Articles,18,beirut,2200,56446
+S6xD8UIByvQ,22,Clothing Articles,19,coat,6888,63334
+S6xD8UIByvQ,22,Clothing Articles,20,puffer,3312,66646
+S6xD8UIByvQ,22,Clothing Articles,21,cardigan,3192,69838
+S6xD8UIByvQ,23,Pieces of Furniture,1,couch,3128,3128
+S6xD8UIByvQ,23,Pieces of Furniture,2,chair,1792,4920
+S6xD8UIByvQ,23,Pieces of Furniture,3,tablee,1872,6792
+S6xD8UIByvQ,23,Pieces of Furniture,4,recliner,2192,8984
+S6xD8UIByvQ,23,Pieces of Furniture,5,counter,1744,10728
+S6xD8UIByvQ,23,Pieces of Furniture,6,barstool,3344,14072
+S6xD8UIByvQ,23,Pieces of Furniture,7,dresser,1864,15936
+S6xD8UIByvQ,23,Pieces of Furniture,8,bed,984,16920
+S6xD8UIByvQ,23,Pieces of Furniture,9,closet,3872,20792
+S6xD8UIByvQ,24,Clothing Articles,1,skirt,3024,3024
+S6xD8UIByvQ,24,Clothing Articles,2,pants,1464,4488
+S6xD8UIByvQ,24,Clothing Articles,3,skirt,1192,5680
+S6xD8UIByvQ,24,Clothing Articles,4,gloves,1600,7280
+S6xD8UIByvQ,24,Clothing Articles,5,hat,1136,8416
+S6xD8UIByvQ,24,Clothing Articles,6,trnchcoat,2847,11263
+S6xD8UIByvQ,24,Clothing Articles,7,pufferjacket,3592,14855
+S6xD8UIByvQ,24,Clothing Articles,8,dressshirt,8704,23559
+S6xD8UIByvQ,24,Clothing Articles,9,skirt,2616,26175
+S6xD8UIByvQ,24,Clothing Articles,10,stockings,3344,29519
+S6xD8UIByvQ,24,Clothing Articles,11,leggings,2600,32119
+S6xD8UIByvQ,24,Clothing Articles,12,shoes,2112,34231
+S6xD8UIByvQ,24,Clothing Articles,13,socks,4344,38575
 SxLi4TSBWZj,1,Vegetables,1,carrot,26407,26407
 SxLi4TSBWZj,1,Vegetables,2,cucomber,5559,31966
 SxLi4TSBWZj,1,Vegetables,3,zucchini,5832,37798
