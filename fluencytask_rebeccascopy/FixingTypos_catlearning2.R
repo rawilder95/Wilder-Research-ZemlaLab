@@ -40,16 +40,16 @@ spellcheck <- c(instruments_clean, vegetables, furniture, clothing, cities, coun
 
 # write an arbitrary data table so that you can append in sorted data that was *not* in last batch
 to_import <- data.table(spellcheck[!spellcheck %in% ra_sheet$Unchecked])
-# if (length(spellcheck)>= length(ra_sheet$unchecked)){
-#   sheet_append(ss= 'https://docs.google.com/spreadsheets/d/14YJ7IpvEyFVRSqr3zo3SAqgyR6g0QYAbI5xzxh3rl_A/edit?usp=sharing', to_import, 1)
-# }
-# 
+
+
+##Only uncomment this when you load in new data. This appends the unique new words to the google sheets## 
+#   sheet_append(ss= 'https://docs.google.com/spreadsheets/d
 
 
 ## Pull data back to original dataframe ##
 ra_sheet<- data.table(read_sheet('https://docs.google.com/spreadsheets/d/14YJ7IpvEyFVRSqr3zo3SAqgyR6g0QYAbI5xzxh3rl_A/edit?usp=sharing'))
 
-dat <- data.table(read.csv("results_cleaned.csv"))
+# dat <- data.table(read.csv("results_cleaned.csv"))
 
 
 nsubj <- unique(dat$id)
@@ -66,11 +66,12 @@ for (i in 1:length(unitems)){
   if (sum(!is.na(unitems[i]), !is.na(citems[i]))==2){
     dat[dat$item %in% unitems[i]]$item<- citems[i]
   }
-  
 }
 
-write.csv(dat, "results_cleaned2.csv")
+# write.csv(dat, "results_cleaned.csv")
 
 
-dat2 <- data.table(read.csv("results_cleaned2.csv"))
+dat <- data.table(read.csv("results_cleaned.csv"))
+
+
 
