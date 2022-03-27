@@ -5,8 +5,8 @@ if (getwd()!= "~/Desktop/Desktop - Rebecca’s MacBook Air/Research 2021-2022/Gi
 # ##Relevant Libraries & Packages###
 # install.packages("data.table")
 # library(data.table)
-# install.packages("googlesheets4")
-# library(googlesheets4)
+install.packages("googlesheets4")
+library(googlesheets4)
 
 
 
@@ -41,6 +41,8 @@ spellcheck <- c(instruments_clean, vegetables, furniture, clothing, cities, coun
 # write an arbitrary data table so that you can append in sorted data that was *not* in last batch
 to_import <- data.table(spellcheck[!spellcheck %in% ra_sheet$Unchecked])
 
+
+dat[!spellcheck %in% dat$category]
 
 ##Only uncomment this when you load in new data. This appends the unique new words to the google sheets## 
 #   sheet_append(ss= 'https://docs.google.com/spreadsheets/d

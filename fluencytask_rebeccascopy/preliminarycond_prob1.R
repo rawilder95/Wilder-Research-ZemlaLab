@@ -4,7 +4,7 @@ if (getwd()!= "~/Desktop/Desktop - Rebecca’s MacBook Air/Research 2021-2022/Gi
 
 # ##Relevant Libraries & Packages###
 # install.packages("data.table")
-# library(data.table)
+library(data.table)
 # install.packages("googlesheets4")
 # library(googlesheets4)
 # install.packages("ggplot2")
@@ -51,7 +51,7 @@ first_trials <-dat[listrank == 1,]
 
 # Old analysis from last semester
 p_trial2p_trial1 <- vector()
-for i in 1:length N Categories
+# for i in 1:length N Categories
 for (cat_i in 1:length(cat_names)){
   # Grab all unique items from the second trial of category[i]
   this_category<- dat[category== cat_names[cat_i],]
