@@ -179,6 +179,7 @@ for (i in 1:1000){
   # old_new_dist [i] <- pf(new|old)
 }
 
+# sample e.g. 1000 per trial (which means subj/cat/trial) and add col that says samplei for each iteration ?  Turn it into a function and pass it through 
 for (i in 1:1000){
   
 }
