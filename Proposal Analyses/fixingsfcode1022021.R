@@ -324,3 +324,6 @@ geom_line(aes(x= x, y= y2), color= "red", size= 0.85)+geom_point(aes(x= x, y= y2
   
 write.csv(sort(unique(animal_items)), "animal_data1.csv")
 
+
+
+

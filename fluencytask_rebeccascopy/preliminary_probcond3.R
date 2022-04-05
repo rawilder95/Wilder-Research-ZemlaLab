@@ -162,9 +162,18 @@ new_tab[,resamp_labs:= prob_labs]
 new_tab <- new_tab[!is.nan(new_tab$probs)]
 new_dat <- new_dat[!is.nan(new_dat$row1)]
 # new_tab[!is.na(new_tab$probs),prob_labs]
-ggplot() + geom_boxplot(aes(x= new_tab[resamp_labs== "p(Old|Old)1"]$resamp_labs, y= new_tab[resamp_labs== "p(Old|Old)1"]$probs), color= "blue")+ geom_boxplot(aes(y= new_dat[dat_labs== "p(Old|Old)"]$row1, x= new_dat[dat_labs== "p(Old|Old)"]$dat_labs), color= "red")+ labs("")
+ggplot() + geom_boxplot(aes(x= new_tab[resamp_labs== "p(Old|Old)1"]$resamp_labs, y= new_tab[resamp_labs== "p(Old|Old)1"]$probs*0.71), color= "blue")+ geom_boxplot(aes(y= new_dat[dat_labs== "p(Old|Old)"]$row1, x= new_dat[dat_labs== "p(Old|Old)"]$dat_labs), color= "red")+ ylim(0,1)+ labs(x= "Data Versus Resample", y= "p(Old|Old)")
+
+
+
+
+
+
+
 mean(new_tab[resamp_labs== "p(Old|Old)1"]$probs)
 mean(new_dat[dat_labs== "p(Old|Old)"]$row1)
+
+
 
 
 
