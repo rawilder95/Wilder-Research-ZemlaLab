@@ -157,12 +157,12 @@ resamp_probs[, newold:= sample(all_probs$old_new, 1000, replace= TRUE)]
 resamp_probs[, newnew:= sample(all_probs$new_new, 1000, replace= TRUE)]
 new_tab <- data.table()
 new_tab[, probs:= c(resamp_probs$oldold, resamp_probs$oldnew, resamp_probs$newold, resamp_probs$newnew)]
-prob_labs <- c(rep("p(Old|Old)1", 1000), rep("p(Old|New)", 1000), rep("p(New|Old)", 1000), rep("p(New|New)", 1000))
+prob_labs <- c(rep("p(Old|Old) Resample", 1000), rep("p(Old|New)", 1000), rep("p(New|Old)", 1000), rep("p(New|New)", 1000))
 new_tab[,resamp_labs:= prob_labs]
 new_tab <- new_tab[!is.nan(new_tab$probs)]
 new_dat <- new_dat[!is.nan(new_dat$row1)]
 # new_tab[!is.na(new_tab$probs),prob_labs]
-ggplot() + geom_boxplot(aes(x= new_tab[resamp_labs== "p(Old|Old)1"]$resamp_labs, y= new_tab[resamp_labs== "p(Old|Old)1"]$probs*0.71), color= "blue")+ geom_boxplot(aes(y= new_dat[dat_labs== "p(Old|Old)"]$row1, x= new_dat[dat_labs== "p(Old|Old)"]$dat_labs), color= "red")+ ylim(0,1)+ labs(x= "Data Versus Resample", y= "p(Old|Old)")
+ggplot() + geom_boxplot(aes(x= new_tab[resamp_labs== "p(Old|Old) Resample"]$resamp_labs, y= new_tab[resamp_labs== "p(Old|Old) Resample"]$probs*0.71), color= "blue")+ geom_boxplot(aes(y= new_dat[dat_labs== "p(Old|Old)"]$row1, x= new_dat[dat_labs== "p(Old|Old)"]$dat_labs), color= "red")+ ylim(0,1)+ labs(x= "Data Versus Resample", y= "p(Old|Old)")
 
 
 
@@ -170,11 +170,47 @@ ggplot() + geom_boxplot(aes(x= new_tab[resamp_labs== "p(Old|Old)1"]$resamp_labs,
 
 
 
-mean(new_tab[resamp_labs== "p(Old|Old)1"]$probs)
+mean(new_tab[resamp_labs== "p(Old|Old) Resample"]$probs)
 mean(new_dat[dat_labs== "p(Old|Old)"]$row1)
+ggsave("poldold.png", device= png, dpi= 300)
+
+
+rpoldold <- sample(transition_probabilities$OldOld, 1000, replace= TRUE)/nrow(transition_probabilities)
+
+rpnewnew <- sample(transition_probabilities$NewNew, 1000, replace= TRUE)/nrow(transition_probabilities)
+
+
+# leave out (old|new) (new|old)
+# put id and cat name in prob data table
 
 
 
 
+nsubj[2]
+nsubj[7]
+
+all_probs[new_old== 0]
+all_probs[new_new== 0]
+
+all_probs[old_old== 0]
+all_probs[old_new== 0]
 
 
+
+# treat the lists as shuffled generated those probabilities do it on a shuffled list.  Shuffle the probabilities.  Recompute average over 3 distinct categories.  shuffle that 1000 times
+
+sample(trial2[,item])
+
+# for subject ()
+# for category ()
+# for 1000x sample ()
+
+
+# Do people cluster old things together more than you would expect by chance 
+# If you have 20 data points --> boxplot dist, average them together, single value for p(old/new|old/new) actual data points 
+
+# Generate a density distribution for cond_probs, make an entirely resampled dataset.  Shuffle that lists and redo the old_trials and old new.  Make sure you have an entirely fabricated data set of the same size.  Participants recalled the same words as they did, but a bag of words approach.  Shuffle 1x by this point- you want 1000 fake datasets.
+
+# Plot those as dist, how for probabilities old|old as a group, and point estimate 
+
+# When you write it up, make sure you talk about shuffling the words.

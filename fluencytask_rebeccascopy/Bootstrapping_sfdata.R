@@ -114,3 +114,41 @@ for (subject in nsubj){
   }
 }
 
+
+bts_table= data.table(id= character(), category= character(), oldold= numeric(), oldnew= numeric(), newold= numeric(), newnew= numeric())
+
+
+
+
+
+
+
+for (bts in 1:1000){
+  for (subject in nsubj){
+    for (cats in unique(dat$category)){
+      bold_old <-0 
+      bold_new <- 0
+      bnew_old <-0
+      bnew_new <-0
+      bold <- 0
+      bnew <-0 
+      trial2 <- dat[id== subject & category== cats & listrank==2,]
+      for (i in 1:(nrow(trial2)-1)){
+        if(trial2[i]$both_trials== 1 & trial2[i+1]$both_trials== 1){
+          bold_old= bold_old+1
+        } else if (trial2[i]$both_trials== 0 & trial2[i+1]$both_trials== 1){
+          bnew_old= bnew_old+1
+        } else if(trial2[i]$both_trials== 1 & trial2[i+1]$both_trials== 0){
+          bold_new= bold_new +1
+        } else if(trial2[i]$both_trials== 0 & trial2[i+1]$both_trials== 0){
+          bnew_new= bnew_new+1
+        }
+      }
+      newrow <- list(id=subject, category=cats, OldOld=bold_old, OldNew=bold_new, NewNew=bnew_new, NewOld=bnew_old)
+      btransition_probabilities <- rbind(transition_probabilities, newrow, fill= TRUE)
+    }
+  }
+}
+
+
+
