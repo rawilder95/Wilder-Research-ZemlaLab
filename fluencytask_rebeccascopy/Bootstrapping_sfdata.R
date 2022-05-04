@@ -114,3 +114,76 @@ for (subject in nsubj){
   }
 }
 
+
+bts_table= data.table(id= character(), category= character(), oldold= numeric(), oldnew= numeric(), newold= numeric(), newnew= numeric())
+
+
+
+
+
+btransition_probabilities= data.table(id= character(), category= character(), OldOld= numeric(), OldNew= numeric(), NewOld= numeric(), NewNew= numeric(), Old= numeric(), New= numeric())
+
+for (bts in 1:100){
+  for (subject in nsubj){
+    for (cats in unique(dat$category)){
+      bold_old <-0 
+      bold_new <- 0
+      bnew_old <-0
+      bnew_new <-0
+      bold <- 0
+      bnew <-0 
+      trial2 <- dat[id== subject & category== cats & listrank==2,]
+      trial2$both_trials <- sample(trial2$both_trials)
+      for (i in 1:(nrow(trial2)-1)){
+        if(trial2[i]$both_trials== 1 & trial2[i+1]$both_trials== 1){
+          bold_old= bold_old+1
+        } else if (trial2[i]$both_trials== 0 & trial2[i+1]$both_trials== 1){
+          bnew_old= bnew_old+1
+        } else if(trial2[i]$both_trials== 1 & trial2[i+1]$both_trials== 0){
+          bold_new= bold_new +1
+        } else if(trial2[i]$both_trials== 0 & trial2[i+1]$both_trials== 0){
+          bnew_new= bnew_new+1
+        }
+      }
+      newrow <- list(id=subject, category=cats, OldOld=bold_old, OldNew=bold_new, NewNew=bnew_new, NewOld=bnew_old)
+      btransition_probabilities <- rbind(btransition_probabilities, newrow, fill= TRUE)
+    }
+  }
+}
+
+
+# btransition_probabilities <- subset(btransition_probabilities, select = -c(boldold, boldnew, bnewold, bnewnew))
+
+for (bts in 1:100){
+  for (subject in nsubj){
+    for (cats in unique(dat$category)){
+          old <- 0
+          new <- 0
+          trial2 <- dat[id== subject & category== cats & listrank==2,]
+          for (i in 1:nrow(trial2)){
+            if (trial2$both_trials[i]==1){
+              old= old +1
+            } else {
+              new = new + 1
+            }
+          }
+          btransition_probabilities[id== subject & category== cats]$Old= old
+          btransition_probabilities[id== subject & category== cats]$New= new
+        }
+      }
+        }
+      
+      
+bt <- btransition_probabilities
+
+bnew_dat <- data.table()
+bnew_dat[, bt_vals:= c(bt$OldOld/(bt$OldOld+bt$OldNew), bt$OldNew/(bt$OldOld+bt$OldNew), bt$NewOld/(bt$NewOld+bt$NewNew), bt$NewNew/(bt$NewOld+bt$NewNew))]
+
+
+bnew_dat[, bt_labs:= c(rep("p(Old|Old)", length(bt$OldOld)), rep("p(New|Old)", length(bt$OldNew)), rep("p(Old|New)", length(bt$NewOld)), rep("p(New|New)", length(bt$NewNew)))]
+
+
+ggplot() + geom_boxplot(aes(x= bnew_dat$bt_labs, y= bnew_dat$bt_vals))+ labs(x= "Retrieval Type", y= "Conditional Probability of Retrieval Type")
+ggsave("conditional_probability_repeat_type.png", device= "png", dpi= 300)
+
+

@@ -45,7 +45,7 @@ to_import <- data.table(spellcheck[!spellcheck %in% ra_sheet$Unchecked])
 dat[!spellcheck %in% dat$category]
 
 ##Only uncomment this when you load in new data. This appends the unique new words to the google sheets## 
-#   sheet_append(ss= 'https://docs.google.com/spreadsheets/d/14YJ7IpvEyFVRSqr3zo3SAqgyR6g0QYAbI5xzxh3rl_A/edit?usp=sharing', to_import)
+  sheet_append(ss= 'https://docs.google.com/spreadsheets/d/14YJ7IpvEyFVRSqr3zo3SAqgyR6g0QYAbI5xzxh3rl_A/edit?usp=sharing', to_import)
 
 
 ## Pull data back to original dataframe ##
