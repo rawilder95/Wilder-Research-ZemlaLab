@@ -118,10 +118,10 @@ for (subject in nsubj){
 bts_table= data.table(id= character(), category= character(), oldold= numeric(), oldnew= numeric(), newold= numeric(), newnew= numeric())
 
 
+kkkkkkk
 
 
-
-btransition_probabilities= data.table(id= character(), category= character(), OldOld= numeric(), OldNew= numeric(), NewOld= numeric(), NewNew= numeric(), Old= numeric(), New= numeric())
+btransition_probabilities= data.table(id= character(), category= character(), OldOld= numeric(), OldNew= numeric(), NewOld= numeric(), NewNew= numeric(), Old= numeric(), New= numeric())jjjjj
 
 for (bts in 1:100){
   for (subject in nsubj){
