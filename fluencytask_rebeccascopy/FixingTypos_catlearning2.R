@@ -68,10 +68,8 @@ for (i in 1:length(unitems)){
   }
 }
 
-write.csv(dat, "results_cleaned.csv")
+write.csv(dat, "final_results.csv")
 
-
-dat <- data.table(read.csv("results_cleaned.csv"))
 
 
 # Just not going to include them - recognize that it's not fair, no solution is perfect.  
