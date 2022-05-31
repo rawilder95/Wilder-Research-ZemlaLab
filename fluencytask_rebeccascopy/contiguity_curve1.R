@@ -3,7 +3,7 @@ if (getwd()!= "~/Desktop/Desktop - Rebecca’s MacBook Air/Research 2021-2022/Gi
   setwd("~/Desktop/Desktop - Rebecca’s MacBook Air/Research 2021-2022/GitHub/Wilder-Research-ZemlaLab/fluencytask_rebeccascopy/")
 }
 dat <- data.table(read.csv("final_results.csv"))
-dat2 <- data.table(read.csv("results_cleaned.csv"))
+
 
 # dat<- dat[group== "Experiment1"]
 # dat[listnum<3, listrank:= 1]

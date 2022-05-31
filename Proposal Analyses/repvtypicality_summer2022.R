@@ -12,7 +12,10 @@ if (getwd()!= "~/Desktop/Desktop - Rebecca’s MacBook Air/Research 2021-2022/Gi
 
 # set up data file
 dat <- data.table(read.csv("final_results.csv"))
+dat<- subset(dat,select=-c(X))
 nsubj= unique(dat$id)
+
+
 ncat= unique(dat$category)
 for (i in 1:length(nsubj)){
   for (j in 1:length(ncat)){
@@ -22,8 +25,9 @@ for (i in 1:length(nsubj)){
 }
 dat[listnum== "FALSE", listrank:= 1]
 dat[listnum == "TRUE", listrank:= 2]
-dat<- subset(dat,select=-c(listnum,X))
+dat<- subset(dat, game<23)
 dat[, both_trials := 0]
+
 
 # get items that were listed in both trials 
 for (i in 1:length(nsubj)){
@@ -57,16 +61,37 @@ for (subject in nsubj){
 
 
 
+
+
 # isolate items listed in repeated fluency trial
 trial2= dat[listrank==2]
 trial1= dat[listrank==1]
 # p(listing a word on list2| that it was listed on list 1)
 pba1= vector()
-for (i in 1:length(unique(trial2[both_trials==1 & !is.na(item)]$item))){
-  pba1[i]= sum(trial1$item %in% trial2[both_trials==1 & !is.na(item)]$item[i])/length(nsubj)
+for (subject in nsubj){
+  for(cats in ncat){
+    l1= dat[id== subject & category== cats & listrank== 1]
+    l2= dat[id== subject & category== cats & listrank== 2]
+  }
 }
 
-typicality1= (trial2[item %in% unique(trial2[both_trials==1 & !is.na(item)]$item), .N, by= .(item)]$N-1)/length(nsubj)
+
+# Right here 
+typicality= data.frame()
+pba= dat[listrank==2, mean(both_trials), by= .(unique(item))]
+
+
+
+typicality2= dat[both_trials==1, .N, by= (item)]
+typicality= dat[, .N, by= (item)]
+typicality1=typicality[item %in% typicality2$item,]
+
+
+typicality2$N/length(nsubj)*2
+
+typicality1= (trial2[item %in% unique(trial2[both_trials==1 & !is.na(item)]$item), .N, by= (item)]$N-1)/length(nsubj)
+
+
 
 # get typicality score
 sus_words= vector()
@@ -114,11 +139,101 @@ for (subject in nsubj){
 
 k= dat[, .N, by= .(both_trials, item)]
 bt= vector()
-for (i = 1:length(unique(k$item))){
-  bt[i]= k[item== item[i] & both_trials== 1]
+# for (i = 1:length(unique(k$item))){
+#   bt[i]= k[item== item[i] & both_trials== 1]
+# }
+
+
+
+words2= data.table(item= unique(dat[listrank==2, item]), count= numeric())
+# dat[item %in% words2[1], .N, by= id]
+
+
+  for (subject in nsubj){
+    for (cats in ncat){
+      this_subj= dat[id== subject & category== cats]
+      for (i in 1:length(unique(this_subj$item))){
+        word= this_subj$item[i]
+        if(any(words2$item %in% word)){
+      }
+    }
+    }}
+# dat[id== "Sj1Fs4GWRuX" & category== "Clothing Articles",]
+
+this_subj= dat[id== nsubj[2]]
+ext_cat = this_subj[, .N, by= .(game, category)]
+ext_cat[, .N, by= (category)]
+# last 2 games need to be removed
+
+word_counts= data.table(item= sfboth$item, count= 0, category= character())
+
+sfboth= dat[listrank==2 & both_trials==1, .N, by= .(category,item)]
+sf1= dat[listrank==1, .N, by= .(category,item)]
+for(i in 1:length(sfboth$item)){
+  words= sfboth$item
+  for (cats in ncat){
+    newrow= list(sf1[category== cats & item== words[i]]$item, sf1[category== cats & item== words[i]]$N, sf1[category==cats]$category)
+    word_counts= rbind(word_counts,newrow)
+  }
+  word_counts[i]$count= sf1[item %in% words[i]]$N
 }
 
 
 
-words2= dat[listrank2]
+
+k= dat[listrank==2 & both_trials==1, .N, by= .(item, id, category)]
+dat[item== "cupboard" & category != "Objects You Would Find in The Kitchen"]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+############### CLEAN CODE FOR JEFF #######################
+##########################  COMPARISON FOR CATEGORY 2 ##########################
+this_subj= dat[id== nsubj[1] & category== ncat[2]]
+# Grab all items generated from list 2
+# words2= unique(fruit[listrank== 2,item])
+words2= unique(dat[listrank== 2 & category==ncat[1], item])
+
+sf2 <- vector()
+sf2sf1 <- vector()
+for (i in 1:length(words2)){
+  check_foroverlap <- intersect(dat[listrank==1 & item== words2[i]]$id, dat[listrank==2 & item== words2[i]]$id)
+  sf2[i] <- sum(dat[listrank== 2 & item== words2[i], .N, by= id]$N)-1
+  if (length(check_foroverlap)>0){
+    sf2sf1[i] <- length(check_foroverlap)/sum(dat[listrank== 1 & item== words2[i], .N, by= id]$N)
+  }else{
+    sf2sf1[i] <- 0
+  }
+}
+
+pcat <- data.table()
+pcat[,sf2:= sf2/length(nsubj)]
+pcat[,sf2sf1:= sf2sf1]
+
+ggplot() + geom_count(aes(x= pcat$sf2, y= pcat$sf2sf1))
 

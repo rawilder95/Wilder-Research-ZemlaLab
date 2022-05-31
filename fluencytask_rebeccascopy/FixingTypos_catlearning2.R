@@ -43,7 +43,7 @@ to_import <- data.table(spellcheck[!spellcheck %in% ra_sheet$Unchecked])
 
 
 ##Only uncomment this when you load in new data. This appends the unique new words to the google sheets## 
-  sheet_append(ss= 'https://docs.google.com/spreadsheets/d/14YJ7IpvEyFVRSqr3zo3SAqgyR6g0QYAbI5xzxh3rl_A/edit?usp=sharing', to_import)
+  # sheet_append(ss= 'https://docs.google.com/spreadsheets/d/14YJ7IpvEyFVRSqr3zo3SAqgyR6g0QYAbI5xzxh3rl_A/edit?usp=sharing', to_import)
 
 
 ## Pull data back to original dataframe ##
@@ -63,14 +63,23 @@ unitems <- ra_sheet$Unchecked
 citems <- ra_sheet$SpellChecked
 
 for (i in 1:length(unitems)){
-  if (sum(!is.na(unitems[i]), !is.na(citems[i]))==2){
-    dat[dat$item %in% unitems[i]]$item<- citems[i]
+  dat[item %in% unitems[i]]$item= citems[i]
+}
+# fix categortype
+for (i in 1:length(nsubj)){
+  for (j in 1:length(ncat)){
+    this_game <- dat[id== nsubj[i] & category== ncat[j], game]
+    dat[id== nsubj[i] & category== ncat[j], listnum:= this_game== max(this_game)]
   }
 }
+
+
 
 write.csv(dat, "final_results.csv")
 
 
 
 # Just not going to include them - recognize that it's not fair, no solution is perfect.  
+# Weird thing with cupboard being listed under other categories
+dat[item== "cupboard" & !(category == "Objects You Would Find in The Kitchen" | category == "Pieces of Furniture")]
 
