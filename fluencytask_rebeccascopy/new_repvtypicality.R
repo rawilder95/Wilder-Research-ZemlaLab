@@ -18,7 +18,15 @@ dat <- data.table(read.csv("final_results.csv"))
 dat<- subset(dat,select=-c(X))
 nsubj= unique(dat$id)
 
+# get indices for categories that were !repeated twice
+k= dat[, .N, by= .(category, game, id)]
+cat_table= k[, .N, by= .(id, category)]
 
+dat= merge(dat, cat_table)
+dat= dat[N== 2]
+
+
+# Drop games 23-24
 ncat= unique(dat$category)
 for (i in 1:length(nsubj)){
   for (j in 1:length(ncat)){
@@ -28,17 +36,20 @@ for (i in 1:length(nsubj)){
 }
 dat[listnum== "FALSE", listrank:= 1]
 dat[listnum == "TRUE", listrank:= 2]
-dat<- subset(dat, game<23)
+
+
 dat[, both_trials := 0]
-dat<- subset(dat,select=-c(listnum))
+dat<- subset(dat, select=-c(listnum))
 
 # get items that were listed in both trials 
 for (i in 1:length(nsubj)){
-  this_subj <- dat[id==nsubj[i],]
-  repeated_words <- intersect(this_subj[listrank==2,item], this_subj[listrank==1,item])
-  this_subj[, both_trials:= 0]
-  this_subj[item %in% repeated_words, both_trials:=1]
-  dat[id==nsubj[i]]$both_trials <- this_subj$both_trials
+  for (cats in ncat){
+    this_subj <- dat[id==nsubj[i] & category== cats,]
+    repeated_words <- intersect(this_subj[listrank==2,item], this_subj[listrank==1,item])
+    this_subj[, both_trials:= 0]
+    this_subj[item %in% repeated_words, both_trials:=1]
+    dat[id==nsubj[i] & category== cats]$both_trials <- this_subj$both_trials
+  }
 }
 
 
@@ -65,6 +76,9 @@ for (cats in ncat){
 }
 
   
+mean(dat[temp_int==2]$both_trials)
+mean(dat[temp_int==4]$both_trials)
+mean(dat[temp_int==6]$both_trials)
 
 ggplot() + geom_count(aes(x= all_cats$typicality, y= all_cats$pba), alpha= 0.5)+ geom_abline(intercept= 0, slope= 1)+ labs(y= "p(Repetition)", x= "Item Typicality")
 ggsave("repvtypicality_summer22.png", device= "png", dpi= 300)
@@ -91,7 +105,7 @@ j= vector()
 for(cats in ncat){
   this_cat= dat[category== cats & listrank== 2]
   that_cat= dat[category== cats & listrank== 1]
-  # l1word= unique(this_cat[listrank==1]$item)
+  l1word= unique(this_cat[listrank==1]$item)
   l2word= unique(this_cat[listrank==2]$item)
   for (word in 1:length(l2word)){
     # k[word]= (length(dat[category== cats & item== l2word[word]]$game)-1)/length(nsubj)
@@ -105,7 +119,15 @@ for(cats in ncat){
 
 
 
+# glmer(rep ~ typicality * temporal-interval + (1|category) + (1|id), data=dat, family="binomial")
+
+
+
 sf2[i]= (sum(this_cat[listrank==2 & item == words[i], .N, by= id]$N)-1)/length(nsubj)
+
+
+
+
 summary(glmer(data= dat, both_trials~ temp_int + typicality + (1|id)+ (1|category), family= "binomial"))
 
 
