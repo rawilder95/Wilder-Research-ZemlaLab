@@ -73,7 +73,21 @@ for (i in 1:length(nsubj)){
   }
 }
 
-
+# This loop looks up and gets rid of perseverative erros by setting to NaN
+check4err= data.table()
+for (subject in nsubj){
+  for (cats in ncat){
+    this_subj <- dat[listrank== 1 & id== subject & category== cats]
+    if(any(this_subj[listrank== 1,.N, by= item]$N> 1)){
+      check4err <- this_subj[listrank== 1,.N, by= item]
+      get_err <- this_subj[item %in% check4err[check4err$N>1]$item]
+      smallest_val <- min(get_err$itemnum)
+      # larger_val <- get_err[itemnum != smallest_val]
+      this_subj[item %in% unique(get_err$item) & itemnum %in% smallest_val]$item = NaN
+      dat[id== subject & category == cats & listrank== 1] <- this_subj
+    }
+  }
+}
 
 write.csv(dat, "final_results.csv")
 
