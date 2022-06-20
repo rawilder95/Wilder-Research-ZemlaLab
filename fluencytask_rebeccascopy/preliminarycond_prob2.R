@@ -9,8 +9,8 @@ if (getwd()!= "~/Desktop/Desktop - Rebecca’s MacBook Air/Research 2021-2022/Gi
 # library(googlesheets4)
 # install.packages("ggplot2")
 # library(ggplot2)
-## Pull data back to original dataframe ##
-ra_sheet<- data.table(read_sheet('https://docs.google.com/spreadsheets/d/14YJ7IpvEyFVRSqr3zo3SAqgyR6g0QYAbI5xzxh3rl_A/edit?usp=sharing'))
+# ## Pull data back to original dataframe ##
+# ra_sheet<- data.table(read_sheet('https://docs.google.com/spreadsheets/d/14YJ7IpvEyFVRSqr3zo3SAqgyR6g0QYAbI5xzxh3rl_A/edit?usp=sharing'))
 
 
 dat <- data.table(read.csv("results_cleaned.csv"))
@@ -46,7 +46,7 @@ p_trial <- vector()
 
 # Find all of the listrank 3 which represent repeated items
 # Do this in one subject first
-intersect(dat[listrank==1 & item== nitems[i]]$id, dat[listrank==2 & item== nitems[i]]$id)
+intersect(dat[listrank==1 & item== nitem[i]]$id, dat[listrank==2 & item== nitem[i]]$id)
 
 this_subject <- dat[id== nsubj[1] & category== "Fruits",]
 # second_trial <- this_subj[listrank== 2]

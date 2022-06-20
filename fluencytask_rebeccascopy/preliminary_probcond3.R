@@ -12,6 +12,9 @@ if (getwd()!= "~/Desktop/Desktop - Rebecca’s MacBook Air/Research 2021-2022/Gi
 # install.packages("cowplot")
 # library(cowplot)
 
+
+
+
 dat <- data.table(read.csv("snafu_sample.csv"))
 
 dat<- dat[group== "Experiment1"]
@@ -44,7 +47,6 @@ for (subject in nsubj){
    this_subj[item %in% repeated_words, both_trials:= 1]
    this_subj[!item %in% repeated_words, both_trials:=0]
    dat[id== subject & category== cats, both_trials:= this_subj$both_trials]
-   
   }
 }
 
@@ -70,7 +72,6 @@ for (subject in nsubj){
         old_old= old_old+1
       } else if (trial2[i]$both_trials== 0 & trial2[i+1]$both_trials== 1){
         new_old= new_old+1
-        
       } else if(trial2[i]$both_trials== 1 & trial2[i+1]$both_trials== 0){
         old_new= old_new +1
       } else if(trial2[i]$both_trials== 0 & trial2[i+1]$both_trials== 0){
@@ -135,10 +136,10 @@ tp<- transition_probabilities
 # p (old | old ) = old_old/ (old_new + old_old)
 # p (old | new ) = new_old/ (new_old + new_new)
 all_probs<- data.table()
-all_probs[,old_old:= t$OldOld/(t$OldOld+t$OldNew)]
-all_probs[,old_new:= t$OldNew/(t$OldOld+t$OldNew)]
-all_probs[,new_old:= t$NewOld/(t$NewOld+t$NewNew)]
-all_probs[,new_new:= t$NewNew/(t$NewOld+t$NewNew)]
+all_probs[,old_old:= tp$OldOld/(tp$OldOld+tp$OldNew)]
+all_probs[,old_new:= tp$OldNew/(tp$OldOld+tp$OldNew)]
+all_probs[,new_old:= tp$NewOld/(tp$NewOld+tp$NewNew)]
+all_probs[,new_new:= tp$NewNew/(tp$NewOld+tp$NewNew)]
 
 tp[, pOldOld:= OldOld/(OldOld+OldNew)]
 tp[, pOldNew := (OldNew/(OldOld+OldNew))]
@@ -165,8 +166,6 @@ new_dat[, dat_labs:= c(rep("p(Old|Old)", length(all_probs$old_old)), rep("p(New|
 
 
 btransition_probabilities= data.table(id= character(), category= character(), iteration= numeric(), OldOld= numeric(), OldNew= numeric(), NewOld= numeric(), NewNew= numeric())
-
-bootstrap_vals <- function(startval){
   for (bts in 1:1000){
     for (subject in nsubj){
       for (cats in unique(dat$category)){
@@ -198,13 +197,15 @@ bootstrap_vals <- function(startval){
         newrow[, NewOld:= bnew_old]
         newrow[, NewNew:= bnew_new]
         l = list(btransition_probabilities, newrow)
-        btransition_probabilities <- rbindlist(l)
+        btransition_probabilities <- rbind(btransition_probabilities, list(subject, cats, bts, newrow$OldOld, newrow$OldNew, newrow$NewOld, newrow$NewNew))
         # btransition_probabilities <- rbind(btransition_probabilities, newrow)
       }
     }
-    print(bts)
+    # print(bts)
   }
-}
+
+
+
 
 
 bt <- btransition_probabilities
@@ -227,9 +228,9 @@ bt[, pNewOld := (NewOld/(NewOld+NewNew))]
 bt[, pNewNew := (NewNew/(NewOld+NewNew))]
 
 
+bnewdat= data.table()
 
-
-bnew_dat[, bt_labs:= c(rep("p(Old|Old)", length(bt$OldOld)), rep("p(New|Old)", length(bt$OldNew)), rep("p(Old|New)", length(bt$NewOld)), rep("p(New|New)", length(bt$NewNew)))]
+bnewdat[, bt_labs:= c(rep("p(Old|Old)", length(bt$OldOld)), rep("p(New|Old)", length(bt$OldNew)), rep("p(Old|New)", length(bt$NewOld)), rep("p(New|New)", length(bt$NewNew)))]
 
 
 # mean(new_dat[dat_labs== "p(Old|Old)"]$row1)
@@ -256,10 +257,15 @@ quantile(bt_vals$oldnew)
 quantile(bt_vals$newold)
 quantile(bt_vals$newnew)
 
-
+new_dat= new_dat[!is.na(row1)]
 
 p1 <- ggplot() + geom_density(aes(x= bt_vals$oldold, fill= "Bootstrapped Data"), fill= "white") + geom_vline(aes(xintercept= mean(new_dat[dat_labs== "p(Old|Old)"]$row1), color= "Subject Average"))+ xlim(0,1)+ labs(x= "p(B|A)", y= "Density", title= "Probability of Repeated Item Given a Repeated Item")
+
 p2 <- ggplot() + geom_density(aes(x= bt_vals$newold, fill= "Bootstrapped Data"), fill= "white") + geom_vline(aes(xintercept= mean(new_dat[dat_labs== "p(Old|New)"]$row1), color= "Subject Average"))+ xlim(0,1)+ labs(x= "p(B|A)", y= "Density", title= "Probability of Repeated Item Given New Item")
+
+
+
+
 p3 <- ggplot() + geom_density(aes(x= bt_vals$oldnew, fill= "Bootstrapped Data"), fill= "white") + geom_vline(aes(xintercept= mean(new_dat[dat_labs== "p(New|Old)"]$row1), color= "Subject Average"))+ xlim(0,1)+ labs(x= "p(B|A)", y= "Density", title= "Probability of New Item Given Repeated Item", colour= "Simulated Distribution")
 p4 <- ggplot() + geom_density(aes(x= bt_vals$newnew, fill= "Bootstrapped Data", color= "Simulated Permutation"), fill= "white", color= "black") + geom_vline(aes(xintercept= mean(new_dat[dat_labs== "p(New|New)"]$row1), color= "Subject Average"))+ xlim(0,1)+ labs(x= "p(B|A)", y= "Density", title= "Probability of New Item Given New Item", colour= "Simulated Distribution")
 

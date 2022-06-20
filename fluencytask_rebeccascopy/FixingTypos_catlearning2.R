@@ -89,6 +89,19 @@ for (subject in nsubj){
   }
 }
 
+counts_table1= dat[, .N, by= .(id, category, game)]
+counts_table= counts_table1[, .N, by= .(id, category)]
+
+
+
+
+dat= merge(dat, counts_table)
+
+
+
+dat= dat[N==2]
+
+
 write.csv(dat, "final_results.csv")
 
 
@@ -96,4 +109,5 @@ write.csv(dat, "final_results.csv")
 # Just not going to include them - recognize that it's not fair, no solution is perfect.  
 # Weird thing with cupboard being listed under other categories
 dat[item== "cupboard" & !(category == "Objects You Would Find in The Kitchen" | category == "Pieces of Furniture")]
+
 
