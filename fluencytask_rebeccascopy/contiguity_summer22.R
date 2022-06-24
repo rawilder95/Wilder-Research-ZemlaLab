@@ -108,7 +108,7 @@ for (subject in nsubj){
         id_vec[i]= subject
         cat_vec[i]= cats
         item_vec[i]= l2[i]$item
-        sp_vec1[i]= min(which(l1$item %in% l2[i]$item))
+        sp_vec1[i]= min(l1[l1$item %in% l2[i]$item]$itemnum)
         sp_vec2[i]= l1[i]$itemnum
       }
       max_range= rep(max(abs(s_vec)),length(s_vec))
@@ -118,7 +118,6 @@ for (subject in nsubj){
   }
 }
 
-# actual_counts= s_df[, .N, by= .(id, category, dist)]
 ### Sanity Check Calculations ###
 #Forwards
 s_df[dist>0, mean(dist), by= .(id, category)]
@@ -136,6 +135,7 @@ bckwd= s_df[dist<0, .N, by= .(id, category)]
 fwd= s_df[dist>0, .N, by= .(id, category)]
 mean(fwd$N) #3.905405
 mean(bckwd$N) #5.665198
+
 
 
 transition_range= 1:(max(this_transition$dist))
@@ -208,8 +208,68 @@ s_df
 
 
 
-transition_range= 1:(max(this_trans$dist))
+this_transition= s_df[id== nsubj[1]& category== ncat[1]]
+thislog= vector()
+# possible transitions
+idx= this_transition[1]$sp1 #= 2
+# vector= [1, 3, 4, 5, 6, ..... to 25]
+k = c(1:idx, idx:(max(this_transition$sp1)))
+thislog[1]= idx
+k= k[!k%in% thislog]
+k
+length(k)
 
+idx= this_transition[2]$sp1 #= 2
+# vector= [1, 3, 4, 5, 6, ..... to 25]
+k = c(1:idx, idx:(max(this_transition$sp1)))
+thislog[2]= idx
+k= k[!k%in% thislog]
+k
+length(k)
 
+idx= this_transition[3]$sp1 #= 2
+# vector= [1, 3, 4, 5, 6, ..... to 25]
+k = c(1:idx, idx:(max(this_transition$sp1)))
+thislog[3]= idx
+k= k[!k%in% thislog]
+k
+length(k)
+
+idx= this_transition[4]$sp1 #= 2
+# vector= [1, 3, 4, 5, 6, ..... to 25]
+k = c(1:idx, idx:(max(this_transition$sp1)))
+thislog[4]= idx
+k= k[!k%in% thislog]
+k
+length(k)
+
+idx= this_transition[5]$sp1 #= 2
+# vector= [1, 3, 4, 5, 6, ..... to 25]
+k = c(1:idx, idx:(max(this_transition$sp1)))
+thislog[5]= idx
+k= k[!k%in% thislog]
+k
+length(k)
+
+thislog= vector()
+ptr_count= data.table(sp= numeric(), npossible= numeric())
+getvals= vector()
+for (i in 1:max(this_transition$sp1)){
+  # print(i)
+  if(nrow(this_transition[sp1 %in% i])>0){
+    idx= i
+    k = c(1:idx, idx:(max(this_transition$sp1)))
+    thislog[i]= idx
+    k= k[!k%in% thislog]
+    k= k[!is.na(k)]
+    print(k)
+
+  }else {
+    k = 0
+    thislog[i]= idx
+  }
+  ptr_count[i]$npossible= length(k) #N possible transitions that could be made up till this point
+}
+ptr_count
 
 
