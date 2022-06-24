@@ -118,7 +118,24 @@ for (subject in nsubj){
   }
 }
 
-actual_counts= s_df[, .N, by= .(id, category, dist)]
+# actual_counts= s_df[, .N, by= .(id, category, dist)]
+### Sanity Check Calculations ###
+#Forwards
+s_df[dist>0, mean(dist), by= .(id, category)]
+s_df[dist>0, mean(dist), by=  id]
+s_df[dist>0, mean(dist), by= category]
+
+#Backwards
+s_df[dist<0, mean(dist), by= .(id, category)]
+s_df[dist<0, mean(dist), by=  id]
+s_df[dist<0, mean(dist), by= category]
+#all about the same
+
+#Get counts for how many forward v backward order transitions by subj
+bckwd= s_df[dist<0, .N, by= .(id, category)]
+fwd= s_df[dist>0, .N, by= .(id, category)]
+mean(fwd$N) #3.905405
+mean(bckwd$N) #5.665198
 
 
 transition_range= 1:(max(this_transition$dist))
