@@ -12,10 +12,11 @@ if (getwd()!= "~/Desktop/Desktop - Rebecca’s MacBook Air/Research 2021-2022/Gi
 # install.packages("lme4")
 # library(lme4)
 
-# library(lme4)
-# library(cowplot)
-# library(ggplot2)
-# library(data.table)
+rm()
+library(lme4)
+library(cowplot)
+library(ggplot2)
+library(data.table)
 
 # 
 dat <- data.table(read.csv("final_results.csv"))
@@ -52,30 +53,30 @@ for (i in 1:length(nsubj)){
 }
 dat[, temp_int:= 0]
 dat[, temp_int:= ((max(game)-min(game))-1), by= .(id, category)]
-
-for (subject in nsubj){
-  for(cats in ncat){
-    this_subj= dat[id= subject & category= ncat & listrank== 2]
-    # Make sure this isn't an empty row for subject (as some trials were removed)
-    if(nrow(this_subj)>0){
-      
-    }
-  }
-}
-
-
-l2 = dat[both_trials==1 & listrank==2]
-l1= dat[listrank==1]
-transitions1= dat[which(l1$item %in% l2$item)]
-sample_l2= l2[id== "S0lVm6wcxkb" & category== "Animals"]
-sample_l1= l1[id== "S0lVm6wcxkb" & category== "Animals"]
-s_vec= vector()
-
-for(i in 1:(nrow(sample_subj)-1)){
-  if(abs(sample_subj[i]$itemnum- sample_subj[i+1]$itemnum)==1){
-    s= abs(sample_l1[item %in% sample_l2[i]$item]$itemnum - sample_l1[item %in% sample_l2[i+1]$item]$itemnum)
-  } 
-}
+# 
+# for (subject in nsubj){
+#   for(cats in ncat){
+#     this_subj= dat[id== subject & category== ncat & listrank== 2]
+#     # Make sure this isn't an empty row for subject (as some trials were removed)
+#     if(nrow(this_subj)>0){
+# 
+#     }
+#   }
+# }
+# 
+# 
+# l2 = dat[both_trials==1 & listrank==2]
+# l1= dat[listrank==1]
+# transitions1= dat[which(l1$item %in% l2$item)]
+# sample_l2= l2[id== "S0lVm6wcxkb" & category== "Animals"]
+# sample_l1= l1[id== "S0lVm6wcxkb" & category== "Animals"]
+# s_vec= vector()
+# 
+# for(i in 1:(nrow(sample_subj)-1)){
+#   if(abs(sample_subj[i]$itemnum- sample_subj[i+1]$itemnum)==1){
+#     s= abs(sample_l1[item %in% sample_l2[i]$item]$itemnum - sample_l1[item %in% sample_l2[i+1]$item]$itemnum)
+#   } 
+# }
 
 # for (subject in nsubj){
 #   for (cats in ncat){
@@ -148,13 +149,10 @@ for(i in 1:length(transition_range$possible_transitions)){
   idx= transition_range$possible_transitions[i]
   transition_range[i]$counts= sum(this_transition$dist %in% idx)
 }
-
 log_table= data.table(transition= numeric())
 this_log= vector()
 counter= vector()
 tvec= vector()
-
-
 for (i in 1:max(this_transition$sp1)){
   if(nrow(this_transition[sp1==i])>0){
     this_log[i]= this_transition[sp1== i]$sp1
@@ -181,12 +179,7 @@ for (i in 1:max(this_transition$sp1)){
 #   newrow= list(c(fordir, (backdir*-1)))
 #   log_table= rbindlist(list(log_table, newrow))
 # }
-
-# merge(s_df, actual_counts, all.x= 1, all.y= 1, no.dups= TRUE)
-
 s_df
-
-
 # 
 # k= s_df[id== nsubj[1] & category== ncat[1]]
 # t_counts= vector()
@@ -197,16 +190,11 @@ s_df
 # }
 
 
-# k= dat[listrank==2, max(itemnum), by= .(id, category)]
-# (k[, single_out:= "Value Distribution"])
-# k[V1>28]$single_out <- "Subject N"
-# k[V1<28 | V1> 34]$single_out <- "Value Distribution"
-# ggplot() + geom_histogram(aes(x= k$V1,  fill= k$single_out), bins= 40, binwidth= 1, color= "grey")+ labs(y= "Probability Density", x= "Predicted Trial 2 Length", fill= "Single Out Subject N")+ scale_x_continuous(breaks= (1:80))+ theme(axis.text.x = element_blank(), axis.ticks.x = element_blank())
 
 
 
 
-
+#### Me mapping out exactly how to get the dist of possible transition values#### 
 
 this_transition= s_df[id== nsubj[1]& category== ncat[1]]
 thislog= vector()
@@ -251,6 +239,11 @@ k= k[!k%in% thislog]
 k
 length(k)
 
+
+
+### Then trying to do it exactly in the vector### 
+#New weird error is that ptr_count is now, for whatever reason, not adding rows.
+#Even though it was earlier.
 thislog= vector()
 ptr_count= data.table(sp= numeric(), npossible= numeric())
 getvals= vector()

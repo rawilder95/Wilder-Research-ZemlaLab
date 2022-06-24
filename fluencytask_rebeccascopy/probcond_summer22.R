@@ -2,6 +2,7 @@ if (getwd()!= "~/Desktop/Desktop - Rebecca’s MacBook Air/Research 2021-2022/Gi
   setwd("~/Desktop/Desktop - Rebecca’s MacBook Air/Research 2021-2022/GitHub/Wilder-Research-ZemlaLab/fluencytask_rebeccascopy/")
 }
 
+rm()
 # ##Relevant Libraries & Packages###
 # install.packages("data.table")
 # library(data.table)
@@ -12,10 +13,10 @@ if (getwd()!= "~/Desktop/Desktop - Rebecca’s MacBook Air/Research 2021-2022/Gi
 # install.packages("lme4")
 # library(lme4)
 
-# library(lme4)
-# library(cowplot)
-# library(ggplot2)
-# library(data.table)
+library(lme4)
+library(cowplot)
+library(ggplot2)
+library(data.table)
 
 if (getwd()!= "~/Desktop/Desktop - Rebecca’s MacBook Air/Research 2021-2022/GitHub/Wilder-Research-ZemlaLab/fluencytask_rebeccascopy/logs"){
 setwd("~/Desktop/Desktop - Rebecca’s MacBook Air/Research 2021-2022/GitHub/Wilder-Research-ZemlaLab/fluencytask_rebeccascopy/")}
@@ -253,4 +254,5 @@ for (i in 1:10){
   thisnum= list(sample(100, 100, replace= TRUE))
   thislist= rbindlist(list(thislist, thisnum), use.names = FALSE, fill= FALSE, idcol= FALSE)
 }
+
 
