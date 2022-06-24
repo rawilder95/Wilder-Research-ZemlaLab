@@ -333,5 +333,23 @@ transition_probabilities$OldOld/(transition_probabilities$OldOld+ transition_pro
 # #   }
 # #   }
 # #   }
+
+
+
+
+# btransition_probabilities= btransition_probabilities[!is.na(btransition_probabilities$oldold) & !is.na(category),]
+# New Data Table: Coerce cols into single column for vals and one for labels.
+####Harder and dumber way to do what I just did in the for loop####
+# btransition_probabilities[, p_oldold:= sum(OldOld)/sum(OldOld,OldNew)]
+# btransition_probabilities[, p_oldnew:= sum(OldNew)/sum(OldOld,OldNew)]
+# btransition_probabilities[, p_newold:= sum(NewOld)/sum(NewOld,NewNew)]
+# btransition_probabilities[, p_newnew:= sum(NewNew)/sum(NewOld,NewNew)]
+# btransition_probabilities[, p_old:= sum(Old)/(sum(Old,New))]
+# btransition_probabilities[, p_new:= sum(New)/(sum(Old,New))]
+
+
+# bnewdat[, bt_labs:= c(rep("p(Old|Old)", length(bt$pOldOld)), rep("p(Old|New)", length(bt$pOldNew)), rep("p(New|Old)", length(bt$pNewOld)), rep("p(New|New)", length(bt$pNewNew)))]
+# bnewdat[, bt_probs:= c(bt$pOldOld, bt$pOldNew, bt$pNewOld, bt$pNewNew)]
+# bnewdat[, bt_probs:= c(bt[,OldOld], bt[,OldNew], bt[,NewOld], bt[,NewNew])]
 # 
 

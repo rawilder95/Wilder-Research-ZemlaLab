@@ -70,6 +70,59 @@ for (i in 1:length(nsubj)){
 }
 dat[, temp_int:= 0]
 dat[, temp_int:= ((max(game)-min(game))-1), by= .(id, category)]
+transition_probabilities= data.table(id= character(), category= character(), iteration= numeric(), OldOld= numeric(), OldNew= numeric(), NewOld= numeric(), NewNew= numeric(), Old= numeric(), New= numeric())
+for(subject in nsubj){
+  for(cats in ncat){
+    bold_old <-0
+    bold_new <- 0
+    bnew_old <-0
+    bnew_new <-0
+    bold <- 0
+    bnew <-0
+    trial2 <- dat[id== subject & category== cats & listrank==2,]
+    trial2$both_trials <- sample(trial2$both_trials)
+    if(nrow(trial2)>1){
+      for (i in 1:(nrow(trial2)-1)){
+        if(trial2[i]$both_trials== 1 & trial2[i+1]$both_trials== 1){
+          bold_old= bold_old+1
+          bold= bold+1
+        } else if (trial2[i]$both_trials== 0 & trial2[i+1]$both_trials== 1){
+          bnew_old= bnew_old+1
+          bnew= bnew+1
+        } else if(trial2[i]$both_trials== 1 & trial2[i+1]$both_trials== 0){
+          bold_new= bold_new +1
+          bold= bold+1
+        } else if(trial2[i]$both_trials== 0 & trial2[i+1]$both_trials== 0){
+          bnew_new= bnew_new+1
+          bnew= bnew+1
+        }
+      }
+    }
+    newrow <- list(id= subject, category= cats, iteration= bts, pOldOld= bold_old/sum(bold_old,bold_new), pOldNew= bold_new/sum(bold_old, bold_new), NewOld= bnew_old/sum(bnew_old, bnew_new), NewNew= bnew_new/sum(bnew_old,bnew_new), Old= bold, New= bnew)
+ transition_probabilities= rbindlist(list(transition_probabilities, newrow))
+  }
+  }
+
+transition_probabilities[, pOldOld:= sum(OldOld)/sum(OldOld,OldNew)]
+transition_probabilities[, pOldNew:= sum(OldNew)/sum(OldOld,OldNew)]
+transition_probabilities[, pNewOld:= sum(NewOld)/sum(NewOld,NewNew)]
+transition_probabilities[, pNewNew:= sum(NewNew)/sum(NewOld,NewNew)]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # 
 bt= data.table()
@@ -122,46 +175,68 @@ for (bts in 1:50){
 
 
 
-bt <- btransition_probabilities[!is.na(btransition_probabilities$oldold) & !is.na(category),]
+bt <- btransition_probabilities[!is.na(btransition_probabilities$OldOld) & !is.na(category),]
 
 bt[, pOldOld := (OldOld/(OldOld+OldNew))]
+
+
+# at min do it by subject- probably best to do it by category
+### NOT THIS WAY###
 bt[, pOldNew := (OldNew/(OldOld+OldNew))]
 bt[, pNewOld := (NewOld/(NewOld+NewNew))]
 bt[, pNewNew := (NewNew/(NewOld+NewNew))]
 
-# btransition_probabilities= btransition_probabilities[!is.na(btransition_probabilities$oldold) & !is.na(category),]
-# New Data Table: Coerce cols into single column for vals and one for labels.
-####Harder and dumber way to do what I just did in the for loop####
-btransition_probabilities[, p_oldold:= sum(OldOld)/sum(OldOld,OldNew)]
-btransition_probabilities[, p_oldnew:= sum(OldNew)/sum(OldOld,OldNew)]
-btransition_probabilities[, p_newold:= sum(NewOld)/sum(NewOld,NewNew)]
-btransition_probabilities[, p_newnew:= sum(NewNew)/sum(NewOld,NewNew)]
-btransition_probabilities[, p_old:= sum(Old)/(sum(Old,New))]
-btransition_probabilities[, p_new:= sum(New)/(sum(Old,New))]
-
-
-bnewdat= data.table()
+# Exclude rows that reference transition type: (old/new= 0)/(old/new= 0)
+# bt= bt[!is.na(pOldOld) & !is.na(pOldNew) & !is.na(pNewOld) & !is.na(pNewNew)]
+bt[is.na(pOldOld)]= 0
+bt[is.na(pOldNew)]= 0
+bt[is.na(pNewOld)]= 0
+bt[is.na(pNewNew)]= 0
 # Coerce into two cols for labs and vals
-bnewdat[, bt_labs:= c(rep("p(Old|Old)", length(btransition_probabilities$oldold)), rep("p(Old|New)", length(btransition_probabilities$oldnew)), rep("p(New|Old)", length(btransition_probabilities$newold)), rep("p(New|New)", length(btransition_probabilities$newnew)))]
-bnewdat[, bt_probs:= c(btransition_probabilities$p_oldold, btransition_probabilities$p_oldnew, btransition_probabilities$p_newold, btransition_probabilities$p_newnew)]
+bnewdat= data.table(bt_labs= c(rep("p(Old|Old)", length(bt$pOldOld)), rep("p(Old|New)", length(bt$pOldNew)), rep("p(New|Old)", length(bt$pNewOld)), rep("p(New|New)", length(bt$pNewNew))), bt_probs= c(bt[,pOldOld], bt[,pOldNew], bt[,pNewOld], bt[,pNewNew]))
+
+
+transition_probabilities
+tranplot= data.table(t_prob= c(transition_probabilities$pOldOld, transition_probabilities$pOldNew, transition_probabilities$pNewOld, transition_probabilities$pNewNew), tlabs= c(rep("p(Old|Old)", length(transition_probabilities$pOldOld)), rep("p(Old|New)", length(transition_probabilities$pOldNew)), rep("p(New|Old)", length(transition_probabilities$pNewOld)), rep("p(New|New)", length(transition_probabilities$pNewNew))))
+
+ggplot()+ geom_boxplot(aes(x= tranplot$tlabs, y= tranplot$t_prob))+ labs(x= "Transition Type", y= "Probability of Transition Type")
+ggsave("probcond_boxplots_summer22.png", device= "png", dpi = 300)
+
+
+
+
+
+
+
+
+
 
 # bnewdat[, simvals:= c(btransition_probabilities$oldold, btransition_probabilities$oldnew, btransition_probabilities$newold, btransition_probabilities$newnew)]
 
-ggplot()+ geom_boxplot(aes(x= bnewdat$bt_labs, y= bnewdat$bt_probs))+ labs(x= "Transition Type", y= "Probability of Transition Type")
-ggsave("probcond_boxplots_summer22.png", device= "png", dpi = 300)
-
-p1= ggplot()+ geom_density(aes(y= btransition_probabilities$oldold), fill= "white") + geom_density(aes(x= 1, y= p_oldold))
 
 
-
-p1 <- ggplot() + geom_density(aes(x= bt_vals$oldold, fill= "Bootstrapped Data"), fill= "white") + geom_vline(aes(xintercept= mean(new_dat[dat_labs== "p(Old|Old)"]$row1), color= "Subject Average"))+ xlim(0,1)+ labs(x= "p(B|A)", y= "Density", title= "Probability of Repeated Item Given a Repeated Item")
+p1= ggplot()+ geom_density(aes(y= bnewdat$bt_labs), fill= "white") + geom_density(aes(x= 1, y= bnewdat$bt_probs))
 
 
 
-p1= ggplot() + geom_density(aes(x= bnewdat[bt_labs== "p(Old|Old)"]$bt_probs, fill= "Bootstrapped Data"), fill= "white") + geom_vline(aes(xintercept= p_oldold, color= "Observed Probability"))+ xlim(0,1)+ labs(x= "Transition Probability", y= "Density", title= "p(Repeat|Repeat)")
-p2= ggplot() + geom_density(aes(x= bnewdat[bt_labs== "p(Old|New)"]$bt_probs, fill= "Bootstrapped Data"), fill= "white") + geom_vline(aes(xintercept= p_oldnew, color= "Observed Probability"))+ xlim(0,1)+ labs(x= "Transition Probability", y= "Density", title= "p(Repeat|New)")
-p3= ggplot() + geom_density(aes(x= bnewdat[bt_labs== "p(New|Old)"]$bt_probs, fill= "Bootstrapped Data"), fill= "white") + geom_vline(aes(xintercept= p_newold, color= "Observed Probability"))+ xlim(0,1)+ labs(x= "Transition Probability", y= "Density", title= "p(New|Repeat)")
-p4= ggplot() + geom_density(aes(x= bnewdat[bt_labs== "p(New|New)"]$bt_probs, fill= "Bootstrapped Data"), fill= "white") + geom_vline(aes(xintercept= p_newnew, color= "Observed Probability"))+ xlim(0,1)+ labs(x= "Transition Probability", y= "Density", title= "p(New|New)")
+p1 <- ggplot() + geom_density(aes(x= bnewdat[bt_labs== "p(Old|Old)"], fill= "Bootstrapped Data"), fill= "white") + geom_vline(aes(xintercept= mean(transition_probabilities[dat_labs== "p(Old|Old)"]$row1), color= "Subject Average"))+ xlim(0,1)+ labs(x= "p(B|A)", y= "Density", title= "Probability of Repeated Item Given a Repeated Item")
+
+
+
+# ggplot() + geom_density(aes(x= bnewdat[bt_labs== "p(Old|Old)"]$bt_probs, fill= "Bootstrapped Data"), fill= "white") + geom_vline(aes(xintercept= mean(pOldOld, color= "Observed Probability"))+ xlim(0,1)+ labs(x= "Transition Probability", y= "Density", title= "p(Repeat|Repeat)")
+
+
+
+p1= ggplot() + geom_density(aes(x= bnewdat[bt_labs== "p(Old|Old)"]$bt_probs, fill= "Bootstrapped Data"), fill= "white") + geom_vline(aes(xintercept= mean(transition_probabilities$pOldOld), color= "Observed Probability"))+ xlim(0,1)+ labs(x= "Transition Probability", y= "Density", title= "p(Repeat|Repeat)")
+
+
+p2= ggplot() + geom_density(aes(x= bnewdat[bt_labs== "p(Old|New)"]$bt_probs, fill= "Bootstrapped Data"), fill= "white") + geom_vline(aes(xintercept= mean(transition_probabilities$pOldNew), color= "Observed Probability"))+ xlim(0,1)+ labs(x= "Transition Probability", y= "Density", title= "p(Repeat|New)")
+
+
+
+
+p3= ggplot() + geom_density(aes(x= bnewdat[bt_labs== "p(New|Old)"]$bt_probs, fill= "Bootstrapped Data"), fill= "white") + geom_vline(aes(xintercept= mean(transition_probabilities$pNewOld), color= "Observed Probability"))+ xlim(0,1)+ labs(x= "Transition Probability", y= "Density", title= "p(New|Repeat)")
+p4= ggplot() + geom_density(aes(x= bnewdat[bt_labs== "p(New|New)"]$bt_probs, fill= "Bootstrapped Data"), fill= "white") + geom_vline(aes(xintercept= mean(transition_probabilities$pNewNew), color= "Observed Probability"))+ xlim(0,1)+ labs(x= "Transition Probability", y= "Density", title= "p(New|New)")
 cowplot::plot_grid(p1,p2,p3,p4)
 
 

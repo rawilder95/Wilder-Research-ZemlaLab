@@ -2,6 +2,13 @@ if (getwd()!= "~/Desktop/Desktop - Rebecca’s MacBook Air/Research 2021-2022/Gi
   setwd("~/Desktop/Desktop - Rebecca’s MacBook Air/Research 2021-2022/GitHub/Wilder-Research-ZemlaLab/fluencytask_rebeccascopy/")
 }
 
+# Clear workspace line here###
+# load wikipedia2vec on lab computer -->  run python script to get all similarities --> save csv --> nevr touch wikipedia2vec again. 
+# Install xCode --> xcode commandline tools --> option to do that + google
+
+
+
+
 # ##Relevant Libraries & Packages###
 # install.packages("data.table")
 # library(data.table)
@@ -25,6 +32,7 @@ cat_table= cat_table[N==2]
 
 dat= merge(dat, cat_table)
 dat= dat[N== 2]
+
 
 
 
@@ -64,11 +72,12 @@ for (i in 1:length(nsubj)){
 # words= unique(this_cat[listrank== 2, item])
 sf2 <- vector()
 both_trials <- vector()
-all_cats= data.table(typicality= numeric(), pba= numeric())
+all_cats= data.table(item= character(), pba= numeric(), typicality= numeric(), category= character())
 # all_cats= data.table(item= character(), pba= numeric(), typicality= numeric(), category= character())
 
 # this works DO NOT TOUCH IT. Do NOT try to do anything with aesthetics for now, you absolute gaffe machine.
 # now I have to leave reminders bc you did it again. stop.
+
 for (cats in ncat){
   this_cat= dat[category== cats]
   words= unique(this_cat[listrank== 2, item])
@@ -82,16 +91,29 @@ for (cats in ncat){
     }
   }
 newlist= list(words, both_trials, sf2, rep(cats,length(sf2)))
-all_cats= rbind(all_cats, list(sf2, both_trials))
+all_cats= rbind(all_cats, newlist)
+
 }
 
 ggplot() + geom_count(data= all_cats, aes(x= all_cats$typicality, y= all_cats$pba, alpha= 0.5)) + geom_abline(intercept= 0, slope= 1)+ ylim(0,1) + xlim(0,1)
 
-
-
+###USE THIS MERGE FOR GET TYPICALITY#####
+# merge(dat, all_cats, by=c("item","category"))
 
 ggsave("repvtypicality_summer22.png", device= "png", dpi= 300)
 
+
+k= dat[listrank==2, .N, by= .(id,category)][, .N, by= category]
+# merge(dat, k)
+
+
+
+merge(dat, j, by= c("item", "category"))
+
+j= dat[listrank==2, (.N-1)/length(nsubj), by=.(category, item)]
+
+
+mod= glmer(data= dat[listrank==1], both_trials~ V1 )
 #################### Temporal Interval ######################
 
 
@@ -164,6 +186,7 @@ tmp_spc= dat[, max(game)- min(game), by= .(id, category)]
 
 k= vector()
 j= vector()
+dat[, typicality:= NaN]
 for(cats in ncat){
   this_cat= dat[category== cats & listrank== 2]
   that_cat= dat[category== cats & listrank== 1]
@@ -172,10 +195,10 @@ for(cats in ncat){
   for (word in 1:length(l2word)){
     # k[word]= (length(dat[category== cats & item== l2word[word]]$game)-1)/length(nsubj)
     k[word]= (sum(this_cat$item %in% l2word[word])-1)/length(nsubj)
-    dat[category== cats & listrank== 2 & item== l2word[word]]$typicality= (sum(this_cat$item %in% l2word[word])-1)/length(nsubj)
+    dat[category== cats & listrank== 2 & item== l2word[word]]$typicality== (sum(this_cat$item %in% l2word[word])-1)/length(nsubj)
   }
   for (item in 1:length(l1word)){
-    dat[category== cats & listrank== 1 & item == l1word[item]]$typicality = (sum(that_cat$item %in% l1word[word]-1)/length(nsubj))
+    dat[category== cats & listrank== 1 & item == l1word[item]]$typicality== (sum(that_cat$item %in% l1word[word]-1)/length(nsubj))
   }
 }
 
@@ -185,6 +208,15 @@ for(cats in ncat){
 modreptyp= glmer(both_trials ~ typicality * temp_int + (1|id) + (1|category), data= dat, family= "binomial")
 
 summary(modreptyp)
+
+
+glmer(both_trials ~typicality + temp_int + (1|id) + (1|category), data= dat, family= "binomial")
+
+
+
+
+
+
 
 
 

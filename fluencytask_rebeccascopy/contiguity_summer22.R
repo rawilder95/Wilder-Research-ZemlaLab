@@ -52,3 +52,147 @@ for (i in 1:length(nsubj)){
 }
 dat[, temp_int:= 0]
 dat[, temp_int:= ((max(game)-min(game))-1), by= .(id, category)]
+
+for (subject in nsubj){
+  for(cats in ncat){
+    this_subj= dat[id= subject & category= ncat & listrank== 2]
+    # Make sure this isn't an empty row for subject (as some trials were removed)
+    if(nrow(this_subj)>0){
+      
+    }
+  }
+}
+
+
+l2 = dat[both_trials==1 & listrank==2]
+l1= dat[listrank==1]
+transitions1= dat[which(l1$item %in% l2$item)]
+sample_l2= l2[id== "S0lVm6wcxkb" & category== "Animals"]
+sample_l1= l1[id== "S0lVm6wcxkb" & category== "Animals"]
+s_vec= vector()
+
+for(i in 1:(nrow(sample_subj)-1)){
+  if(abs(sample_subj[i]$itemnum- sample_subj[i+1]$itemnum)==1){
+    s= abs(sample_l1[item %in% sample_l2[i]$item]$itemnum - sample_l1[item %in% sample_l2[i+1]$item]$itemnum)
+  } 
+}
+
+# for (subject in nsubj){
+#   for (cats in ncat){
+#     if (nrow(dat[id== subject & category== cats & both_trials== 1 & listrank== 2])>1 & nrow(dat[id== subject & category== cats & both_trials== 1 & listrank== 1]))>1){
+#       l2= dat[id== subject & category== cats & both_trials== 1 & listrank== 2]
+#       l1= dat[id== subject & category== cats & listrank== 1]
+#       s_vec= list()
+#       for(i in 1:(nrow(l2)-1)){
+#         s_vec[i]= abs(l1[item %in% l2[i]$item]$itemnum- l1[item %in% l2[i+1]$item]$itemnum)
+#       }
+#     }
+#   }
+# }
+
+s_df= data.table(id= character(), category= character(), item= character(), sp1= numeric(), sp2= numeric(), dist= numeric(), range= numeric())
+for (subject in nsubj){
+  for(cats in ncat){
+    idx= nrow(dat[id== subject & category== cats & both_trials== 1 & listrank==2])>1 & nrow(dat[id== subject & category== cats & both_trials== 1 & listrank==2])
+    if (idx== TRUE){
+      l2= dat[id== subject & category== cats & both_trials== 1 & listrank== 2]
+      l1= dat[id== subject & category== cats & listrank== 1]
+      s_vec= vector()
+      id_vec= vector()
+      cat_vec= vector()
+      item_vec= vector()
+      sp_vec2= vector()
+      sp_vec1= vector()
+      for(i in 1:(nrow(l2)-1)){
+        s_vec[i]= max(l1[item %in% l2[i]$item]$itemnum)- min(l1[item %in% l2[i+1]$item]$itemnum)
+        id_vec[i]= subject
+        cat_vec[i]= cats
+        item_vec[i]= l2[i]$item
+        sp_vec1[i]= min(which(l1$item %in% l2[i]$item))
+        sp_vec2[i]= l1[i]$itemnum
+      }
+      max_range= rep(max(abs(s_vec)),length(s_vec))
+      newrow= list(id_vec, cat_vec, item_vec, sp_vec1, sp_vec2, s_vec, max_range)
+      s_df= rbindlist(list(s_df, newrow))
+    }
+  }
+}
+
+actual_counts= s_df[, .N, by= .(id, category, dist)]
+
+
+transition_range= 1:(max(this_transition$dist))
+this_subj= dat[id== nsubj[1] & category== ncat[1]]
+this_transition= s_df[id== nsubj[1] & category== ncat[1]]
+transition_range= data.table(possible_transitions= c(min(this_transition$dist):max(this_transition$dist)), counts= 0)
+
+
+for(i in 1:length(transition_range$possible_transitions)){
+  idx= transition_range$possible_transitions[i]
+  transition_range[i]$counts= sum(this_transition$dist %in% idx)
+}
+
+log_table= data.table(transition= numeric())
+this_log= vector()
+counter= vector()
+tvec= vector()
+
+
+for (i in 1:max(this_transition$sp1)){
+  if(nrow(this_transition[sp1==i])>0){
+    this_log[i]= this_transition[sp1== i]$sp1
+    fordir= c(1:i)
+    fordir[fordir%in% this_log]= NaN
+    backdir= c(i:1)
+    backdir[backdir%in% this_log]= NaN
+    backdir[backdir %in% fordir]= NaN
+    newrow= c(fordir, backdir)
+    log_table= rbindlist(list(log_table, newrow))
+    print(i)
+  } else{
+    print(this_transition$sp)
+  }
+}
+# for(i in 1:max(this_transition$sp1)){
+#   idx= this_transition[sp1== i]$sp1
+#   this_log[i]= idx
+#   fordir= c(1:idx)
+#   fordir[!fordir %in% this_log]= NaN
+#   backdir= c(idx:1)
+#   backdir[backdir %in% this_log]= NaN
+#   tvec[i]= sum(!is.nan(fordir))+ sum(!is.nan(backdir))
+#   newrow= list(c(fordir, (backdir*-1)))
+#   log_table= rbindlist(list(log_table, newrow))
+# }
+
+# merge(s_df, actual_counts, all.x= 1, all.y= 1, no.dups= TRUE)
+
+s_df
+
+
+# 
+# k= s_df[id== nsubj[1] & category== ncat[1]]
+# t_counts= vector()
+# d= vector()
+# a_counts= unique(s_df)
+# for (i in 1:max(k$dist)){
+#  d[i]= max(k$dist)- i+1
+# }
+
+
+# k= dat[listrank==2, max(itemnum), by= .(id, category)]
+# (k[, single_out:= "Value Distribution"])
+# k[V1>28]$single_out <- "Subject N"
+# k[V1<28 | V1> 34]$single_out <- "Value Distribution"
+# ggplot() + geom_histogram(aes(x= k$V1,  fill= k$single_out), bins= 40, binwidth= 1, color= "grey")+ labs(y= "Probability Density", x= "Predicted Trial 2 Length", fill= "Single Out Subject N")+ scale_x_continuous(breaks= (1:80))+ theme(axis.text.x = element_blank(), axis.ticks.x = element_blank())
+
+
+
+
+
+
+transition_range= 1:(max(this_trans$dist))
+
+
+
+
