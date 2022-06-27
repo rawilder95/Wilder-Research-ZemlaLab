@@ -8,7 +8,6 @@ library(cowplot)
 library(ggplot2)
 library(data.table)
 library(dplyr)
-
 # set up data file
 dat <- data.table(read.csv("final_results.csv"))
 dat<- subset(dat,select=-c(X))
@@ -21,10 +20,6 @@ cat_table= cat_table[N==2]
 dat= merge(dat, cat_table)
 dat= dat[N== 2]
 dat= subset(dat, select= -c(N))
-dat[listnum== "FALSE", listrank:= 1]
-dat[listnum == "TRUE", listrank:= 2]
-dat[, both_trials := 0]
-dat$listnum= dat[, as.numeric(listnum),]
 # Drop games 23-24
 ncat= unique(dat$category)
 for (i in 1:length(nsubj)){
@@ -33,7 +28,7 @@ for (i in 1:length(nsubj)){
     dat[id== nsubj[i] & category== ncat[j], listnum:= max(game)]
   }
 }
-dat<- subset(dat, select=-c(listnum))
+dat= subset(dat, select= -c(listnum))
 # This loop looks up and gets rid of perseverative erros by setting to NaN
 check4err= data.table()
 for (subject in nsubj){
@@ -52,6 +47,46 @@ for (subject in nsubj){
     }
   }
 }
+dat[, both_trials:= 0]
+for (subject in nsubj){
+  for (cats in unique(dat$category)){
+    this_subj <- dat[id== subject & category== cats,]
+    repeated_words <- intersect(this_subj[listrank==2,item], this_subj[listrank==1,item])
+    this_subj[, both_trials:= 0]
+    this_subj[item %in% repeated_words, both_trials:=1]
+    dat[id== subject & category == cats]$both_trials <- this_subj$both_trials
+  }
+}
+
+
+
+all_transitions= data.table()
+for (subject in nsubj){
+  for(cats in ncat){
+    this_subj= dat[id== subject & category== cats]
+    thisword= unique(this_subj$item)
+    for (word in 1:(length(thisword)-1)){
+      if(sum(this_subj$both_trials[word], this_subj$both_trials[word+1])==2){
+        all_transitions[id== subject & category== cats & item %in% item[word] <- which(thatword %in% thisword[word])]
+      } else {
+        all_transitions[id== subject & category== cats & item %in% item[word]] <- NaN
+        print(sum(this_subj$both_trials[word], this_subj$both_trials[word+1])==2)
+      }
+      if(length(transition_dist[is.na(transition_dist)%in%length(transition_dist)])){
+        print(sum(this_subj$both_trials[word], this_subj$both_trials[word+1])==2)
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
 
 
 for (subject in nsubj){
@@ -71,7 +106,6 @@ for (subject in nsubj){
     }
   }
 }
-
 
 sum(is.na(all_transitions$x))
 sum(dat[listrank== 2]$both_trials==0)
@@ -177,7 +211,6 @@ s_df
 
 
 #### Me mapping out exactly how to get the dist of possible transition values#### 
-
 this_transition= s_df[id== nsubj[1]& category== ncat[1]]
 thislog= vector()
 # possible transitions

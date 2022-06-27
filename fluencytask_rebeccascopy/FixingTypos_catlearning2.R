@@ -95,15 +95,8 @@ for (subject in nsubj){
 
 # counts_table1= dat[, .N, by= .(id, category, game)]
 # counts_table= counts_table1[, .N, by= .(id, category)]
-# 
-# 
-# 
-# 
 # dat= merge(dat, counts_table)
-
-
-
-dat= dat[N==2]
+# dat= dat[N==2]
 
 
 write.csv(dat, "final_results.csv")

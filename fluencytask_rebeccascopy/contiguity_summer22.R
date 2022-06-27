@@ -100,7 +100,8 @@ dat[, temp_int:= ((max(game)-min(game))-1), by= .(id, category)]
 #     }
 #   }
 # }
-
+lag_df= data.table()
+lag0= vector()
 s_df= data.table(id= character(), category= character(), item= character(), sp1= numeric(), sp2= numeric(), dist= numeric(), range= numeric())
 for (subject in nsubj){
   for(cats in ncat){
@@ -116,6 +117,10 @@ for (subject in nsubj){
       sp_vec1= vector()
       for(i in 1:(nrow(l2)-1)){
         s_vec[i]= max(l1[item %in% l2[i]$item]$itemnum)- min(l1[item %in% l2[i+1]$item]$itemnum)
+        # if(s_vec[i]==0){
+        #   newlag= s_vec[i]
+        # }
+        # lag_df= rbindlist(list(lag_df, newlag))
         id_vec[i]= subject
         cat_vec[i]= cats
         item_vec[i]= l2[i]$item
@@ -128,6 +133,11 @@ for (subject in nsubj){
     }
   }
 }
+
+s_df[dist== 0]= NaN
+
+
+
 
 ### Sanity Check Calculations ###
 #Forwards
@@ -252,28 +262,35 @@ length(k)
 
 
 
+
+
+ggplot()+ geom_histogram(aes(x= s_df[!is.nan(dist)]$dist))
+
+
+
+
 ### Then trying to do it exactly in the vector### 
-#New weird error is that ptr_count is now, for whatever reason, not adding rows.
-#Even though it was earlier.
-thislog= vector()
-ptr_count= data.table(sp= numeric(), npossible= numeric())
-getvals= vector()
-for (i in 1:max(this_transition$sp1)){
-  # print(i)
-  if(nrow(this_transition[sp1 %in% i])>0){
-    idx= i
-    k = c(1:idx, idx:(max(this_transition$sp1)))
-    thislog[i]= idx
-    k= k[!k%in% thislog]
-    k= k[!is.na(k)]
-    print(k)
-
-  }else {
-    k = 0
-    thislog[i]= idx
-  }
-  ptr_count[i]$npossible= length(k) #N possible transitions that could be made up till this point
-}
-ptr_count
-
+# #New weird error is that ptr_count is now, for whatever reason, not adding rows.
+# #Even though it was earlier.
+# thislog= vector()
+# ptr_count= data.table(sp= numeric(), npossible= numeric())
+# getvals= vector()
+# for (i in 1:max(this_transition$sp1)){
+#   # print(i)
+#   if(nrow(this_transition[sp1 %in% i])>0){
+#     idx= i
+#     k = c(1:idx, idx:(max(this_transition$sp1)))
+#     thislog[i]= idx
+#     k= k[!k%in% thislog]
+#     k= k[!is.na(k)]
+#     print(k)
+# 
+#   }else {
+#     k = 0
+#     thislog[i]= idx
+#   }
+#   ptr_count[i]$npossible= length(k) #N possible transitions that could be made up till this point
+# }
+# ptr_count
+# 
 
