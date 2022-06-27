@@ -241,6 +241,13 @@ p4= ggplot() + geom_density(aes(x= bnewdat[bt_labs== "p(New|New)"]$bt_probs, fil
 cowplot::plot_grid(p1,p2,p3,p4)
 
 
+k= dat[listrank==2, max(itemnum), by= .(id, category)]
+# (k[, single_out:= "Value Distribution"])
+# k[V1>28]$single_out <- "Subject N"
+# k[V1<28 | V1> 34]$single_out <- "Value Distribution"
+# ggplot() + geom_histogram(aes(x= k$V1,  fill= k$single_out), bins= 40, binwidth= 1, color= "grey")+ labs(y= "Probability Density", x= "Predicted Trial 2 Length", fill= "Single Out Subject N")+ scale_x_continuous(breaks= (1:80))+ theme(axis.text.x = element_blank(), axis.ticks.x = element_blank())
+
+
 
 
 

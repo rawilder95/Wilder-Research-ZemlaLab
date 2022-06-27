@@ -1,32 +1,30 @@
 if (getwd()!= "~/Desktop/Desktop - Rebecca’s MacBook Air/Research 2021-2022/GitHub/Wilder-Research-ZemlaLab/fluencytask_rebeccascopy/logs"){
   setwd("~/Desktop/Desktop - Rebecca’s MacBook Air/Research 2021-2022/GitHub/Wilder-Research-ZemlaLab/fluencytask_rebeccascopy/")
 }
-# ##Relevant Libraries & Packages###
-# install.packages("data.table")
-# library(data.table)
-# install.packages("googlesheets4")
-# library(googlesheets4)
-# install.packages("ggplot2")
-# library(ggplot2)
-# install.packages("lme4")
-# library(lme4)
+
 rm()
 library(lme4)
 library(cowplot)
 library(ggplot2)
 library(data.table)
-# 
+library(dplyr)
+
+# set up data file
 dat <- data.table(read.csv("final_results.csv"))
 dat<- subset(dat,select=-c(X))
 nsubj= unique(dat$id)
 ncat= unique(dat$category)
-
 # get indices for categories that were !repeated twice
 k= dat[, .N, by= .(category, game, id)]
 cat_table= k[, .N, by= .(id, category)]
 cat_table= cat_table[N==2]
 dat= merge(dat, cat_table)
 dat= dat[N== 2]
+dat= subset(dat, select= -c(N))
+dat[listnum== "FALSE", listrank:= 1]
+dat[listnum == "TRUE", listrank:= 2]
+dat[, both_trials := 0]
+dat$listnum= dat[, as.numeric(listnum),]
 # Drop games 23-24
 ncat= unique(dat$category)
 for (i in 1:length(nsubj)){
@@ -35,71 +33,55 @@ for (i in 1:length(nsubj)){
     dat[id== nsubj[i] & category== ncat[j], listnum:= max(game)]
   }
 }
-
-
-
-
-dat[listnum== "FALSE", listrank:= 1]
-dat[listnum == "TRUE", listrank:= 2]
-dat[, both_trials := 0]
-
-
-
-
-
-
-
-
 dat<- subset(dat, select=-c(listnum))
-# get items that were listed in both trials
-for (i in 1:length(nsubj)){
+# This loop looks up and gets rid of perseverative erros by setting to NaN
+check4err= data.table()
+for (subject in nsubj){
   for (cats in ncat){
-    this_subj <- dat[id==nsubj[i] & category== cats,]
-    repeated_words <- intersect(this_subj[listrank==2,item], this_subj[listrank==1,item])
-    this_subj[, both_trials:= 0]
-    this_subj[item %in% repeated_words, both_trials:=1]
-    dat[id==nsubj[i] & category== cats]$both_trials <- this_subj$both_trials
+    subj <- dat[listrank== 1 & id== subject & category== cats]
+    if(any(subj[listrank== 1,.N, by= item]$N> 1)){
+      for (game_id in unique(subj$game)){
+        this_subj= subj[game== game_id]
+        check4err <- this_subj[listrank== 1,.N, by= item]
+        get_err <- this_subj[item %in% check4err[check4err$N>1]$item]
+        smallest_val <- min(get_err$itemnum)
+        # larger_val <- get_err[itemnum != smallest_val]
+        this_subj[item %in% unique(get_err$item) & itemnum %in% smallest_val] = NaN
+        dat[id== subject & category == cats & listrank== 1] <- this_subj
+      }
+    }
   }
 }
-dat[, temp_int:= 0]
-dat[, temp_int:= ((max(game)-min(game))-1), by= .(id, category)]
-# 
-# for (subject in nsubj){
-#   for(cats in ncat){
-#     this_subj= dat[id== subject & category== ncat & listrank== 2]
-#     # Make sure this isn't an empty row for subject (as some trials were removed)
-#     if(nrow(this_subj)>0){
-# 
-#     }
-#   }
-# }
-# 
-# 
-# l2 = dat[both_trials==1 & listrank==2]
-# l1= dat[listrank==1]
-# transitions1= dat[which(l1$item %in% l2$item)]
-# sample_l2= l2[id== "S0lVm6wcxkb" & category== "Animals"]
-# sample_l1= l1[id== "S0lVm6wcxkb" & category== "Animals"]
-# s_vec= vector()
-# 
-# for(i in 1:(nrow(sample_subj)-1)){
-#   if(abs(sample_subj[i]$itemnum- sample_subj[i+1]$itemnum)==1){
-#     s= abs(sample_l1[item %in% sample_l2[i]$item]$itemnum - sample_l1[item %in% sample_l2[i+1]$item]$itemnum)
-#   } 
-# }
 
-# for (subject in nsubj){
-#   for (cats in ncat){
-#     if (nrow(dat[id== subject & category== cats & both_trials== 1 & listrank== 2])>1 & nrow(dat[id== subject & category== cats & both_trials== 1 & listrank== 1]))>1){
-#       l2= dat[id== subject & category== cats & both_trials== 1 & listrank== 2]
-#       l1= dat[id== subject & category== cats & listrank== 1]
-#       s_vec= list()
-#       for(i in 1:(nrow(l2)-1)){
-#         s_vec[i]= abs(l1[item %in% l2[i]$item]$itemnum- l1[item %in% l2[i+1]$item]$itemnum)
-#       }
-#     }
-#   }
-# }
+
+for (subject in nsubj){
+  for(cats in ncat){
+    this_subj= dat[id== subject & category== cats]
+    thisword= unique(this_subj$word)
+    for (word in 2:length(thisword)-1){
+      if(sum(this_subj[item %in% thisword[word]]$both_trials, this_subj[item %in% thisword[word]]$both_trials)==2){
+        all_transitions[id== subject & category== cats & item== item[word] <- which(thatword %in% thisword[word])]
+      } else {
+        all_transitions[id== subject & category== cats & item== item[word]] <- NaN
+        print(sum(this_subj$both_trials[word], this_subj$both_trials[word+1])==2)
+      }
+      if(length(transition_dist[is.na(transition_dist)== length(transition_dist)])){
+        print(sum(this_subj$both_trials[word], this_subj$both_trials[word+1])==2)
+      }
+    }
+  }
+}
+
+
+sum(is.na(all_transitions$x))
+sum(dat[listrank== 2]$both_trials==0)
+
+all_transitions
+
+# change transition dist to sp
+all_transitions <- dat
+all_transitions[, sp:= NaN]
+transition_dist <- vector()
 
 s_df= data.table(id= character(), category= character(), item= character(), sp1= numeric(), sp2= numeric(), dist= numeric(), range= numeric())
 for (subject in nsubj){
@@ -179,17 +161,6 @@ for (i in 1:max(this_transition$sp1)){
     print(this_transition$sp)
   }
 }
-# for(i in 1:max(this_transition$sp1)){
-#   idx= this_transition[sp1== i]$sp1
-#   this_log[i]= idx
-#   fordir= c(1:idx)
-#   fordir[!fordir %in% this_log]= NaN
-#   backdir= c(idx:1)
-#   backdir[backdir %in% this_log]= NaN
-#   tvec[i]= sum(!is.nan(fordir))+ sum(!is.nan(backdir))
-#   newrow= list(c(fordir, (backdir*-1)))
-#   log_table= rbindlist(list(log_table, newrow))
-# }
 s_df
 # 
 # k= s_df[id== nsubj[1] & category== ncat[1]]
@@ -267,7 +238,7 @@ for (i in 1:max(this_transition$sp1)){
     k= k[!k%in% thislog]
     k= k[!is.na(k)]
     print(k)
-
+    
   }else {
     k = 0
     thislog[i]= idx

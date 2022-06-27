@@ -4,9 +4,9 @@ if (getwd()!= "~/Desktop/Desktop - Rebecca’s MacBook Air/Research 2021-2022/Gi
 
 # ##Relevant Libraries & Packages###
 # install.packages("data.table")
-# library(data.table)
+library(data.table)
 # install.packages("googlesheets4")
-# library(googlesheets4)
+library(googlesheets4)
 
 
 
@@ -72,7 +72,11 @@ for (i in 1:length(nsubj)){
     dat[id== nsubj[i] & category== ncat[j], listnum:= this_game== max(this_game)]
   }
 }
-
+dat$listnum= dat[, as.numeric(listnum)]
+dat[,listrank:= NaN]
+dat[listnum== 0]$listrank= 1
+dat[listnum==1]$listrank= 2
+dat= subset(dat, select= -c(listnum))
 # This loop looks up and gets rid of perseverative erros by setting to NaN
 check4err= data.table()
 for (subject in nsubj){
@@ -89,13 +93,13 @@ for (subject in nsubj){
   }
 }
 
-counts_table1= dat[, .N, by= .(id, category, game)]
-counts_table= counts_table1[, .N, by= .(id, category)]
-
-
-
-
-dat= merge(dat, counts_table)
+# counts_table1= dat[, .N, by= .(id, category, game)]
+# counts_table= counts_table1[, .N, by= .(id, category)]
+# 
+# 
+# 
+# 
+# dat= merge(dat, counts_table)
 
 
 
