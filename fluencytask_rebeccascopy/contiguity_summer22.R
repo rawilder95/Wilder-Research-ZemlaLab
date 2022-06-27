@@ -10,7 +10,7 @@ if (getwd()!= "~/Desktop/Desktop - Rebecca’s MacBook Air/Research 2021-2022/Gi
 # library(ggplot2)
 # install.packages("lme4")
 # library(lme4)
-rm()
+rm(list= ls())
 library(lme4)
 library(cowplot)
 library(ggplot2)
