@@ -158,10 +158,9 @@ mean(fwd$N) #3.905405
 mean(bckwd$N) #5.665198
 
 
-
+this_transition= s_df[id== nsubj[1] & category== ncat[1]]
 transition_range= 1:(max(this_transition$dist))
 this_subj= dat[id== nsubj[1] & category== ncat[1]]
-this_transition= s_df[id== nsubj[1] & category== ncat[1]]
 transition_range= data.table(possible_transitions= c(min(this_transition$dist):max(this_transition$dist)), counts= 0)
 
 
