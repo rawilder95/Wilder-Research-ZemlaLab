@@ -102,7 +102,7 @@ dat[, temp_int:= ((max(game)-min(game))-1), by= .(id, category)]
 # }
 lag_df= data.table()
 lag0= vector()
-s_df= data.table(id= character(), category= character(), item= character(), sp1= numeric(), sp2= numeric(), dist= numeric(), range= numeric())
+s_df= data.table(id= character(), category= character(), item= character(), sp1= numeric(), dist= numeric(), range= numeric())
 for (subject in nsubj){
   for(cats in ncat){
     idx= nrow(dat[id== subject & category== cats & both_trials== 1 & listrank==2])>1 & nrow(dat[id== subject & category== cats & both_trials== 1 & listrank==2])
@@ -116,7 +116,8 @@ for (subject in nsubj){
       sp_vec2= vector()
       sp_vec1= vector()
       for(i in 1:(nrow(l2)-1)){
-        s_vec[i]= max(l1[item %in% l2[i]$item]$itemnum)- min(l1[item %in% l2[i+1]$item]$itemnum)
+        s_vec[i]= l1[item %in% l2[i+1]$item]$itemnum - l1[item %in% l2[i]$item]$itemnum
+        if()
         # if(s_vec[i]==0){
         #   newlag= s_vec[i]
         # }
@@ -125,10 +126,10 @@ for (subject in nsubj){
         cat_vec[i]= cats
         item_vec[i]= l2[i]$item
         sp_vec1[i]= min(l1[l1$item %in% l2[i]$item]$itemnum)
-        sp_vec2[i]= l1[i]$itemnum
+        # sp_vec2[i]= l1[i]$itemnum
       }
       max_range= rep(max(abs(s_vec)),length(s_vec))
-      newrow= list(id_vec, cat_vec, item_vec, sp_vec1, sp_vec2, s_vec, max_range)
+      newrow= list(id_vec, cat_vec, item_vec, sp_vec1, s_vec, max_range)
       s_df= rbindlist(list(s_df, newrow))
     }
   }
@@ -158,36 +159,40 @@ mean(fwd$N) #3.905405
 mean(bckwd$N) #5.665198
 
 
-this_transition= s_df[id== nsubj[1] & category== ncat[1]]
-transition_range= 1:(max(this_transition$dist))
-this_subj= dat[id== nsubj[1] & category== ncat[1]]
-transition_range= data.table(possible_transitions= c(min(this_transition$dist):max(this_transition$dist)), counts= 0)
+# this_transition= s_df[id== nsubj[1] & category== ncat[1]]
+# transition_range= 1:(max(this_transition$dist))
+# this_subj= dat[id== nsubj[1] & category== ncat[1]]
+# transition_range= data.table(possible_transitions= c(min(this_transition$dist):max(this_transition$dist)), counts= 0)
 
 
-# This is where I am getting the transition counts
-for(i in 1:length(transition_range$possible_transitions)){
-  idx= transition_range$possible_transitions[i]
-  transition_range[i]$counts= sum(this_transition$dist %in% idx)
-}
-log_table= data.table(transition= numeric())
-this_log= vector()
-counter= vector()
-tvec= vector()
-for (i in 1:max(this_transition$sp1)){
-  if(nrow(this_transition[sp1==i])>0){
-    this_log[i]= this_transition[sp1== i]$sp1
-    fordir= c(1:i)
-    fordir[fordir%in% this_log]= NaN
-    backdir= c(i:1)
-    backdir[backdir%in% this_log]= NaN
-    backdir[backdir %in% fordir]= NaN
-    newrow= c(fordir, backdir)
-    log_table= rbindlist(list(log_table, newrow))
-    print(i)
-  } else{
-    print(this_transition$sp)
-  }
-}
+# # This is where I am getting the transition counts
+# for(i in 1:length(transition_range$possible_transitions)){
+#   idx= transition_range$possible_transitions[i]
+#   transition_range[i]$counts= sum(this_transition$dist %in% idx)
+# }
+# 
+# 
+# log_table= data.table(transition= numeric())
+# this_log= vector()
+# counter= vector()
+# tvec= vector()
+# for (i in 1:max(this_transition$sp1)){
+#   if(nrow(this_transition[sp1==i])>0){
+#     this_log[i]= this_transition[sp1== i]$sp1
+#     fordir= c(1:i)
+#     fordir[fordir%in% this_log]= NaN
+#     backdir= c(i:1)
+#     backdir[backdir%in% this_log]= NaN
+#     backdir[backdir %in% fordir]= NaN
+#     newrow= list(c(fordir, backdir))
+#     log_table= rbindlist(list(log_table, newrow))
+#     print(i)
+#   } else{
+#     print(this_transition$sp)
+#   }
+# }
+
+
 # for(i in 1:max(this_transition$sp1)){
 #   idx= this_transition[sp1== i]$sp1
 #   this_log[i]= idx
@@ -215,49 +220,49 @@ s_df
 
 
 #### Me mapping out exactly how to get the dist of possible transition values#### 
-
-this_transition= s_df[id== nsubj[1]& category== ncat[1]]
-thislog= vector()
-# possible transitions
-idx= this_transition[1]$sp1 #= 2
-# vector= [1, 3, 4, 5, 6, ..... to 25]
-k = c(1:idx, idx:(max(this_transition$sp1)))
-thislog[1]= idx
-k= k[!k%in% thislog]
-k
-length(k)
-
-idx= this_transition[2]$sp1 #= 2
-# vector= [1, 3, 4, 5, 6, ..... to 25]
-k = c(1:idx, idx:(max(this_transition$sp1)))
-thislog[2]= idx
-k= k[!k%in% thislog]
-k
-length(k)
-
-idx= this_transition[3]$sp1 #= 2
-# vector= [1, 3, 4, 5, 6, ..... to 25]
-k = c(1:idx, idx:(max(this_transition$sp1)))
-thislog[3]= idx
-k= k[!k%in% thislog]
-k
-length(k)
-
-idx= this_transition[4]$sp1 #= 2
-# vector= [1, 3, 4, 5, 6, ..... to 25]
-k = c(1:idx, idx:(max(this_transition$sp1)))
-thislog[4]= idx
-k= k[!k%in% thislog]
-k
-length(k)
-
-idx= this_transition[5]$sp1 #= 2
-# vector= [1, 3, 4, 5, 6, ..... to 25]
-k = c(1:idx, idx:(max(this_transition$sp1)))
-thislog[5]= idx
-k= k[!k%in% thislog]
-k
-length(k)
+# 
+# this_transition= s_df[id== nsubj[1]& category== ncat[1]]
+# thislog= vector()
+# # possible transitions
+# idx= this_transition[1]$sp1 #= 2
+# # vector= [1, 3, 4, 5, 6, ..... to 25]
+# k = c(1:idx, idx:(max(this_transition$sp1)))
+# thislog[1]= idx
+# k= k[!k%in% thislog]
+# k
+# length(k)
+# 
+# idx= this_transition[2]$sp1 #= 2
+# # vector= [1, 3, 4, 5, 6, ..... to 25]
+# k = c(1:idx, idx:(max(this_transition$sp1)))
+# thislog[2]= idx
+# k= k[!k%in% thislog]
+# k
+# length(k)
+# 
+# idx= this_transition[3]$sp1 #= 2
+# # vector= [1, 3, 4, 5, 6, ..... to 25]
+# k = c(1:idx, idx:(max(this_transition$sp1)))
+# thislog[3]= idx
+# k= k[!k%in% thislog]
+# k
+# length(k)
+# 
+# idx= this_transition[4]$sp1 #= 2
+# # vector= [1, 3, 4, 5, 6, ..... to 25]
+# k = c(1:idx, idx:(max(this_transition$sp1)))
+# thislog[4]= idx
+# k= k[!k%in% thislog]
+# k
+# length(k)
+# 
+# idx= this_transition[5]$sp1 #= 2
+# # vector= [1, 3, 4, 5, 6, ..... to 25]
+# k = c(1:idx, idx:(max(this_transition$sp1)))
+# thislog[5]= idx
+# k= k[!k%in% thislog]
+# k
+# length(k)
 
 
 

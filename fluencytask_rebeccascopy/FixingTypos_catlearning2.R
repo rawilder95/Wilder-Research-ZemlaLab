@@ -92,7 +92,7 @@ for (subject in nsubj){
     }
   }
 }
-
+dat= dat[!is.nan(dat[item]),]
 # counts_table1= dat[, .N, by= .(id, category, game)]
 # counts_table= counts_table1[, .N, by= .(id, category)]
 # dat= merge(dat, counts_table)
