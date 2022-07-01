@@ -117,7 +117,6 @@ for (subject in nsubj){
       sp_vec1= vector()
       for(i in 1:(nrow(l2)-1)){
         s_vec[i]= l1[item %in% l2[i+1]$item]$itemnum - l1[item %in% l2[i]$item]$itemnum
-        if()
         # if(s_vec[i]==0){
         #   newlag= s_vec[i]
         # }

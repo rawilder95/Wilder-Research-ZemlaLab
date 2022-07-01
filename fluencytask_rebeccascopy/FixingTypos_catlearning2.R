@@ -20,6 +20,7 @@ ra_sheet <- ra_sheet[order(-rank(Unchecked), Category)]
 # Read in New Data
 
 dat <- data.table(read.csv("results_cleaned.csv"))
+#16923
 
 # Parse by category and sort alphabetically
 cat_names <- unique(dat[, category])
@@ -53,11 +54,6 @@ dat <- data.table(read.csv("results_cleaned.csv"))
 
 
 nsubj <- unique(dat$id)
-
-
-
-
-
 unitems <- ra_sheet$Unchecked
 
 citems <- ra_sheet$SpellChecked
@@ -66,18 +62,70 @@ for (i in 1:length(unitems)){
   dat[item %in% unitems[i]]$item= citems[i]
 }
 # fix categortype
-for (i in 1:length(nsubj)){
-  for (j in 1:length(ncat)){
-    this_game <- dat[id== nsubj[i] & category== ncat[j], game]
-    dat[id== nsubj[i] & category== ncat[j], listnum:= this_game== max(this_game)]
+# dat[,listrank:= NaN]
+# for (i in 1:length(nsubj)){
+#   for (j in 1:length(ncat)){
+#     this_game <- dat[id== nsubj[i] & category== ncat[j], game]
+#     dat[id== nsubj[i] & category== ncat[j] & this_game== min(this_game), listnum:= 1]
+#     dat[id== nsubj[i] & category== ncat[j] & this_game== max(this_game), listnum:= 2]
+#   }
+# }
+
+dat[, listrank:= NaN]
+for (subject in nsubj){
+  for (cats in ncat){
+    this_subj= dat[id== subject & category== cats]
+    if(length(unique(this_subj$game))==2){
+      this_subj[game %in% min(game)]$listrank= 1
+      this_subj[game %in% max(game)]$listrank= 2
+    } else if(length(unique(this_subj$game))>2){
+      this_subj[game %in% min(game)]$listrank= 1
+      this_subj[game> min(game) && game< max(game)]$listrank= 2
+      this_subj[game== max(game)]$listrank= 3
+    } else if(length(unique(this_subj$game))<2){
+      this_subj[game %in% min(game)]$listrank= 1
+    }
+    dat[id== subject & category== cats,]= this_subj
   }
 }
-dat$listnum= dat[, as.numeric(listnum)]
-dat[,listrank:= NaN]
-dat[listnum== 0]$listrank= 1
-dat[listnum==1]$listrank= 2
-dat= subset(dat, select= -c(listnum))
+# mask out the each trial that was a 3rd category presentation
+dat= dat[listrank<3]
+
 # This loop looks up and gets rid of perseverative erros by setting to NaN
+
+
+
+for(subject in nsubj){
+  for(cats in ncat){
+    if(any(dat[id== subject & category == cats & listrank==1, .N, by= .(item, game)]$N>1)){
+      this_subj= dat[id== subject & category == cats & listrank==1]
+
+    }
+  }
+}
+
+
+# check_err= this_subj[N>1]
+# get_err= check_err[itemnum== min(itemnum)]
+# this_subj[item== get_err$item & itemnum> get_err$itemnum]
+
+this_subj= dat[id== nsubj[4] & category== "Fruit" & listrank==1]
+
+
+
+this_subj[, .N, by= .(item, game, category, id)]
+
+
+
+
+
+
+this_subj[N>1]
+
+
+
+
+
 check4err= data.table()
 for (subject in nsubj){
   for (cats in ncat){
@@ -92,7 +140,14 @@ for (subject in nsubj){
     }
   }
 }
-dat= dat[!is.nan(dat[item]),]
+dat= dat[!is.nan(item),]
+to_merge= dat[, .N , by= .(id, category, game, item)]
+dat= merge(dat, to_merge)
+
+dat= subset(dat, select= -c(N))
+
+
+
 # counts_table1= dat[, .N, by= .(id, category, game)]
 # counts_table= counts_table1[, .N, by= .(id, category)]
 # dat= merge(dat, counts_table)
