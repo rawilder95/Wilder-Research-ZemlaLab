@@ -2,7 +2,6 @@ dat <- data.table(read.csv("final_results.csv"))
 dat<- subset(dat,select=-c(X))
 nsubj= unique(dat$id)
 ncat= unique(dat$category)
-
 dat[, listrank:= NaN]
 for (subject in nsubj){
   for (cats in ncat){
@@ -22,32 +21,45 @@ for (subject in nsubj){
 }
 # Take out last extra repetition(listrank== 3) to make sure spacing stays consistent and valid
 dat= dat[listrank<3]
-# for(subject in nsubj){
-#   for(cats in ncat){
-#     if(any(dat[id== subject & category == cats & listrank==1, .N, by= .(item, game)]$N>1)){
-#       this_subj= dat[id== subject & category == cats & listrank==1]
-#       get_err= this_subj[, .N, by= .(id, category, game, item)]
-#       this_subj= merge(this_subj, get_err, by= c("id", "category", "game", "item"))
-#       }
-#   }
-# }
-idx_dt= data.table(id= character(), category= character())
-for(subject in nsubj){
-  for(cats in ncat){
-    if(any(dat[id== subject & category == cats & listrank==1, .N, by= .(item, game)]$N>1)){
-      newlist= list(subject, cats)
-      idx_dt= rbindlist(list(idx_dt,newlist))
-      this_subj= dat[id== subject & category == cats & listrank==1]
-    }
+# get rid of categories that only have a listrank== 1
+for (subject in nsubj){
+  this_idx= dat[id== subject]
+  for(cats in unique(this_idx$category)){
+    this_subj= this_idx[category== cats]
+    if(sum(unique(this_subj$listrank))<3)
+    dat[id== subject & category== cats,]= NaN
   }
 }
 
 
-for (subject in idx_dt$id){
-  this_subj= dat[id== idx_dt[i]$id & category== idx_dt[i]$category]
-}
+for (subject in nsubj){
+  this_idx= dat[id== subject]
+  for (cats in unique(this_idx$category)){
+    l1= this_idx[category== cats & listrank== 1]
+    l2= this_idx[category== cats & listrank== 2]
+    for(i in 1:length(unique(l1$item))){
+      word1_idx= unique(l1[listrank== 1]$item)
+      word1= word1_idx[i]
+      get_itemnum1= l1[item %in% word1]$itemnum
+      it_idx= min(get_itemnum1)
+      l1[item %in% word1 & itemnum%in% get_itemnum1[get_itemnum1>it_idx]]= NaN
+    }
+    dat[id== subject & category== cats & listrank==1]= l1
+    for(i in 1:length(unique(l2$item))){
+      word2_idx= unique(l2[listrank== 2]$item)
+      word2= word2_idx[i]
+      get_itemnum2= l2[item %in% word2]$itemnum
+      it_idx= min(get_itemnum2)
+      l2[item %in% word2 & itemnum%in% get_itemnum1[get_itemnum2>it_idx]]= NaN
+      }
+    dat[id== subject & category== cats & listrank==2]= l2
+    }
+  }
+#Remove all of the trials that were set to NaN
+dat= dat[!is.na(id),]
 
-this_subj[, get_counts:= .N, by= .(id, category, game, item)]
-k= this_subj[get_counts>1]
-k
 
+# Check for perseverative errors
+k= dat[, .N, by= .(id, game, category, item)]
+k[N>2]
+#No perseverative errors :)

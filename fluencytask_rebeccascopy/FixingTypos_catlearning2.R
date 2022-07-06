@@ -99,7 +99,6 @@ for(subject in nsubj){
   for(cats in ncat){
     if(any(dat[id== subject & category == cats & listrank==1, .N, by= .(item, game)]$N>1)){
       this_subj= dat[id== subject & category == cats & listrank==1]
-
     }
   }
 }
