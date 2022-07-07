@@ -21,20 +21,6 @@ dat<- subset(dat,select=-c(X))
 nsubj= unique(dat$id)
 ncat= unique(dat$category)
 
-# get indices for categories that were !repeated twice
-k= dat[, .N, by= .(category, game, id)]
-cat_table= k[, .N, by= .(id, category)]
-cat_table= cat_table[N==2]
-dat= merge(dat, cat_table)
-dat= dat[N== 2]
-# Drop games 23-24
-ncat= unique(dat$category)
-for (i in 1:length(nsubj)){
-  for (j in 1:length(ncat)){
-    this_game <- dat[id== nsubj[i] & category== ncat[j], game]
-    dat[id== nsubj[i] & category== ncat[j], listnum:= max(game)]
-  }
-}
 
 
 

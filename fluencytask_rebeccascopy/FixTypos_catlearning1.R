@@ -1,4 +1,4 @@
-dat <- data.table(read.csv("final_results.csv"))
+
 dat<- subset(dat,select=-c(X))
 nsubj= unique(dat$id)
 ncat= unique(dat$category)
@@ -50,16 +50,20 @@ for (subject in nsubj){
       word2= word2_idx[i]
       get_itemnum2= l2[item %in% word2]$itemnum
       it_idx= min(get_itemnum2)
-      l2[item %in% word2 & itemnum%in% get_itemnum1[get_itemnum2>it_idx]]= NaN
+      l2[item %in% word2 & itemnum%in% get_itemnum2[get_itemnum2>it_idx]]= NaN
       }
     dat[id== subject & category== cats & listrank==2]= l2
-    }
   }
 #Remove all of the trials that were set to NaN
 dat= dat[!is.na(id),]
 
 
+
 # Check for perseverative errors
-k= dat[, .N, by= .(id, game, category, item)]
-k[N>2]
-#No perseverative errors :)
+k= dat[, .N, by= .(id, game, category, item, listrank)]
+k[N>1]
+
+#yay no errors
+# spotcheck
+dat[id== "ShuFJHvn7mE" & category== "Sporting Games" & listrank==2]
+
