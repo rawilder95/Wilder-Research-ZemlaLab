@@ -133,17 +133,6 @@ ggplot()+ geom_histogram(aes(x= s_df[!is.nan(dist)]$dist))+ labs(x= "Lag", y= "F
 min(s_df$dist)#max backwards lag (-25)
 max(s_df$dist)#max forwards lag (29)
 
-
-
-
-for (subject in nsubj){
-  this_idx= s_df[id== subject]
-  for (cats in unique(this_idx$category)){
-    this_subj= this_idx[category== cats]
-    
-  }
-}
-
 # Do counts
 #don't worry about listrank bc you're only looking at listrank 2 output
 get_counts= data.table(range= c(1:(max(s_df$range))), actual= rep(0,max(s_df$range)))
@@ -152,25 +141,44 @@ k= s_df[, .N, by= .(id, category, dist)]
 
 ggplot() + geom_point(aes(x= k$dist, y= k$N))
 
-
 back_idx= vector()
-p_counts= data.table(possible= c(min(s_df$dist):max(s_df$dist)), counts= rep(0, length(min(s_df$dist):max(s_df$dist)))) #subject index
-possible_counts= data.table(possible= numeric(), counts= numeric()) #full set using rbindlist
+# p_counts= data.table(possible= c(min(s_df$dist):max(s_df$dist)), counts= rep(0, length(min(s_df$dist):max(s_df$dist)))) #subject index
+# possible_counts= data.table(possible= numeric(), counts= numeric()) #full set using rbindlist
+all_transitions= data.table(possible= numeric())
 for(subject in nsubj){
   this_idx= s_df[id== subject]
   for(cats in unique(s_df$category)){
+    # forward backwards possible transition vectors
+    get_transitions= data.table(possible= numeric())
     for (i in 1:nrow(this_subj)){
-      
+      back_idx[i]= this_subj[i]$sp1
+      btr= c(min(this_subj$sp1):this_subj[i]$sp1)
+      btr= btr[!btr %in% this_subj[i]$sp1 & !btr %in% back_idx]
+      #There's probably a cleaner way to do this- but doing it out fully to make sure that I have it right
+      b1= btr- this_subj[i]$sp1
+      ftr= c(this_subj[i]$sp1: max(this_subj$sp1))
+      ftr= ftr[!ftr %in% this_subj[i]$sp1 & ! ftr %in% back_idx]
+      f1= ftr- this_subj[i]$sp1
+      # How many possible transitions?
+      newlist= list(c(b1, f1))
+      get_transitions= rbindlist(list(get_transitions,newlist))
+      # idk if it goes here
+      all_transitions= rbindlist(list(all_transitions,get_transitions))
     }
-    this_subj= this_idx[category== cats]
-    k=this_subj[dist %in% p_counts$possible, .N, by= dist]
-    p_counts[possible %in% k$dist]$counts= p_counts[possible %in% k$dist]$counts+ k$N
-    possible_counts= rbindlist(list(possible_counts, p_counts))
   }
 }
 
-# Here, I'm summing the counts relative to the unique values in the col "possible".  This should match the actual count range. 
-possible_counts[,sum(counts), by= possible]
+# just get the table counts for each instance of value(i)
+j= all_transitions[, .N, by= possible]
+k= s_df[, .N, by= dist]
+k= k[dist>= -13]
+k= k[dist<= max(j$possible)]
+colnames(k) <- c("dist", "N")
+colnames(j) <- c("dist", "N")
+# compare possible versus actual counts
+comp_pcounts= merge(j,k, by= "dist")
+colnames(comp_pcounts) <- c("dist", "possible", "actual")
+
 
 
 
