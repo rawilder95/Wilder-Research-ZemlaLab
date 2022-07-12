@@ -147,14 +147,16 @@ back_idx= vector()
 all_transitions= data.table(possible= numeric())
 for(subject in nsubj){
   this_idx= s_df[id== subject]
-  for(cats in unique(s_df$category)){
+  for(cats in unique(this_idx$category)){
     # forward backwards possible transition vectors
+    this_subj= this_idx[category== cats]
     get_transitions= data.table(possible= numeric())
     for (i in 1:nrow(this_subj)){
       back_idx[i]= this_subj[i]$sp1
       btr= c(min(this_subj$sp1):this_subj[i]$sp1)
       btr= btr[!btr %in% this_subj[i]$sp1 & !btr %in% back_idx]
       #There's probably a cleaner way to do this- but doing it out fully to make sure that I have it right
+      if(this_subj[i]$dist== -25){break}
       b1= btr- this_subj[i]$sp1
       ftr= c(this_subj[i]$sp1: max(this_subj$sp1))
       ftr= ftr[!ftr %in% this_subj[i]$sp1 & ! ftr %in% back_idx]
@@ -168,16 +170,51 @@ for(subject in nsubj){
   }
 }
 
-# just get the table counts for each instance of value(i)
-j= all_transitions[, .N, by= possible]
+# fuck it's because each subject has a different SP length- the kahana CRP tutorial assumes that SP range will be fixed- so range is is out of 1:length(N items presented)
+get_counts= vector()
+range_vec= c(min(s_df$dist):max(s_df$dist))
+p_vec= data.table(possible= range_vec, counts= NaN)
+for (i in 1:length(range_vec)){
+  p_vec[i]$counts= sum(all_transitions$possible %in% range_vec[i])
+}
 k= s_df[, .N, by= dist]
-k= k[dist>= -13]
-k= k[dist<= max(j$possible)]
-colnames(k) <- c("dist", "N")
-colnames(j) <- c("dist", "N")
-# compare possible versus actual counts
-comp_pcounts= merge(j,k, by= "dist")
-colnames(comp_pcounts) <- c("dist", "possible", "actual")
+k= k[order(dist)]
+colnames(k)= colnames(p_vec)
+
+
+all_counts= merge(k, p_vec, by= "possible")
+colnames(all_counts) <- c("lag", "observed", "possible")
+all_counts[, CRP:= observed/possible]
+# Add rows for the impossible transitions e.g. 0
+k= all_counts
+for (i in 1:length(range_vec)){
+  idx= range_vec[i]
+  if(!any(all_counts$lag %in% range_vec[i])){
+    print(range_vec[i])
+    k[i]$lag= range_vec[i]
+    k[i]$possible= 0
+    k[i]$observed= 0
+    k[i]$CRP= NaN
+  }
+}
+all_counts= k
+
+ggplot(data= all_counts, aes(x= lag, y= CRP))+ geom_line() + geom_point()+ xlim(-20,20)+ labs(title= "Lag CRP", x= "Lag")
+ggsave("lagcrp_summer22.png", device= png, dpi= 300)
+
+
+
+
+# # just get the table counts for each instance of value
+# j= all_transitions[, .N, by= possible]
+# k= s_df[, .N, by= dist]
+# k= k[dist>= -13]
+# k= k[dist<= max(j$possible)]
+# colnames(k) <- c("dist", "N")
+# colnames(j) <- c("dist", "N")
+# # compare possible versus actual counts
+# comp_pcounts= merge(j,k, by= "dist")
+# colnames(comp_pcounts) <- c("dist", "possible", "actual")
 
 
 
