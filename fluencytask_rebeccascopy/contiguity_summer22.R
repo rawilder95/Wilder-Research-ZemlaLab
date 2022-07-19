@@ -202,8 +202,11 @@ all_counts= k
 ggplot(data= all_counts, aes(x= lag, y= CRP))+ geom_line() + geom_point()+ xlim(-20,20)+ labs(title= "Lag CRP", x= "Lag")
 ggsave("lagcrp_summer22.png", device= png, dpi= 300)
 
-
-
+# get forwards and backwards transitions
+all_counts[, directionality:= as.numeric(lag>0)]
+sum(all_counts[directionality==0]$observed)
+sum(all_counts[directionality==1]$observed)
+# plot that into a binomial test
 
 # # just get the table counts for each instance of value
 # j= all_transitions[, .N, by= possible]
@@ -216,6 +219,6 @@ ggsave("lagcrp_summer22.png", device= png, dpi= 300)
 # comp_pcounts= merge(j,k, by= "dist")
 # colnames(comp_pcounts) <- c("dist", "possible", "actual")
 
-
+write.csv(s_df, file= "contiguityfor_python.csv")
 
 
